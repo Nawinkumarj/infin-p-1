@@ -3,7 +3,6 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import Scrollcard from "../Components/Scrollcard";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -29,10 +28,6 @@ export default function page() {
   }, []);
 
   return (
-    <>
-    <section>
-      <Scrollcard />
-    </section>
     <div className="industries-container" ref={flipRef}>
       <div className="flip-wrapper">
         <div className="card">
@@ -66,6 +61,5 @@ export default function page() {
         </div>
       </div>
     </div>
-    </>
   );
 }

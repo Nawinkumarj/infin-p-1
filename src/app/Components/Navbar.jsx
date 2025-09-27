@@ -45,11 +45,6 @@ export default function Navbar() {
           <Link href="/Career">careers</Link>
         </div>
 
-        <div className="navbar-lang">
-          <button> EN
-          </button>
-        </div>
-
         <div className="navbar-contact">
           <Link href="/Contact">contact</Link>
         </div>

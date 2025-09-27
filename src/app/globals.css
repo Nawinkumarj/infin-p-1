@@ -71,7 +71,7 @@ a {
   align-items: center;
   justify-content: space-between;
   padding: 0 3rem;
-  border-bottom: 2px solid var(--foreground);
+  border-bottom: 2px solid var(--background);
   height: 100px;
   margin: 0 auto;
   font-size: var(--text-sm);
@@ -114,26 +114,25 @@ a {
 
 
 .navbar-item:before,
-.navbar-lang::before {
+.navbar-contact::before {
   content: "";
   position: absolute;
   left: -20px;
-  top: -40px;
+  top: -30px;
   width: 2px;
   height: 100px;
-  background-color: var(--foreground);
+  background-color: var(--background);
   /* background-color: #000000; */
 }
 
-.navbar-item:after,
-.navbar-lang::after {
+.navbar-item:after {
   content: "";
   position: absolute;
   right: -20px;
-  top: -40px;
+  top: -30px;
   width: 2px;
   height: 100px;
-  background-color: var(--foreground);
+  background-color: var(--background);
   /* background-color: #000000; */
 }
 
@@ -1167,7 +1166,7 @@ a {
 /* Team ends */
 /* About us  */
 .about-us-container {
-  margin-top: 150px;
+  margin-top: 50px;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -1179,7 +1178,7 @@ a {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 85vh;
+  min-height: 95vh;
   position: relative;
   gap: 2rem;
   width: 90%;
@@ -1239,7 +1238,7 @@ a {
 }
 
 .about-who-we-content p {
-  font-size: var(--text-l);
+  font-size: var(--text-sm);
 }
 
 .about-who-experience {
@@ -1288,7 +1287,7 @@ a {
   text-transform: uppercase;
 }
 
-.about-values-para {
+.about-value-card {
   position: relative;
   display: flex;
   align-items: center;
@@ -1296,7 +1295,7 @@ a {
   padding: 1rem;
   width: 400px;
   height: 300px;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.511);
   border-radius: 15px;
   --r: 20px;
   --s: 30px;
@@ -1355,7 +1354,7 @@ a {
   height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   padding: 20px;
   padding-top: 100px;
   gap: 40px;
@@ -1369,7 +1368,7 @@ a {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 10px;
+  gap: 15px;
 }
 
 .service-title-box {
@@ -1382,10 +1381,11 @@ a {
   margin-bottom: 10px;
   border: 2px solid gray;
   padding: 10px;
-  border-radius: 20px;
+  border-radius: 10px;
   transition: 0.3s;
   color: white;
   background-color: transparent;
+  /* transition: all 0.3s ease-in-out; */
 }
 
 .service-title.active {
@@ -1581,3 +1581,11 @@ a {
   color: grey;
   display: flex;
 }
+/* Scroll Card */
+.scrollcard{
+  border-width: 3px;
+  border-style: solid;
+  border-image: linear-gradient(to right, rgb(30, 30, 30), var(--background)) 1;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+/* Scroll Card ends */

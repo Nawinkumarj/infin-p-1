@@ -107,44 +107,55 @@ export default function Scrollcard() {
   const cardData = [
     {
       id: 1,
-      title: "BUILD AN EVOLVING ECONOMY",
-      description: "Introduce your own coins and digital items that gain value the more fans shop, play, and share.",
+      title: "Multimarket Execution",
+      description: "Expertise in delivering programs across APAC, EMEA, and North America.",
       position: "right"
     },
     {
       id: 2,
-      title: "CONNECT PHYSICAL & DIGITAL",
-      description: "Turn city streets into treasure hunts, products into interactive collectibles, and everyday moments into immersive adventures.",
+      title: "Regulatory Acumen",
+      description: "Fluency in international compliance standards—from Basel III to GDPR, FATF, and ESG frameworks.",
       position: "left"
     },
     {
       id: 3,
-      title: "ENGAGE YOUR COMMUNITY",
-      description: "Create interactive experiences that bring your audience together through gamification and digital rewards.",
+      title: "Cultural Fluency",
+      description: "Cross-cultural collaboration models that enable seamless alignment with diverse teams and stakeholders.",
       position: "right"
     },
     {
       id: 4,
-      title: "TRANSFORM EXPERIENCES",
-      description: "Bridge the gap between physical and digital worlds with innovative technology solutions.",
+      title: "Partnership-Ready Models",
+      description: "Scalable delivery, whether embedded with clients or operating as a global PMO-as-a-Service.",
       position: "left"
     }
   ];
 
   return (
-    <section
-      ref={containerRef}
+    <section ref={containerRef}
+    style={{
+        background: "linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%)",
+    }}> 
+    <h1 style={{
+        textAlign: "center",
+        fontSize: "3rem",
+        fontWeight: "400",
+        padding: "150px 20px 0px 20px",
+        color: "white",
+        textTransform: "uppercase",
+    }}>
+        Global Expertise. Local Precision.
+    </h1>
+    <div
       className="scrollcard-container"
       style={{
         position: "relative",
-        height: "100vh",
-        background: "linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%)",
+        height: "80vh",
         overflow: "hidden",
         display: "flex",
         alignItems: "center",
         justifyContent: "space-around"
-      }}
-    >
+      }}>
       {cardData.map((card, index) => (
         <div
           key={card.id}
@@ -157,7 +168,6 @@ export default function Scrollcard() {
             padding: "60px 40px",
             background: "rgba(255, 255, 255, 0.05)",
             backdropFilter: "blur(20px)",
-            border: "1px solid rgba(255, 255, 255, 0.1)",
             borderRadius: "20px",
             color: "white",
             textAlign: card.position === "left" ? "left" : "right",
@@ -214,7 +224,9 @@ export default function Scrollcard() {
             }}></div>
           </div>
         </div>
+        
       ))}
+        </div>
     </section>
   );
 }

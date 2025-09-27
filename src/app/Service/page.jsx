@@ -1,6 +1,5 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
-import "../../app/globals.css";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { FaCirclePlus } from "react-icons/fa6";
@@ -19,16 +18,16 @@ gsap.registerPlugin(ScrollTrigger);
 const ServiceList = [
   {
     id: 1,
-    title: "Our Approach",
+    title: "Program & Project Delivery",
     description:
-      "We believe in a collaborative approach, working closely with our clients to understand their unique needs and challenges. Our team of experts combines industry knowledge with cutting-edge technology to deliver tailored solutions that drive results.",
+      "We lead the full lifecycle of strategic initiatives—from planning and mobilization through to execution and benefit realization.",
     imageUrl: "/bimg.jpeg",
   },
   {
     id: 2,
-    title: "Consulting Services",
+    title: "PMO Setup & Governance",
     description:
-      "Our consulting services help businesses identify opportunities for growth and improvement. We provide strategic guidance on digital transformation, process optimization, and technology adoption to help our clients stay ahead in a rapidly evolving market.",
+      "We build and optimize Project Management Offices (PMOs) that bring consistency, visibility, and accountability across enterprise portfolios.",
     imageUrl: "/bimg.jpeg",
   },
   {
@@ -40,23 +39,58 @@ const ServiceList = [
   },
   {
     id: 4,
-    title: "Industry Expertise",
+    title: "Change & Transformation Support",
     description:
-      "With experience across various industries, including finance, healthcare, retail, and manufacturing, we bring deep industry knowledge to every project. Our understanding of industry-specific challenges allows us to deliver solutions that are both effective and relevant.",
+      "From digital onboarding to operating model redesign, we orchestrate change initiatives that stick—on time and on strategy.",
     imageUrl: "/bimg.jpeg",
   },
   {
     id: 5,
-    title: "Client Success Story",
+    title: "Regulatory & Risk Program Management",
     description:
-      "We take pride in the success of our clients. Our portfolio includes numerous case studies showcasing how our services have helped businesses achieve their goals, improve efficiency, and drive growth. We are committed to delivering measurable results and long-term value.",
+      "We manage large-scale compliance and regulatory projects including AML, ESG, Basel, and IFRS programs with full traceability and transparency",
     imageUrl: "/bimg.jpeg",
   },
   {
     id: 6,
-    title: "Get in Touch",
+    title: "Leading Business Transformation Agendas",
     description:
-      "Ready to take your business to the next level? Contact us today to learn more about our services and how we can help you achieve your goals. Our team is here to answer your questions and provide the support you need to succeed.",
+      "We drive enterprise-wide change across people, processes, and platforms—linking strategy to execution with a focus on value realization",
+    imageUrl: "/bimg.jpeg",
+  },
+  {
+    id: 7,
+    title: "Driving Digital Transformation ",
+    description:
+      "From AI-driven fintech solutions to open banking innovations, we ensure seamless execution of cutting-edge projects.",
+    imageUrl: "/bimg.jpeg",
+  },
+  {
+    id: 8,
+    title: "Managing High-Impact Strategic Initiatives",
+    description:
+      "Whether it’s launching new ventures, entering new markets, or integrating post-M&A platforms, we bring structured delivery to big ambitions.",
+    imageUrl: "/bimg.jpeg",
+  },
+  {
+    id: 9,
+    title: "Enhancing Regulatory & Compliance Efficiency",
+    description:
+      "Streamlining workflows for AML, risk management, and fraud prevention while ensuring governance excellence.",
+    imageUrl: "/bimg.jpeg",
+  },
+  {
+    id: 10,
+    title: "Accelerating Innovation in Fintech & Insurtech ",
+    description:
+      "Managing complex deployments of AI-driven claims processing, embedded finance, and neobanking solutions",
+    imageUrl: "/bimg.jpeg",
+  },
+  {
+    id: 11,
+    title: "PMO-as-a-Service",
+    description:
+      "For scalable delivery support across portfolios, programs, and change initiatives. Risk-aware Governance aligned with compliance, audit, and performance expectations",
     imageUrl: "/bimg.jpeg",
   },
 ];

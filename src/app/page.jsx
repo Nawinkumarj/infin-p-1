@@ -9,14 +9,8 @@ export default function HomeSection() {
   return (
     <>
       {/* Banner Section */}
-      <div className="home-banner">
-        <ModelViewer
-          url="/infinity.glb"
-          width={500}
-          height={500}
-        />
-      </div>
-      <Scrollcard />
+        <ModelViewer />
+        <Scrollcard />
     </>
   );
 }

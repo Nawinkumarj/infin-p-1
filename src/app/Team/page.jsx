@@ -15,7 +15,7 @@ const teamMembers = [
   },
   {
     name: "John Ben Victor",
-    designation: "Business",
+    designation: "Business Development Manager",
     image: "https://pics.craiyon.com/2024-09-04/lVIdzSccREy2xW2pf853oA.webp",
     description: "Team 2",
   },
@@ -44,10 +44,9 @@ export default function TeamScroll() {
         scrollTrigger: {
           trigger: sectionRef.current,
           start: "top 15%",
-          end: "+=3000",
+          end: "+=1500",
           scrub: true,
           pin: true,
-          markers: true
         },
       });
 
