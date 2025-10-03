@@ -19,19 +19,19 @@ export default function page() {
     <div className="contact-container ">
       <div className="contact-heading">
         <h1>
-          We're Happy to see you on this Page.Please tellu s what project you
-          want to work on
+          We're Happy to see you on this Page.Please tell us what project you
+          want to work on :)
         </h1>
       </div>
       <div className="contact-section">
         <div className="contact-left">
           <div className="contact-ph">
             <MdOutlinePhoneInTalk />
-            <p>+919876543219</p>
+            <p>+91 9841059274</p>
           </div>
           <div className="contact-mail">
             <SiGmail />
-            <p>info@yourmail.com</p>
+            <p>info@infinitasadvisory.com</p>
           </div>
           <div className="contact-address">
             <TbLocation />
@@ -40,7 +40,6 @@ export default function page() {
         </div>
         <div className="contact-right">
           <div className="login-box">
-            <p>Say Hello</p>
             <form>
               <div className="row">
                 <div className="user-box">
@@ -68,9 +67,10 @@ export default function page() {
                   <option value="" disabled selected>
                     Select a Service
                   </option>
-                  <option value="web-development">Web Development</option>
-                  <option value="app-development">App Development</option>
-                  <option value="ui-ux-design">UI/UX Design</option>
+                  <option value="project-management">Project Management Services</option>
+                  <option value="marketing-management">Marketing Management</option>
+                  <option value="Sourcing-and-Procurement">Sourcing & Procurement Consulting</option>
+                  <option value="web-development">Tech & Development</option>
                   <option value="digital-marketing">Digital Marketing</option>
                 </select>
                 <label></label>
@@ -78,17 +78,31 @@ export default function page() {
               <textarea
                 className="contact-message"
                 name="message"
-                rows={5}
+                placeholder="Define Your Service Requirements"
+                rows={7}
                 required
               ></textarea>
 
-              <button type="submit" className="submit-button">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                Submit
+              <button type="submit" class="contact-submit">
+                <div class="svg-wrapper-1">
+                  <div class="svg-wrapper">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      width="24"
+                      height="24"
+                    >
+                      <path fill="none" d="M0 0h24v24H0z"></path>
+                      <path
+                        fill="currentColor"
+                        d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"
+                      ></path>
+                    </svg>
+                  </div>
+                </div>
+                <span>Send</span>
               </button>
+
             </form>
           </div>
         </div>
@@ -103,7 +117,7 @@ export default function page() {
               <img src="/insta.jpeg" alt="" />
             </a>
             <p className="contact-arrow-icon">
-                <IoIosArrowRoundUp />
+              <IoIosArrowRoundUp />
             </p>
           </div>
           <div className="contact-social-link">
@@ -126,9 +140,8 @@ export default function page() {
             {Object.keys(faqData).map((category) => (
               <div
                 key={category}
-                className={`contact-faq-item ${
-                  activeCategory === category ? "active" : ""
-                }`}
+                className={`contact-faq-item ${activeCategory === category ? "active" : ""
+                  }`}
                 onClick={() => {
                   setActiveCategory(category);
                   setOpenIndex(null);

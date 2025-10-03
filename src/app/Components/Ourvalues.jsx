@@ -97,7 +97,7 @@ export default function AboutOurValues() {
         style={{
           padding: "4rem 2rem",
           position: "relative",
-          backgroundImage: "url('/space.gif')",
+          backgroundImage: "url('/infinbg.jpg')",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
           backgroundSize: "cover",

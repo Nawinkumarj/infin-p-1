@@ -133,17 +133,27 @@ export default function Scrollcard() {
 
   return (
     <section ref={containerRef}
-    style={{
-        background: "linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%)",
-    }}> 
+    className="scrollcard-section"> 
+    {/* <div
+        className="scroll"
+        style={{
+          // padding: "4rem 2rem",
+          position: "relative",
+          backgroundImage: "url('/infinbg.jpg')",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "center",
+          backgroundSize: "cover",
+          position: "relative",
+          width: "100%",
+          height: "100%",
+        }}
+      > */}
     <h1 style={{
-        textAlign: "center",
         fontSize: "3rem",
         fontWeight: "400",
-        padding: "150px 20px 0px 20px",
-        color: "white",
+        padding: "50px 20px 0px 20px",
         textTransform: "uppercase",
-    }}>
+    }} className="heading">
         Global Expertise. Local Precision.
     </h1>
     <div
@@ -180,7 +190,7 @@ export default function Scrollcard() {
             marginBottom: "20px",
             letterSpacing: "2px",
             textTransform: "uppercase",
-            background: "linear-gradient(45deg, #00d4ff, #ffffff)",
+            background: "linear-gradient(45deg, var(--background), #ffffff)",
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
             lineHeight: "1.2"
@@ -207,13 +217,13 @@ export default function Scrollcard() {
             <div style={{
               width: "30px",
               height: "2px",
-              background: "linear-gradient(90deg, transparent, #00d4ff)",
+              background: "linear-gradient(90deg, transparent, var(--background), transparent)",
               opacity: 0.6
             }}></div>
             <div style={{
               width: "10px",
               height: "2px",
-              background: "#00d4ff",
+              background: "var(--background)",
               opacity: 0.8
             }}></div>
             <div style={{
@@ -227,6 +237,7 @@ export default function Scrollcard() {
         
       ))}
         </div>
+        {/* </div> */}
     </section>
   );
 }

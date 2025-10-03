@@ -2,8 +2,10 @@
 import React from "react";
 import Link from 'next/link';
 import { usePathname } from "next/navigation";
-import { GoNorthStar } from "react-icons/go";
-import { FaChevronRight } from "react-icons/fa6";
+import { FiPhone } from "react-icons/fi";
+import { GoArrowUpRight } from "react-icons/go";
+import { TbMailFilled } from "react-icons/tb";
+import { FaFacebook, FaXTwitter, FaLinkedin, FaInstagram } from "react-icons/fa6";
 
 export default function Footer() {
   const pathname = usePathname();
@@ -25,25 +27,27 @@ export default function Footer() {
           </div>
         </div>
         <div className="footer-grid-item-2">
-          <Link href="mailto:/"><GoNorthStar size='20'/> info@infinitasadvisory.com</Link>
+          <Link href="mailto:/info@infinitasadvisory.com"><TbMailFilled size='23'/> info@infinitasadvisory.com</Link>
         </div>
         <div className="footer-grid-item-3">
-          <Link href="tel:/"><GoNorthStar size='20'/> +91 9840159274</Link>
+          <Link href="tel:/"><FiPhone size='23'/> +91 9840159274</Link>
         </div>
         <div className="footer-grid-item-4">
           <div className="footer-item">
-            <Link href="">Terms of Service<FaChevronRight /></Link>
-            <Link href="">Privacy Policy<FaChevronRight /></Link>
-            <Link href="">Cookie Policy<FaChevronRight /></Link>
+            <Link href="">Terms of Service<GoArrowUpRight /></Link>
+            <Link href="">Privacy Policy<GoArrowUpRight /></Link>
           </div>
         </div>
         <div className="footer-grid-item-5">
           <div className="footer-item">
             <Link href="" style={{fontSize:'20px'}}>Follow us on social media</Link>
-            <Link href="">Facebook</Link>
-            <Link href="">Twitter</Link>
-            <Link href="">LinkedIn</Link>
-            <Link href="">Instagram</Link>
+            <Link href=""><FaFacebook size='20'/>Facebook</Link>
+            <Link href=""> <FaXTwitter size='20'/>
+            Twitter</Link>
+            <Link href=""> <FaLinkedin size='20'/>
+            LinkedIn</Link>
+            <Link href=""> <FaInstagram size='20'/>
+            Instagram</Link>
           </div>
         </div>
         <div style={{gridRow: '1 / span 4',gridColumnStart: '4', display:'flex',justifyContent: 'space-between',flexDirection: 'column' , textAlign: 'center', padding: '16px 0 0 0', fontSize: '18px', color: 'orange'}}>

@@ -54,7 +54,6 @@ export default function Page() {
           start: "top 35%",
           end: "top 15%",
           scrub: true,
-          markers: true,
         },
       });
     });
@@ -133,7 +132,6 @@ export default function Page() {
       zIndex: 1,
     });
 
-    // Pin tsec animate cards 
     ScrollTrigger.create({
       trigger: section,
       start: "top top",
@@ -145,7 +143,7 @@ export default function Page() {
         const progress = self.progress;
 
         if (progress <= 0.6) {
-          // Mission card slides upp
+          // M card slides upp
           const slideProgress = progress / 0.6;
 
           gsap.set(mission, {
@@ -162,8 +160,8 @@ export default function Page() {
             zIndex: 2,
           });
         } else {
-          // Mission card settles, vision card fades out completely
-          const settleProgress = (progress - 0.6) / 0.4; // Normalize remaining progress
+          // Mission card
+          const settleProgress = (progress - 0.6) / 0.4;
 
           gsap.set(mission, {
             y: "0%",
