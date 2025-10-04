@@ -1579,7 +1579,6 @@ a {
   background-color: rgb(200, 15, 15);
   border-radius: 15px;
 }
-
 /* Vision & mission */
 /* About us ends */
 
@@ -1604,11 +1603,17 @@ a {
   flex-direction: column;
   align-items: flex-start;
   gap: 15px;
+  min-width: 0;
+  max-width: 25%;
+  overflow: hidden;
 }
 
 .service-title-box {
   display: flex;
   align-items: center;
+  min-width: 0;
+  width: 100%;
+  max-width: 100%;
 }
 
 .service-title {
@@ -1620,7 +1625,25 @@ a {
   transition: 0.3s;
   color: white;
   background-color: transparent;
-  /* transition: all 0.3s ease-in-out; */
+  min-width: 0;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  white-space: normal;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.service-title h2 {
+  min-width: 0;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  white-space: normal;
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .service-title.active {
@@ -1639,15 +1662,13 @@ a {
   padding: 8px;
   margin: 5px;
   border-radius: 50px;
+  flex-shrink: 0;
 }
 
 .arrow-indicator span {
-  /* font-size: 24px; */
   font-weight: 600;
   color: black;
 }
-
-/* Right Side */
 .description-service {
   width: 75%;
   height: 80vh;
@@ -1655,21 +1676,17 @@ a {
   padding: 10px;
   border-left: 2px solid gray;
   scrollbar-width: none;
-  /* Firefox */
   -ms-overflow-style: none;
-  /* IE/Edge */
   transition: all 2s ease-in-out;
 }
 
 .description-service::-webkit-scrollbar {
   display: none;
-  /* Chrome, Safari */
 }
 
 .service-description-box {
   margin-bottom: 40px;
   opacity: 1;
-  /*starts hidden until GSAP animates it */
   transform: translateY(30px);
 }
 
@@ -1677,6 +1694,8 @@ a {
   margin: 10px;
   font-size: 6rem;
   font-weight: 600;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .service-content {
@@ -1692,12 +1711,18 @@ a {
 .service-content p {
   flex: 1;
   font-size: 24px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  line-height: 1.5;
 }
 
 .service-content img {
   width: 60vh;
   height: auto;
   border-radius: 20px;
+  flex-shrink: 0;
+  max-width: 50%;
+  object-fit: cover;
 }
 
 .know-more-btn {
@@ -1709,6 +1734,8 @@ a {
   border-radius: 10px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  flex-shrink: 0;
+  white-space: nowrap;
 }
 
 .know-more-btn:hover {
@@ -1726,6 +1753,103 @@ a {
 .MuiDialog-paper {
   background-color: var(--background) !important;
   color: var(--foreground) !important;
+}
+
+@media (max-width: 1200px) {
+  .service-heading {
+    font-size: 4rem;
+  }
+  
+  .service-content {
+    height: auto;
+    min-height: 300px;
+  }
+  
+  .service-content img {
+    width: 40vh;
+  }
+}
+
+@media (max-width: 768px) {
+  .service-container {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+    gap: 20px;
+  }
+  
+  .title-service {
+    width: 100%;
+    max-width: 100%;
+    order: 2;
+  }
+  
+  .description-service {
+    width: 100%;
+    height: 60vh;
+    border-left: none;
+    border-top: 2px solid gray;
+    order: 1;
+  }
+  
+  .service-content {
+    flex-direction: column;
+    height: auto;
+    text-align: center;
+  }
+  
+  .service-content img {
+    width: 100%;
+    max-width: 300px;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .service-heading {
+    font-size: 3rem;
+    text-align: center;
+  }
+  
+  .service-content p {
+    font-size: 18px;
+  }
+  
+  .arrow-indicator {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .service-heading {
+    font-size: 2rem;
+  }
+  
+  .service-content p {
+    font-size: 16px;
+  }
+  
+  .know-more-text {
+    font-size: 16px;
+  }
+  
+  .service-title {
+    padding: 8px;
+    margin-bottom: 8px;
+  }
+}
+
+/* Additional utility classes */
+.text-no-wrap {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.text-wrap {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  white-space: normal;
 }
 
 /* Case Study Container */

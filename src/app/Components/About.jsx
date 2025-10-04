@@ -96,13 +96,13 @@ export default function About() {
             <h2>Our Mission</h2>
             <p>Our mission is to empower businesses with expert guidance and end-to-end support in delivering high-impact projects, building resilient brands, and optimizing procurement strategies.</p>
             <div className="home-about-image">
-              <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=400&h=300&fit=crop" alt="Team" />
+              <img src="/abt1.jpg" alt="Team" />
             </div>
           </div>
 
           <div ref={centerRef} className="home-about-center">
             <div className="home-about-main-image">
-              <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=600&h=400&fit=crop" alt="Construction" />
+              <img src="/abtimg.jpg" alt="Construction" />
               <div className="home-about-overlay">ABOUT&nbsp;US</div>
             </div>
           </div>
@@ -112,7 +112,7 @@ export default function About() {
             <h2>Our Vision</h2>
             <p>To be the leading advisory partner in project delivery, strategic marketing, and intelligent sourcing — enabling clients to transform with speed, precision, and purpose.</p>
             <div className="home-about-image">
-              <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=400&h=300&fit=crop" alt="Delivery" />
+              <img src="/abt2.jpg" alt="Delivery" />
             </div>
           </div>
 

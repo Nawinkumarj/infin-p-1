@@ -1,7 +1,8 @@
 "use client";
-import React, { useRef, useEffect, useState } from "react";
+import React, { useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
 import Scrollcard from "./Components/Scrollcard";
 import ModelViewer from "./Components/ModalViewer";
 import Cta from "./Components/Cta";

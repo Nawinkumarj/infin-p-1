@@ -187,14 +187,14 @@ const Page = () => {
       <div className="title-service">
         <h1>Our Services</h1>
         {ServiceList.map((service, index) => (
-          <div key={service.id} className="service-title-box">
+          <div className="service-title-box">
             <div
               className={`service-title ${
                 activeIndex === index ? "active" : ""
               }`}
               onClick={() => handleClick(index)}
             >
-              <h2>{service.title}</h2>
+              <h2 style={{ margin: 0, padding: 0 }}>{service.title}</h2>
             </div>
             {activeIndex === index && (
               <div className="arrow-indicator">
@@ -238,7 +238,7 @@ const Page = () => {
         ))}
       </div>
 
-      <Dialog open={open} onClose={handleClose} maxWidth="md" fullWidth >
+      <Dialog open={open} onClose={handleClose} maxWidth="md" fullWidth>
         {selectedService && (
           <>
             <DialogTitle sx={{ display: "flex", alignItems: "center", pr: 6 }}>
