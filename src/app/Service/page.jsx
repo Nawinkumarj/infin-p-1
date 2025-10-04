@@ -118,7 +118,7 @@ const Page = () => {
     const target = refs.current[index];
 
     if (container && target) {
-      const scrollTop = target.offsetTop - container.offsetTop; // position of target inside scrollable container
+      const scrollTop = target.offsetTop - container.offsetTop;
 
       gsap.to(container, {
         scrollTop,
@@ -145,7 +145,6 @@ const Page = () => {
             scroller: scrollRef.current,
             start: "top 80%", // when section enters viewport
             toggleActions: "play reverse play reverse",
-            // play on enter, reverse on leave, replay on enterBack, reverse on leaveBack
           },
         }
       );

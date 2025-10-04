@@ -29,7 +29,7 @@ export default function Navbar() {
     <div className="navbar-container">
       <div className={`navbar-section ${visible ? "navbar-visible" : "navbar-hidden"}`}>
         <div className="navbar-logo">
-          <img src="/infinitas.png" alt="Logo" />
+          <img src="/Infinitas.png" alt="Logo" />
         </div>
 
         <div className="navbar-item">
