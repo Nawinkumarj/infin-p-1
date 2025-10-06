@@ -13,7 +13,7 @@ export default function Navbar() {
       const currentScrollPos = window.pageYOffset;
 
       if (currentScrollPos < 50) {
-        setVisible(true); // always show at top
+        setVisible(true);
       } else {
         setVisible(prevScrollPos > currentScrollPos);
       }
@@ -31,11 +31,9 @@ export default function Navbar() {
         <div className="navbar-logo">
           <img src="/Infinitas.png" alt="Logo" />
         </div>
-
         <div className="navbar-item">
           <Link href="/CaseStudy">casestudy</Link>
         </div>
-
         <div className="navbar-list">
           <Link href="/">Home</Link>
           <Link href="/About">About</Link>
@@ -44,7 +42,6 @@ export default function Navbar() {
           <Link href="/Team">team</Link>
           <Link href="/Career">careers</Link>
         </div>
-
         <div className="navbar-contact">
           <Link href="/Contact">contact</Link>
         </div>

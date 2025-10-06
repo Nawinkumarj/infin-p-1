@@ -1,54 +1,14 @@
 "use client";
-import React, { useEffect, useRef } from "react";
-import gsap from "gsap";
+import React, { useRef } from "react";
+import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function AboutOurValues() {
   const visionRef = useRef(null);
   const cardsRef = useRef([]);
-
-  useEffect(() => {
-    const cards = cardsRef.current;
-    const container = visionRef.current;
-
-    if (!cards.length) return;
-    ScrollTrigger.getAll().forEach((st) => st.kill());
-
-    cards.forEach((card, i) => {
-      gsap.set(card, {
-        x: `${20 + i * 50}vw`,
-        opacity: 1,
-      });
-    });
-
-    ScrollTrigger.create({
-      trigger: container,
-      start: "top top",
-      end: () => `+=${cards.length * 100}%`,
-      pin: true,
-      scrub: 1,
-      onUpdate: (self) => {
-        const progress = self.progress;
-        const totalDistance = cards.length * 40; // Total scroll distance
-
-        cards.forEach((card, i) => {
-          const initialPosition = 20 + i * 50; // First card  20vw
-          const currentPosition = initialPosition - totalDistance * progress;
-
-          gsap.set(card, {
-            x: `${currentPosition}vw`,
-            opacity: currentPosition > -40 && currentPosition < 100 ? 1 : 0.3,
-          });
-        });
-      },
-    });
-
-    return () => {
-      ScrollTrigger.getAll().forEach((st) => st.kill());
-    };
-  }, []);
 
   const valuesData = [
     {
@@ -78,7 +38,7 @@ export default function AboutOurValues() {
     {
       id: 5,
       number: "05",
-      title: "Collaboration and Enpowerment",
+      title: "Collaboration and Empowerment",
       text: "We build strong, trust-based partnerships and empower teams to lead with confidence",
     },
     {
@@ -89,6 +49,48 @@ export default function AboutOurValues() {
     },
   ];
 
+  useGSAP(
+    () => {
+      const cards = cardsRef.current;
+      const container = visionRef.current;
+
+      if (!cards.length) return;
+
+      // Initial positions for all cards
+      cards.forEach((card, i) => {
+        gsap.set(card, {
+          x: `${20 + i * 50}vw`,
+          opacity: 1,
+        });
+      });
+
+      // ScrollTrigger animation
+      ScrollTrigger.create({
+        trigger: container,
+        start: "top top",
+        end: () => `+=${cards.length * 100}%`,
+        pin: true,
+        scrub: 1,
+        onUpdate: (self) => {
+          const progress = self.progress;
+          const totalDistance = cards.length * 40;
+
+          cards.forEach((card, i) => {
+            const initialPosition = 20 + i * 50;
+            const currentPosition = initialPosition - totalDistance * progress;
+
+            gsap.set(card, {
+              x: `${currentPosition}vw`,
+              opacity:
+                currentPosition > -40 && currentPosition < 100 ? 1 : 0.3,
+            });
+          });
+        },
+      });
+    },
+    { scope: visionRef } // Automatically handles cleanup
+  );
+
   return (
     <section className="about-our-value-wrapper">
       <div
@@ -96,7 +98,6 @@ export default function AboutOurValues() {
         ref={visionRef}
         style={{
           padding: "4rem 2rem",
-          position: "relative",
           backgroundImage: "url('/infinbg.jpg')",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
@@ -137,7 +138,6 @@ export default function AboutOurValues() {
               left: "0",
               transform: "translateY(-50%)",
               width: "50vw",
-              height: "auto",
               padding: "3rem 4rem",
               display: "flex",
               alignItems: "center",

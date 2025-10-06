@@ -2,6 +2,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
 import { FaCirclePlus } from "react-icons/fa6";
 import { FaArrowRight } from "react-icons/fa";
 import {
@@ -13,7 +14,7 @@ import {
 } from "@mui/material";
 import { IoIosCloseCircleOutline } from "react-icons/io";
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 const ServiceList = [
   {
@@ -128,57 +129,59 @@ const Page = () => {
     }
   };
 
-  useEffect(() => {
-    ScrollTrigger.getAll().forEach((st) => st.kill());
+ useGSAP(
+    () => {
+      const sections = refs.current;
 
-    refs.current.forEach((section, i) => {
-      gsap.fromTo(
-        section,
-        { opacity: 0, y: 50 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 1,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: section,
-            scroller: scrollRef.current,
-            start: "top 80%", // when section enters viewport
-            toggleActions: "play reverse play reverse",
-          },
-        }
-      );
-    });
-
-    refs.current.forEach((section, i) => {
-      ScrollTrigger.create({
-        trigger: section,
-        scroller: scrollRef.current,
-        start: "top bottom",
-        end: "bottom top",
-        onUpdate: () => {
-          let maxVisible = 0;
-          let active = 0;
-
-          refs.current.forEach((el, idx) => {
-            const rect = el.getBoundingClientRect();
-            const windowHeight = window.innerHeight;
-
-            const visibleHeight =
-              Math.min(rect.bottom, windowHeight) - Math.max(rect.top, 0);
-            const ratio = visibleHeight / windowHeight;
-
-            if (ratio > maxVisible) {
-              maxVisible = ratio;
-              active = idx;
-            }
-          });
-
-          setActiveIndex(active);
-        },
+      sections.forEach((section) => {
+        gsap.fromTo(
+          section,
+          { opacity: 0, y: 50 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: section,
+              scroller: scrollRef.current,
+              start: "top 80%",
+              toggleActions: "play reverse play reverse",
+            },
+          }
+        );
       });
-    });
-  }, []);
+
+      sections.forEach((section) => {
+        ScrollTrigger.create({
+          trigger: section,
+          scroller: scrollRef.current,
+          start: "top bottom",
+          end: "bottom top",
+          onUpdate: () => {
+            let maxVisible = 0;
+            let active = 0;
+
+            refs.current.forEach((el, idx) => {
+              const rect = el.getBoundingClientRect();
+              const windowHeight = window.innerHeight;
+              const visibleHeight =
+                Math.min(rect.bottom, windowHeight) - Math.max(rect.top, 0);
+              const ratio = visibleHeight / windowHeight;
+
+              if (ratio > maxVisible) {
+                maxVisible = ratio;
+                active = idx;
+              }
+            });
+
+            setActiveIndex(active);
+          },
+        });
+      });
+    },
+    { scope: scrollRef } // ensures cleanup & scoping
+  );
 
   return (
     <div className="service-container">

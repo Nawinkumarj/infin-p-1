@@ -3,9 +3,10 @@
 import React, { useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
 import AboutOurValues from "../Components/Ourvalues";
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 export default function Page() {
   const aboutRef = useRef(null);
@@ -18,7 +19,7 @@ export default function Page() {
   const missionRef = useRef(null);
 
   // === "Why Infinitas? ===
-  useEffect(() => {
+ useGSAP(() => {
     const about = aboutRef.current;
     const paragraphs = about.querySelectorAll("p");
 
@@ -57,13 +58,11 @@ export default function Page() {
         },
       });
     });
-  }, []);
+  }, { scope: aboutRef });
 
-  // === Who We Are" ===
-  useEffect(() => {
+  // === WHO WE ARE CARD ===
+  useGSAP(() => {
     const card = cardRef.current;
-
-    // Card animation
     gsap.fromTo(
       card,
       {
@@ -88,6 +87,7 @@ export default function Page() {
         ease: "power3.out",
       }
     );
+
     gsap.from(contentRefs.current, {
       scrollTrigger: {
         trigger: card,
@@ -99,21 +99,15 @@ export default function Page() {
       duration: 0.8,
       ease: "power2.out",
     });
-  }, []);
+  }, { scope: cardRef });
 
-  // === Vision-Mission ===
-  useEffect(() => {
+  // === VISION & MISSION ===
+  useGSAP(() => {
     const section = visionMissionRef.current;
     const vision = visionRef.current;
     const mission = missionRef.current;
-
     if (!section || !vision || !mission) return;
 
-    ScrollTrigger.getAll().forEach((st) => {
-      if (st.trigger === section) {
-        st.kill();
-      }
-    });
     gsap.set(vision, {
       x: "0%",
       y: "0%",
@@ -143,9 +137,7 @@ export default function Page() {
         const progress = self.progress;
 
         if (progress <= 0.6) {
-          // M card slides upp
           const slideProgress = progress / 0.6;
-
           gsap.set(mission, {
             y: `${100 - 100 * slideProgress}vh`,
             rotation: -15 + 15 * slideProgress,
@@ -160,9 +152,7 @@ export default function Page() {
             zIndex: 2,
           });
         } else {
-          // Mission card
           const settleProgress = (progress - 0.6) / 0.4;
-
           gsap.set(mission, {
             y: "0%",
             rotation: 0,
@@ -170,7 +160,6 @@ export default function Page() {
             opacity: 1,
             zIndex: 3,
           });
-
           gsap.set(vision, {
             opacity: Math.max(0, 0.6 - 0.6 * settleProgress),
             scale: Math.max(0.8, 0.95 - 0.15 * settleProgress),
@@ -180,7 +169,6 @@ export default function Page() {
         }
       },
       onComplete: () => {
-        // Ensure final state when animation completes
         gsap.set(mission, {
           y: "0%",
           rotation: 0,
@@ -196,16 +184,9 @@ export default function Page() {
         });
       },
     });
+  }, { scope: visionMissionRef });
 
-    return () => {
-      ScrollTrigger.getAll().forEach((st) => {
-        if (st.trigger === section) {
-          st.kill();
-        }
-      });
-    };
-  }, []);
-
+  
   return (
     <div className="about-us-container">
       {/* WHY INFINITAS */}

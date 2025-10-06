@@ -1,7 +1,8 @@
 "use client";
-import React, { useEffect, useRef } from "react";
-import gsap from "gsap";
+import React, { useRef } from "react";
+import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -9,128 +10,123 @@ export default function Scrollcard() {
   const containerRef = useRef(null);
   const cardsRef = useRef([]);
 
-  useEffect(() => {
-    const cards = cardsRef.current;
-    const container = containerRef.current;
-    
-    if (!cards.length) return;
-
-    // Clear previous ScrollTriggers
-    ScrollTrigger.getAll().forEach(st => st.kill());
-
-    // Set initial positions for all cards
-    cards.forEach((card, i) => {
-      const isLeft = i % 2 === 0;
-      
-      gsap.set(card, {
-        x: isLeft ? "-40%" : "40%", // Stay in left/right position
-        y: "0%",
-        scale: 0.7,
-        filter: "blur(8px)",
-        opacity: 0.3,
-        zIndex: cards.length - i,
-      });
-    });
-
-    // Create main ScrollTrigger that pins the container and animates cards
-    ScrollTrigger.create({
-      trigger: container,
-      start: "top top",
-      end: () => `+=${cards.length * window.innerHeight}`,
-      pin: true,
-      scrub: 1,
-      onUpdate: (self) => {
-        const totalProgress = self.progress;
-        const cardProgress = totalProgress * cards.length;
-        const currentCardIndex = Math.floor(cardProgress);
-        const currentCardProgress = cardProgress - currentCardIndex;
-
-        cards.forEach((card, i) => {
-          const isLeft = i % 2 === 0;
-
-          if (i === currentCardIndex) {
-            // Current active card
-            if (currentCardProgress <= 0.5) {
-              // First half: scale up and become clear (stay in position)
-              const progress = currentCardProgress * 2;
-              gsap.set(card, {
-                x: isLeft ? "-40%" : "40%", // Keep original position
-                y: "0%",
-                scale: 0.7 + (0.5 * progress), // Scale from 0.7 to 1.2
-                filter: `blur(${8 - (8 * progress)}px)`,
-                opacity: 0.3 + (0.7 * progress),
-                zIndex: 999,
-              });
-            } else {
-              // Second half: zoom to screen then hide
-              const progress = (currentCardProgress - 0.5) * 2;
-              gsap.set(card, {
-                x: isLeft ? "-40%" : "40%",
-                y: "0%",
-                scale: 1.2 + (0.8 * progress), // Scale from 1.2 to 2.0 (zoom to screen)
-                filter: `blur(${2 * progress}px)`, // Slight blur as it zooms out
-                opacity: 1 - (1 * progress), // Fade out completely
-                zIndex: 999,
-              });
-            }
-          } else if (i < currentCardIndex) {
-            // Cards that have already been shown - completely hidden
-            gsap.set(card, {
-              x: isLeft ? "-40%" : "40%",
-              y: "0%",
-              scale: 2,
-              filter: "blur(10px)",
-              opacity: 0,
-              zIndex: 1,
-            });
-          } else {
-            // Cards waiting to be shown - blurred and small
-            gsap.set(card, {
-              x: isLeft ? "-40%" : "40%",
-              y: "0%",
-              scale: 0.7,
-              filter: "blur(8px)",
-              opacity: 0.3,
-              zIndex: cards.length - i,
-            });
-          }
-        });
-      }
-    });
-
-    return () => {
-      ScrollTrigger.getAll().forEach(st => st.kill());
-    };
-  }, []);
-
-  // Card data
   const cardData = [
     {
       id: 1,
       title: "Multimarket Execution",
       description: "Expertise in delivering programs across APAC, EMEA, and North America.",
-      position: "right"
+      position: "right",
     },
     {
       id: 2,
       title: "Regulatory Acumen",
       description: "Fluency in international compliance standards—from Basel III to GDPR, FATF, and ESG frameworks.",
-      position: "left"
+      position: "left",
     },
     {
       id: 3,
       title: "Cultural Fluency",
       description: "Cross-cultural collaboration models that enable seamless alignment with diverse teams and stakeholders.",
-      position: "right"
+      position: "right",
     },
     {
       id: 4,
       title: "Partnership-Ready Models",
       description: "Scalable delivery, whether embedded with clients or operating as a global PMO-as-a-Service.",
-      position: "left"
-    }
+      position: "left",
+    },
   ];
 
+  // ✅ Use useGSAP for React-safe ScrollTrigger handling
+  useGSAP(
+    () => {
+      const cards = cardsRef.current;
+      const container = containerRef.current;
+
+      if (!cards.length) return;
+
+      // Set initial positions for cards
+      cards.forEach((card, i) => {
+        const isLeft = i % 2 === 0;
+        gsap.set(card, {
+          x: isLeft ? "-40%" : "40%",
+          y: "0%",
+          scale: 0.7,
+          filter: "blur(8px)",
+          opacity: 0.3,
+          zIndex: cards.length - i,
+        });
+      });
+
+      // Create main ScrollTrigger animation
+      ScrollTrigger.create({
+        trigger: container,
+        start: "top top",
+        end: () => `+=${cards.length * window.innerHeight}`,
+        pin: true,
+        scrub: 1,
+        onUpdate: (self) => {
+          const totalProgress = self.progress;
+          const cardProgress = totalProgress * cards.length;
+          const currentCardIndex = Math.floor(cardProgress);
+          const currentCardProgress = cardProgress - currentCardIndex;
+
+          cards.forEach((card, i) => {
+            const isLeft = i % 2 === 0;
+
+            if (i === currentCardIndex) {
+              // Current active card animation
+              if (currentCardProgress <= 0.5) {
+                const progress = currentCardProgress * 2;
+                gsap.set(card, {
+                  x: isLeft ? "-40%" : "40%",
+                  y: "0%",
+                  scale: 0.7 + 0.5 * progress,
+                  filter: `blur(${8 - 8 * progress}px)`,
+                  opacity: 0.3 + 0.7 * progress,
+                  zIndex: 999,
+                });
+              } else {
+                const progress = (currentCardProgress - 0.5) * 2;
+                gsap.set(card, {
+                  x: isLeft ? "-40%" : "40%",
+                  y: "0%",
+                  scale: 1.2 + 0.8 * progress,
+                  filter: `blur(${2 * progress}px)`,
+                  opacity: 1 - 1 * progress,
+                  zIndex: 999,
+                });
+              }
+            } else if (i < currentCardIndex) {
+              // Cards that have passed
+              gsap.set(card, {
+                x: isLeft ? "-40%" : "40%",
+                y: "0%",
+                scale: 2,
+                filter: "blur(10px)",
+                opacity: 0,
+                zIndex: 1,
+              });
+            } else {
+              // Upcoming cards
+              gsap.set(card, {
+                x: isLeft ? "-40%" : "40%",
+                y: "0%",
+                scale: 0.7,
+                filter: "blur(8px)",
+                opacity: 0.3,
+                zIndex: cards.length - i,
+              });
+            }
+          });
+        },
+      });
+    },
+    { scope: containerRef } // ✅ Automatically cleans up on unmount
+  );
+
+
+  
   return (
     <section ref={containerRef}
     className="scrollcard-section"> 

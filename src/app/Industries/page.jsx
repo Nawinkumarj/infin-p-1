@@ -1,17 +1,20 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import gsap from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, useGSAP);
 
-export default function page() {
-  const flipRef = useRef(null); // ref for scoped animation
+export default function Page() {
+  const flipRef = useRef(null); // ref for scoping animations
 
-  useEffect(() => {
-    const ctx = gsap.context(() => {
+  useGSAP(
+    () => {
       gsap.to(".card", {
+        rotateX: 180,
+        ease: "none",
         scrollTrigger: {
           trigger: ".flip-wrapper",
           start: "top top",
@@ -19,19 +22,16 @@ export default function page() {
           scrub: true,
           pin: true,
         },
-        rotateX: 180,
-        ease: "none",
       });
-    }, flipRef); // apply animations only within this ref
-
-    return () => ctx.revert(); // clean up on unmount
-  }, []);
+    },
+    { scope: flipRef } // automatically scoped to this element
+  );
 
   return (
     <div className="industries-container" ref={flipRef}>
       <div className="flip-wrapper">
         <div className="card">
-          {/* front */}
+          {/* Front */}
           <div className="card-face industries-section-1">
             <div className="industries-banner-img">
               {/* <img src="/imgg.jpg" alt="industries banner" /> */}
@@ -40,6 +40,7 @@ export default function page() {
               <h1>Industries</h1>
             </div>
           </div>
+
           {/* Back */}
           <div className="card-face industries-section-2">
             <div className="industries-circle-1">
