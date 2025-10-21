@@ -149,7 +149,7 @@ export default function AboutOurValues() {
             <h1
               className="about-values-title"
               style={{
-                fontSize: "8rem",
+                fontSize: "6rem",
                 fontWeight: "900",
                 color: "#ddd",
                 margin: "0",
@@ -170,7 +170,7 @@ export default function AboutOurValues() {
                 color: "#333",
                 margin: "0",
                 flex: 1,
-                maxWidth: "600px",
+                maxWidth: "500px",
               }}
             >
               <h2>{value.title}</h2>

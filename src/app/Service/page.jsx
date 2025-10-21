@@ -19,65 +19,65 @@ gsap.registerPlugin(ScrollTrigger, useGSAP);
 const ServiceList = [
   {
     id: 1,
-    title: "Program & Project Delivery",
-    description:
-      "We lead the full lifecycle of strategic initiatives—from planning and mobilization through to execution and benefit realization.",
-    imageUrl: "/bimg.jpeg",
-  },
-  {
-    id: 2,
-    title: "PMO Setup & Governance",
-    description:
-      "We build and optimize Project Management Offices (PMOs) that bring consistency, visibility, and accountability across enterprise portfolios.",
-    imageUrl: "/bimg.jpeg",
-  },
-  {
-    id: 3,
-    title: "PMO-as-a-Service",
-    description:
-      "For scalable delivery support across portfolios, programs, and change initiatives. Risk-aware Governance aligned with compliance, audit, and performance expectations",
-    imageUrl: "/bimg.jpeg",
-  },
-  {
-    id: 4,
-    title: "Change & Transformation Support",
-    description:
-      "From digital onboarding to operating model redesign, we orchestrate change initiatives that stick—on time and on strategy.",
-    imageUrl: "/bimg.jpeg",
-  },
-  {
-    id: 5,
-    title: "Regulatory & Risk Program Management",
-    description:
-      "We manage large-scale compliance and regulatory projects including AML, ESG, Basel, and IFRS programs with full traceability and transparency",
-    imageUrl: "/bimg.jpeg",
-  },
-  {
-    id: 6,
     title: "Leading Business Transformation Agendas",
     description:
       "We drive enterprise-wide change across people, processes, and platforms—linking strategy to execution with a focus on value realization",
     imageUrl: "/bimg.jpeg",
   },
   {
-    id: 7,
+    id: 2,
     title: "Driving Digital Transformation ",
     description:
       "From AI-driven fintech solutions to open banking innovations, we ensure seamless execution of cutting-edge projects.",
     imageUrl: "/bimg.jpeg",
   },
   {
-    id: 8,
+    id: 3,
     title: "Managing High-Impact Strategic Initiatives",
     description:
       "Whether it’s launching new ventures, entering new markets, or integrating post-M&A platforms, we bring structured delivery to big ambitions.",
     imageUrl: "/bimg.jpeg",
   },
   {
-    id: 9,
+    id: 4,
+    title: "Regulatory & Risk Program Management",
+    description:
+      "We manage large-scale compliance and regulatory projects including AML, ESG, Basel, and IFRS programs with full traceability and transparency",
+    imageUrl: "/bimg.jpeg",
+  },
+  {
+    id: 5,
     title: "Enhancing Regulatory & Compliance Efficiency",
     description:
       "Streamlining workflows for AML, risk management, and fraud prevention while ensuring governance excellence.",
+    imageUrl: "/bimg.jpeg",
+  },
+  {
+    id: 6,
+    title: "Program & Project Delivery",
+    description:
+      "We lead the full lifecycle of strategic initiatives—from planning and mobilization through to execution and benefit realization.",
+    imageUrl: "/bimg.jpeg",
+  },
+  {
+    id: 7,
+    title: "PMO Setup & Governance",
+    description:
+      "We build and optimize Project Management Offices (PMOs) that bring consistency, visibility, and accountability across enterprise portfolios.",
+    imageUrl: "/bimg.jpeg",
+  },
+  {
+    id: 8,
+    title: "PMO-as-a-Service",
+    description:
+      "For scalable delivery support across portfolios, programs, and change initiatives. Risk-aware Governance aligned with compliance, audit, and performance expectations",
+    imageUrl: "/bimg.jpeg",
+  },
+  {
+    id: 9,
+    title: "Change & Transformation Support",
+    description:
+      "From digital onboarding to operating model redesign, we orchestrate change initiatives that stick—on time and on strategy.",
     imageUrl: "/bimg.jpeg",
   },
   {
@@ -201,7 +201,7 @@ const Page = () => {
             {activeIndex === index && (
               <div className="arrow-indicator">
                 <span>
-                  <FaArrowRight size={25} color="black" />
+                  <FaArrowRight size={20} color="black" />
                 </span>
               </div>
             )}

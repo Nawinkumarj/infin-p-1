@@ -13,6 +13,7 @@
     --text-xl: 2rem;
     --text-xxl: 3.3rem;
     --text-x: 5.1rem;
+    --text-navbar: 1.2rem;
   }
 }
 
@@ -80,7 +81,7 @@ a {
   border-bottom: 2px solid var(--background);
   height: 100px;
   margin: 0 auto;
-  font-size: var(--text-sm);
+  font-size: var(--text-navbar);
   transition: top 0.3s;
 }
 
@@ -128,7 +129,7 @@ a {
   left: -20px;
   top: -30px;
   width: 2px;
-  height: 100px;
+  height: 95px;
   background-color: var(--background);
   /* background-color: #000000; */
 }
@@ -139,7 +140,7 @@ a {
   right: -20px;
   top: -30px;
   width: 2px;
-  height: 100px;
+  height: 95px;
   background-color: var(--background);
   /* background-color: #000000; */
 }
@@ -1242,7 +1243,7 @@ a {
   font-size: 12px;
 }
 .footer-grid-section a {
-  font-size: 21px !important;
+  font-size: var(--text-navbar) !important;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -1263,14 +1264,9 @@ a {
 
 .footer-item a {
   text-decoration: none;
-  font-size: var(--text-s);
+  font-size: var(--text-xl);
   line-height: 40px;
-}
-
-.footer-item a {
-  margin-right: 16px;
-  /* color: #aaa; */
-  text-decoration: none;
+   margin-right: 16px;
   transition: all 0.3s ease;
   padding-bottom: 4px;
 }
@@ -1407,12 +1403,13 @@ a {
 }
 
 .about-title {
-  font-size: var(--text-xxl);
+  font-size: 3.9rem;
   color: var(--background);
 }
 
 .about-content {
-  font-size: var(--text-xl);
+  font-size: 2.4rem;
+  text-align: justify;
   line-height: 45px;
   color: var(--background);
   white-space: pre-wrap;
@@ -1518,8 +1515,8 @@ a {
   align-items: center;
   justify-content: center;
   padding: 1rem;
-  width: 400px;
-  height: 300px;
+  /* width: 400px; */
+  height: 250px;
    background-color: #0b172d98 !important;
   backdrop-filter: blur(10px);
   border-radius: 15px;
@@ -1555,8 +1552,8 @@ a {
 
 .about-values-title {
   position: absolute;
-  left: 15px;
-  top: 10px;
+  left: 80px;
+  top: 20px;
 }
 
 /* our value */
@@ -1696,8 +1693,8 @@ a {
 }
 
 .service-heading {
-  margin: 10px;
-  font-size: 6rem;
+  margin: 30px 5px;
+  font-size: 3.9rem;
   font-weight: 600;
   word-wrap: break-word;
   overflow-wrap: break-word;

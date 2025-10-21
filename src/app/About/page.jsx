@@ -223,21 +223,21 @@ export default function Page() {
               className="about-experience"
               ref={(el) => (contentRefs.current[2] = el)}
             >
-              <h1 className="about-experience-title">30 Years</h1>
+              <h1 className="about-experience-title">25+ Years</h1>
               <p>in Business</p>
             </div>
             <div
               className="about-clients"
               ref={(el) => (contentRefs.current[3] = el)}
             >
-              <h1 className="about-clients-title">250+ Clients</h1>
+              <h1 className="about-clients-title">30+ Clients</h1>
               <p>across the globe</p>
             </div>
             <div
               className="about-Project"
               ref={(el) => (contentRefs.current[4] = el)}
             >
-              <h1 className="about-Project-title">100+ Projects</h1>
+              <h1 className="about-Project-title">75+ Projects</h1>
               <p>completed successfully</p>
             </div>
           </div>

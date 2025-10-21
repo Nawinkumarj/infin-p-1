@@ -16,7 +16,7 @@ export default function Footer() {
           <h2>infinitas</h2>
         </div>
         <div className="footer-grid-item-1">
-          <div className="footer-item" style={{fontSize: '20px'}}>
+          <div className="footer-item">
             <Link href="/" className={pathname === "/" ? "active-link" : ""}>Home</Link>
             <Link href="/About" className={pathname === "/About" ? "active-link" : ""}>About</Link>
             <Link href="/Service" className={pathname === "/Service" ? "active-link" : ""}>Service</Link>
