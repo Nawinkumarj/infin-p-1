@@ -3,7 +3,7 @@
 import React, { useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useGSAP } from "@gsap/react"; // ✅ Import the React hook
+import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
@@ -17,8 +17,7 @@ const teamMembers = [
   {
     name: "John Ben Victor",
     designation: "Business Development Manager",
-    image:
-      "https://pics.craiyon.com/2024-09-04/lVIdzSccREy2xW2pf853oA.webp",
+    image:"/ben.png",
     description: "Team 2",
   },
   {
@@ -38,7 +37,6 @@ export default function TeamScroll() {
   const addToImageRefs = (el) => el && !imageRefs.current.includes(el) && imageRefs.current.push(el);
   const addToTextRefs = (el) => el && !textRefs.current.includes(el) && textRefs.current.push(el);
 
-  // ✅ Using useGSAP hook for better React cleanup and scoped animation
   useGSAP(() => {
     const tl = gsap.timeline({
       scrollTrigger: {
@@ -50,31 +48,35 @@ export default function TeamScroll() {
       },
     });
 
+    const gap = 2; // additional scroll space/time between 2nd and 3rd section
+
     teamMembers.forEach((_, i) => {
       if (i === 0) return;
+
+      const startTime = i === 2 ? i * 1.8 + gap : i * 1.8;
 
       tl.to(imageRefs.current[i], {
         clipPath: "inset(0% 0% 0% 0%)",
         opacity: 1,
         scale: 1,
         duration: 1,
-      }, i * 1.8)
+      }, startTime)
         .to(textRefs.current[i], {
           opacity: 1,
           zIndex: 2,
           duration: 1,
-        }, i * 1.5)
+        }, startTime) // Same start time to sync with image
         .to(imageRefs.current[i - 1], {
           opacity: 0,
           duration: 1,
-        }, i * 1.5 + 0.5)
+        }, startTime + 0.5)
         .to(textRefs.current[i - 1], {
           opacity: 0,
           zIndex: 1,
           duration: 1,
-        }, i * 1.5 + 0.5);
+        }, startTime + 0.5);
     });
-  }, { scope: sectionRef }); // 👈 Scope animations to this section
+  }, { scope: sectionRef });
 
   return (
     <section ref={sectionRef} className="team-section">
@@ -103,7 +105,7 @@ export default function TeamScroll() {
                 }}
               >
                 <h2>{member.name}</h2>
-                <p>{member.designation}</p>
+                <p>{ member.designation}</p>
                 <p>{member.description}</p>
               </div>
             </React.Fragment>

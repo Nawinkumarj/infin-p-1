@@ -267,9 +267,9 @@ export default function Page() {
           ref={visionRef}
           style={{
             position: "absolute",
-            width: "800px",
+            width: "600px",
             maxWidth: "90vw",
-            height: "450px",
+            height: "400px",
             background: "rgba(255, 255, 255, 0.95)",
             borderRadius: "10px",
             padding: "3rem",
@@ -294,7 +294,7 @@ export default function Page() {
             Our Vision
           </h2>
           <ul>
-          <li
+          {/* <li
             style={{
               fontSize: "1.1rem",
               lineHeight: "1.6",
@@ -317,8 +317,8 @@ export default function Page() {
             }}
           >
             To be the leading advisory partner in project execution, strategic marketing, and intelligent sourcing — enabling organizations to transform with agility, clarity, and measurable impact.
-          </li>
-          <li
+          </li> */}
+          <p
             style={{
               fontSize: "1.1rem",
               lineHeight: "1.6",
@@ -328,7 +328,7 @@ export default function Page() {
             }}
           >
             To be the leading provider of integrated business solutions, empowering organizations with seamless project management, innovative marketing strategies, and efficient sourcing and procurement services. We strive to drive excellence, foster sustainable growth, and create lasting value for our clients.
-          </li>
+          </p>
           </ul>
         </div>
 
@@ -338,9 +338,9 @@ export default function Page() {
           ref={missionRef}
           style={{
             position: "absolute",
-            width: "800px",
+            width: "600px", //800
             maxWidth: "90vw",
-            height: "450px",
+            height: "400px",  //450
             background: "#040d1e",
             borderRadius: "10px",
             padding: "3rem",
@@ -365,7 +365,7 @@ export default function Page() {
             Our Mission
           </h2>
           <ul>
-          <li
+          <p
             style={{
               fontSize: "1.1rem",
               lineHeight: "1.6",
@@ -375,8 +375,8 @@ export default function Page() {
             }}
           >
            Our mission is to empower businesses with expert guidance and end-to-end support in delivering high-impact projects, building resilient brands, and optimizing procurement strategies. We combine industry insight, innovation, and precision to drive sustainable growth and operational excellence for our clients.
-          </li>
-          <li
+          </p>
+          {/* <li
             style={{
               fontSize: "1.1rem",
               lineHeight: "1.6",
@@ -422,7 +422,7 @@ export default function Page() {
             }}
           >
           - Optimizing sourcing and procurement processes to ensure cost-effectiveness and quality. Through innovation, collaboration, and customer-centricity, we aim to be the trusted partner in accelerating business performance.
-          </li>
+          </li> */}
           </ul>
         </div>
       </section>

@@ -1,10 +1,11 @@
 "use client";
 
-import React, { useEffect, useRef, useState, Suspense } from "react";
+import React, { useRef, useEffect, Suspense } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, useGLTF } from "@react-three/drei";
 import * as THREE from "three";
 
+// 3D Model logic
 const Model = () => {
   const groupRef = useRef();
   const { scene } = useGLTF("/infinity.glb");
@@ -12,7 +13,6 @@ const Model = () => {
   useEffect(() => {
     if (scene && groupRef.current) {
       const clonedScene = scene.clone();
-
       const box = new THREE.Box3().setFromObject(clonedScene);
       const size = new THREE.Vector3();
       box.getSize(size);
@@ -20,7 +20,6 @@ const Model = () => {
       if (size.length() > 0) {
         const maxDimension = Math.max(size.x, size.y, size.z);
         const scaleFactor = 6 / maxDimension;
-
         clonedScene.scale.setScalar(scaleFactor);
 
         const center = new THREE.Vector3();
@@ -35,72 +34,51 @@ const Model = () => {
 
   useFrame(() => {
     if (groupRef.current) {
-      groupRef.current.rotation.y += 0.008; //  rotation
+      groupRef.current.rotation.y += 0.006;
     }
   });
 
   return <group ref={groupRef} />;
 };
 
-const ModelViewer = () => {
-  return (
-    <div
-      style={{
-        width: "100%",
-        height: "100%",
-        position: "relative",
+const ModelViewer = () => (
+  <div
+    style={{
+      width: "100%",
+      height: "100%",
+      position: "relative",
+    }}
+  >
+    <Canvas
+      style={{ width: "100%", height: "100%" }}
+      camera={{ position: [0, 0, 12], fov: 50 }}
+      gl={{
+        antialias: true,
+        alpha: true,
+        premultipliedAlpha: false,
       }}
     >
-      <Canvas
-        style={{
-          width: "100%",
-          height: "100%",
-        }}
-        camera={{
-          position: [0, 0, 12],
-          fov: 50,
-        }}
-        gl={{
-          antialias: true,
-          alpha: true,
-          premultipliedAlpha: false,
-        }}
-      >
-        <ambientLight intensity={0.7} />
-        <directionalLight
-          position={[8, 8, 8]}
-          intensity={1.2}
-          castShadow={false}
-        />
-        <pointLight position={[-8, -8, 8]} intensity={0.6} />
-        <pointLight position={[0, 10, 0]} intensity={0.4} />
+      <ambientLight intensity={0.7} />
+      <directionalLight position={[8, 8, 8]} intensity={1.2} castShadow={false} />
+      <pointLight position={[-8, -8, 8]} intensity={0.6} />
+      <pointLight position={[0, 10, 0]} intensity={0.4} />
+      <OrbitControls enableZoom={false} enableRotate={false} enablePan={false} />
+      <Model />
+    </Canvas>
+  </div>
+);
 
-        {/*  OrbitControls */}
-        <OrbitControls
-          enableZoom={false}
-          enableRotate={false}
-          enablePan={false}
-        />
-
-        <Model />
-      </Canvas>
-    </div>
-  );
-};
 class ErrorBoundary extends React.Component {
   constructor(props) {
     super(props);
     this.state = { hasError: false };
   }
-
   static getDerivedStateFromError(error) {
     return { hasError: true };
   }
-
   componentDidCatch(error, errorInfo) {
     console.error("3D Model Error:", error, errorInfo);
   }
-
   render() {
     if (this.state.hasError) {
       return (
@@ -120,12 +98,10 @@ class ErrorBoundary extends React.Component {
         </div>
       );
     }
-
     return this.props.children;
   }
 }
 
-// Main banner component
 export default function BannerSection() {
   return (
     <section
@@ -136,6 +112,7 @@ export default function BannerSection() {
         overflow: "hidden",
       }}
     >
+      {/* Video Background */}
       <video
         autoPlay
         loop
@@ -180,42 +157,17 @@ export default function BannerSection() {
         }}
       />
 
-      {/* Left */}
-      <div
-        style={{
-          position: "absolute",
-          top: "200px",
-          left: "4rem",
-          maxWidth: "900px",
-          color: "white",
-          zIndex: 10,
-        }}
-      >
-        <h1
-          style={{
-            fontSize: "4.5rem",
-            fontWeight: "bold",
-            lineHeight: "1.2",
-            background: "linear-gradient(45deg, #ffffff, #f0f0f0)",
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
-            textShadow: "0 2px 1px var(--background)",
-          }}
-        >
-          Driving Business Success Through
-        </h1>
-      </div>
-
       {/* 3D Model */}
       <div
         style={{
           position: "absolute",
-          top: "60%",
+          top: "38%",
           left: "50%",
           transform: "translate(-50%, -50%)",
-          width: "80%",
-          height: "120vh",
+          width: "100%",
+          height: "100%",
           zIndex: 5,
+          pointerEvents: "none",
         }}
       >
         <ErrorBoundary>
@@ -242,7 +194,49 @@ export default function BannerSection() {
         </ErrorBoundary>
       </div>
 
-      {/* Right */}
+      {/* Headline block */}
+      <div
+        style={{
+          position: "absolute",
+          top: "58%",
+          left: "50%",
+          transform: "translate(-50%, 0)",
+          zIndex: 10,
+          textAlign: "center",
+          width: "100%",
+          maxWidth: "900px",
+          color: "white",
+          pointerEvents: "none",
+        }}
+      >
+        <div
+          style={{
+            fontSize: "3rem",
+            fontWeight: 400,
+            color: "white",
+            marginBottom: "0.7rem",
+            lineHeight: 1.1,
+            // textShadow: "0 2px 1px var(--background)",
+          }}
+        >
+          Driving Business Through
+        </div>
+        <div
+          style={{
+            fontSize: "5rem",
+            fontWeight: 700,
+            background: "linear-gradient(45deg, #ffffff, #ece3d0)",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+            lineHeight: 1,
+            textShadow: "0 2px 6px var(--background)",
+          }}
+        >
+          Strategy, Innovation & Execution
+        </div>
+      </div>
+
+      {/* Socials */}
       <div
         style={{
           position: "absolute",
@@ -254,136 +248,109 @@ export default function BannerSection() {
           zIndex: 10,
         }}
       >
-        <h2
+        <h3
           style={{
-            fontSize: "4.5rem",
+            fontSize: "1.5rem",
             fontWeight: "bold",
-            marginBottom: "1.5rem",
-            background: "linear-gradient(45deg, #ffffff, #f0f0f0)",
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
-            textShadow: "0 2px 4px rgba(0,0,0,0.3)",
+            marginBottom: "1rem",
+            color: "white",
+            textShadow: "0 1px 2px rgba(0,0,0,0.5)",
           }}
         >
-          Strategy, Innovation & Execution
-        </h2>
+          Connect with us:
+        </h3>
         <div
           style={{
-            textAlign: "right",
+            display: "flex",
+            gap: "1rem",
+            justifyContent: "flex-end",
+            flexWrap: "wrap",
           }}
         >
-          <h3
+          <button
             style={{
-              fontSize: "1.5rem",
-              fontWeight: "bold",
-              marginBottom: "1rem",
+              width: "60px",
+              height: "60px",
+              aspectRatio: 1,
+              clipPath: "polygon(50% 0,100% 50%,50% 100%,0 50%)",
+              background: "rgba(255, 255, 255, 0.05)",
+              backdropFilter: "blur(20px)",
+              border: "2px solid rgba(255, 255, 255, 0.3)",
               color: "white",
-              textShadow: "0 1px 2px rgba(0,0,0,0.5)",
-            }}
-          >
-            Connect with us:
-          </h3>
-
-          <div
-            style={{
+              fontSize: "1.2rem",
+              cursor: "pointer",
+              transition: "all 0.3s ease",
               display: "flex",
-              gap: "1rem",
-              justifyContent: "flex-end",
-              flexWrap: "wrap",
+              alignItems: "center",
+              justifyContent: "center",
+              boxShadow: "0 4px 15px rgba(0,0,0,0.2)",
             }}
           >
-            <button
-              style={{
-                width: "60px",
-                height: "60px",
-                aspectRatio: 1,
-                clipPath: "polygon(50% 0,100% 50%,50% 100%,0 50%)",
-                background: "rgba(255, 255, 255, 0.05)",
-            backdropFilter: "blur(20px)",
-                border: "2px solid rgba(255, 255, 255, 0.3)",
-                color: "white",
-                fontSize: "1.2rem",
-                cursor: "pointer",
-                backdropFilter: "blur(10px)",
-                transition: "all 0.3s ease",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                boxShadow: "0 4px 15px rgba(0,0,0,0.2)",
-              }}
-            >
-              f
-            </button>
-
-            <button
-              style={{
-               width: "60px",
-                height: "60px",
-                aspectRatio: 1,
-                clipPath: "polygon(50% 0,100% 50%,50% 100%,0 50%)",
-                background: "rgba(255, 255, 255, 0.05)",
-            backdropFilter: "blur(20px)",
-                border: "2px solid rgba(255, 255, 255, 0.3)",
-                color: "white",
-                fontSize: "1.2rem",
-                cursor: "pointer",
-                backdropFilter: "blur(10px)",
-                transition: "all 0.3s ease",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                boxShadow: "0 4px 15px rgba(0,0,0,0.2)",
-              }}
-            >
-              X
-            </button>
-
-            <button
-              style={{
-               width: "60px",
-                height: "60px",
-                aspectRatio: 1,
-                clipPath: "polygon(50% 0,100% 50%,50% 100%,0 50%)",
-                background: "rgba(255, 255, 255, 0.05)",
-            backdropFilter: "blur(20px)",
-                border: "2px solid rgba(255, 255, 255, 0.3)",
-                color: "white",
-                fontSize: "1.2rem",
-                cursor: "pointer",
-                backdropFilter: "blur(10px)",
-                transition: "all 0.3s ease",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                boxShadow: "0 4px 15px rgba(0,0,0,0.2)",
-              }}
-            >
-              in
-            </button>
-
-            <button
-              style={{
-                width: "60px",
-                height: "60px",
-                aspectRatio: 1,
-                clipPath: "polygon(50% 0,100% 50%,50% 100%,0 50%)",
-                background: "rgba(255, 255, 255, 0.05)",
-            backdropFilter: "blur(20px)",
-                border: "2px solid rgba(255, 255, 255, 0.3)",
-                color: "white",
-                fontSize: "1.2rem",
-                cursor: "pointer",
-                backdropFilter: "blur(10px)",
-                transition: "all 0.3s ease",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                boxShadow: "0 4px 15px rgba(0,0,0,0.2)",
-              }}
-            >
-              📷
-            </button>
-          </div>
+            f
+          </button>
+          <button
+            style={{
+              width: "60px",
+              height: "60px",
+              aspectRatio: 1,
+              clipPath: "polygon(50% 0,100% 50%,50% 100%,0 50%)",
+              background: "rgba(255, 255, 255, 0.05)",
+              backdropFilter: "blur(20px)",
+              border: "2px solid rgba(255, 255, 255, 0.3)",
+              color: "white",
+              fontSize: "1.2rem",
+              cursor: "pointer",
+              transition: "all 0.3s ease",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              boxShadow: "0 4px 15px rgba(0,0,0,0.2)",
+            }}
+          >
+            X
+          </button>
+          <button
+            style={{
+              width: "60px",
+              height: "60px",
+              aspectRatio: 1,
+              clipPath: "polygon(50% 0,100% 50%,50% 100%,0 50%)",
+              background: "rgba(255, 255, 255, 0.05)",
+              backdropFilter: "blur(20px)",
+              border: "2px solid rgba(255, 255, 255, 0.3)",
+              color: "white",
+              fontSize: "1.2rem",
+              cursor: "pointer",
+              transition: "all 0.3s ease",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              boxShadow: "0 4px 15px rgba(0,0,0,0.2)",
+            }}
+          >
+            in
+          </button>
+          <button
+            style={{
+              width: "60px",
+              height: "60px",
+              aspectRatio: 1,
+              clipPath: "polygon(50% 0,100% 50%,50% 100%,0 50%)",
+              background: "rgba(255, 255, 255, 0.05)",
+              backdropFilter: "blur(20px)",
+              border: "2px solid rgba(255, 255, 255, 0.3)",
+              color: "white",
+              fontSize: "1.2rem",
+              cursor: "pointer",
+              transition: "all 0.3s ease",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              boxShadow: "0 4px 15px rgba(0,0,0,0.2)",
+            }}
+          >
+            📷
+          </button>
         </div>
       </div>
 
@@ -420,7 +387,6 @@ export default function BannerSection() {
           Scroll Down
         </p>
       </div>
-
       {/* CSS Animation */}
       <style jsx>{`
         @keyframes bounce {
@@ -438,7 +404,6 @@ export default function BannerSection() {
             transform: translateY(-5px);
           }
         }
-
         button:hover {
           transform: translateY(-2px);
           box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
@@ -448,5 +413,4 @@ export default function BannerSection() {
   );
 }
 
-// Preload the model
 useGLTF.preload("/infinity.glb");

@@ -33,9 +33,9 @@ const ServiceList = [
   },
   {
     id: 3,
-    title: "Technology Solution",
+    title: "PMO-as-a-Service",
     description:
-      "We offer a range of technology solutions designed to meet the specific needs of our clients. From custom software development to cloud computing and cybersecurity, our team leverages the latest technologies to deliver innovative solutions that drive business success.",
+      "For scalable delivery support across portfolios, programs, and change initiatives. Risk-aware Governance aligned with compliance, audit, and performance expectations",
     imageUrl: "/bimg.jpeg",
   },
   {
@@ -89,9 +89,9 @@ const ServiceList = [
   },
   {
     id: 11,
-    title: "PMO-as-a-Service",
+    title: "Technology Solution",
     description:
-      "For scalable delivery support across portfolios, programs, and change initiatives. Risk-aware Governance aligned with compliance, audit, and performance expectations",
+      "We offer a range of technology solutions designed to meet the specific needs of our clients. From custom software development to cloud computing and cybersecurity, our team leverages the latest technologies to deliver innovative solutions that drive business success.",
     imageUrl: "/bimg.jpeg",
   },
 ];

@@ -7,12 +7,12 @@
   :root {
     --background: #ceae95;
     --foreground: #040d1e;
-    --text-sm: 1.2rem;
-    --text-s: 1.5rem;
-    --text-l: 1.8rem;
-    --text-xl: 2.2rem;
-    --text-xxl: 3.5rem;
-    --text-x: 6rem;
+    --text-sm: 1rem;
+    --text-s: 1.3rem;
+    --text-l: 1.6rem;
+    --text-xl: 2rem;
+    --text-xxl: 3.3rem;
+    --text-x: 5.1rem;
   }
 }
 
@@ -1221,7 +1221,7 @@ a {
 
 .footer-heading {
   position: absolute;
-  top: 0;
+  top: 20px;
   z-index: -1;
 }
 
@@ -1229,7 +1229,7 @@ a {
   font-size: 10rem;
   color: var(--background);
   text-transform: uppercase;
-  letter-spacing: 10px;
+  letter-spacing: 20px;
 }
 
 .footer-grid-section {
@@ -1588,9 +1588,9 @@ a {
   height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
-  padding: 20px;
-  padding-top: 100px;
+  align-items: flex-start;
+  padding: 0 20px;
+  padding-top: 120px;
   gap: 40px;
   border: 2px solid gray;
   color: white;
@@ -1599,15 +1599,20 @@ a {
 /* Left Side */
 .title-service {
   width: 25%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 15px;
-  min-width: 0;
   max-width: 25%;
-  overflow: hidden;
+  overflow-y: auto;
+  max-height: calc(100vh - 190px);
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
-
+.title-service::-webkit-scrollbar {
+  width: 0px;
+  display: none;
+}
+.title-service h1{
+  font: var(--text-xl) sans-serif;
+  margin-bottom: 1rem;
+}
 .service-title-box {
   display: flex;
   align-items: center;
@@ -1619,8 +1624,8 @@ a {
 .service-title {
   cursor: pointer;
   margin-bottom: 10px;
-  border: 2px solid gray;
-  padding: 10px;
+  /* border: 2px solid gray; */
+  padding: 10px 5px;
   border-radius: 10px;
   transition: 0.3s;
   color: white;
@@ -1632,31 +1637,31 @@ a {
   white-space: normal;
   max-width: 100%;
   box-sizing: border-box;
+  transition: all .5s ease-in-out;
 }
 
 .service-title h2 {
   min-width: 0;
-  word-wrap: break-word;
+  /* word-wrap: break-word;
   overflow-wrap: break-word;
-  word-break: break-word;
+  word-break: break-word; */
   white-space: normal;
   margin: 0;
   padding: 0;
   max-width: 100%;
   box-sizing: border-box;
+  font-size: var(--text-s);
 }
 
 .service-title.active {
-  background-color: #ceae95;
-  color: black;
+  color: var(--background);
 }
 
 .service-title:hover {
-  background-color: #ceae95;
-  color: black;
+  color: var(--background);
 }
 
-.arrow-indicator {
+/* .arrow-indicator {
   background-color: #ceae95;
   border: 2px solid transparent;
   padding: 8px;
@@ -1668,7 +1673,7 @@ a {
 .arrow-indicator span {
   font-weight: 600;
   color: black;
-}
+} */
 .description-service {
   width: 75%;
   height: 80vh;
@@ -1964,7 +1969,7 @@ a {
   width: 90%;
   margin: 3rem auto;
   border-radius: 15px;
-  height: 90vh;
+  height: 70vh;
   display: flex;
   flex-direction: column;
   align-items: center;

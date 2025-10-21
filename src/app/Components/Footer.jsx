@@ -30,7 +30,7 @@ export default function Footer() {
           <Link href="mailto:/info@infinitasadvisory.com"><TbMailFilled size='23'/> info@infinitasadvisory.com</Link>
         </div>
         <div className="footer-grid-item-3">
-          <Link href="tel:/"><FiPhone size='23'/> +91 9840159274</Link>
+          <Link href="tel:/"><FiPhone size='23'/> +91 9841059274</Link>
         </div>
         <div className="footer-grid-item-4">
           <div className="footer-item">
