@@ -1220,12 +1220,12 @@ a {
 
 .footer-heading {
   position: absolute;
-  top: 80px;
+  top: 60px;
   z-index: -1;
 }
 
 .footer-heading h2 {
-  font-size: 5rem;
+  font-size: 8rem;
   color: var(--background);
   text-transform: uppercase;
   letter-spacing: 20px;

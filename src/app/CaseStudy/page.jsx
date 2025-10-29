@@ -82,7 +82,7 @@ const Page = () => {
       
       {/* Top Section */}
       <div className="cs-top-section">
-        <h1 className="cs-heading">Case Study Page</h1>
+        {/* <h1 className="cs-heading">Case Study Page</h1> */}
         <p className="cs-subtext">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Error autem,
           animi molestias at esse ea distinctio officiis veniam obcaecati pariatur
