@@ -2045,7 +2045,7 @@ a {
 
 .service-heading {
   margin: 30px 5px;
-  font-size: var(--text-xl);
+  font-size: 32px;
   font-weight: 600;
   word-wrap: break-word;
   overflow-wrap: break-word;
@@ -2591,7 +2591,7 @@ a {
 }
 
 .help-main-title h1 {
-  font-size: var(--text-xl);
+  font-size: 32px;
   font-weight: 900;
   letter-spacing: 0.02em;
   line-height: 0.9;
