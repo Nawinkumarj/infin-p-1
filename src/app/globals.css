@@ -1584,7 +1584,7 @@ a {
 }
 
 .about-us-title {
-  font-size: var(--text-xxl);
+  font-size: 45px;
   text-transform: uppercase;
   font-weight: 700;
   color: var(--background);
