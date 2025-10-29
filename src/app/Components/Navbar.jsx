@@ -8,37 +8,40 @@ export default function Navbar() {
   const [visible, setVisible] = useState(true);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
+  
+const serviceDropdowns = [
+  {
+    id: 1,
+    title: "Project Management",
+    titleHref: "/Service?section=project-management",
+    items: [
+      { name: "Leading Business Transformation", href: "/Service?section=leading-business-transformation" },
+      { name: "Driving Digital Transformation", href: "/Service?section=driving-digital-transformation" },
+      { name: "Regulatory & Risk Program", href: "/Service?section=regulatory-risk-program" },
+    ],
+  },
+  {
+    id: 2,
+    title: "Event Management",
+    titleHref: "/EventManagement",
+    items: [
+      { name: "Corporate Events", href: "/EventManagement?section=corporate-events" },
+      { name: "Personal Events", href: "/EventManagement?section=personal-events" },
+      { name: "Event Production & Logistics", href: "/EventManagement?section=event-production" },
+    ],
+  },
+  {
+    id: 3,
+    title: "Marketing",
+    titleHref: "/Marketing",
+    items: [
+      { name: "Brand Strategy & Positioning", href: "/Marketing?section=brand-strategy" },
+      { name: "Digital Marketing", href: "/Marketing?section=digital-marketing" },
+      { name: "Social Media Management", href: "/Marketing?section=social-media" },
+    ],
+  },
+];
 
-  // Service dropdown items
-  const serviceDropdowns = [
-    {
-      id: 1,
-      title: "Project Management",
-      items: [
-        { name: "Leading Business Transformation", href: "/Service" },
-        { name: "Driving Digital Transformation", href: "/Service" },
-        { name: "Regulatory & Risk Program", href: "/Service" },
-      ],
-    },
-    {
-      id: 2,
-      title: "Event Management",
-      items: [
-        { name: "Corporate Events", href: "/EventManagement" },
-        { name: "Personal Events", href: "/EventManagement" },
-        { name: "Event Production & Logistics", href: "/EventManagement" },
-      ],
-    },
-    {
-      id: 3,
-      title: "Marketing",
-      items: [
-        { name: "Brand Strategy & Positioning", href: "/Marketing" },
-        { name: "Digital Marketing", href: "/Marketing" },
-        { name: "Social Media Management", href: "/Marketing" },
-      ],
-    },
-  ];
 
   // Navbar scroll effect
   useEffect(() => {
@@ -94,21 +97,34 @@ export default function Navbar() {
           </Link>
 
           {/* Service with Hover Dropdown */}
-          <div 
+          <div
             className="dropdown-wrapper"
             onMouseEnter={() => setActiveDropdown("service")}
             onMouseLeave={() => setActiveDropdown(null)}
           >
-            <Link href="/Service">Service</Link>
-            
-            <div className={`dropdown-menu ${activeDropdown === "service" ? "active" : ""}`}>
+            <Link href="/">Service</Link>
+
+            <div
+              className={`dropdown-menu ${
+                activeDropdown === "service" ? "active" : ""
+              }`}
+            >
               {serviceDropdowns.map((dropdown) => (
                 <div key={dropdown.id} className="dropdown-column">
-                  <h4 className="dropdown-heading">{dropdown.title}</h4>
-                  {dropdown.items.map((item) => (
+                  <Link
+                    href={dropdown.titleHref}
+                    onClick={() => {
+                      setActiveDropdown(null);
+                      setMobileMenuOpen(false);
+                    }}
+                  >
+                    <h4 className="dropdown-heading">{dropdown.title}</h4>
+                  </Link>
+                  {dropdown.items.map((item, index) => (
                     <Link
-                      key={item.href}
+                      key={`${item.href}-${index}`}
                       href={item.href}
+                      className="dropdown-item"
                       onClick={() => {
                         setActiveDropdown(null);
                         setMobileMenuOpen(false);
@@ -117,6 +133,16 @@ export default function Navbar() {
                       {item.name}
                     </Link>
                   ))}
+                  <Link
+                    href={dropdown.titleHref}
+                    className="dropdown-see-more"
+                    onClick={() => {
+                      setActiveDropdown(null);
+                      setMobileMenuOpen(false);
+                    }}
+                  >
+                    + See More
+                  </Link>
                 </div>
               ))}
             </div>

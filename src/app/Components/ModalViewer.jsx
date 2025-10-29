@@ -239,9 +239,9 @@ export default function BannerSection() {
       {/* Socials */}
       <div
         style={{
-          position: "absolute",
-          bottom: "2rem",
-          right: "50%",
+          position: "fixed",
+          bottom: "20%",
+          right: "40px",
           transform: "translateX(50%)",
           maxWidth: "600px",
           color: "white",
@@ -250,7 +250,7 @@ export default function BannerSection() {
           paddingTop: "1rem",
         }}
       >
-        <h3
+        {/* <h3
           style={{
             fontSize: "1.3rem",
             fontWeight: "bold",
@@ -261,13 +261,14 @@ export default function BannerSection() {
           }}
         >
           Connect with us:
-        </h3>
+        </h3> */}
         <div
           style={{
             display: "flex",
             gap: "1rem",
             justifyContent: "flex-end",
             flexWrap: "wrap",
+            flexDirection: "column",
           }}
         >
           <button

@@ -77,7 +77,7 @@ export default function Aboutus() {
           <h1 className="about-us-title" ref={titleRef}>Why infinitas?</h1>
         </div>
         <div className="about-us-hero-symbol">
-          <div className="about-us-infinity" ref={infinityRef}>
+          <div className="about-us-infinity">
             <div className="about-us-infinity-circle about-us-infinity-top">
               <img src="/infinity-icon.png" alt="infinitas" />
             </div>

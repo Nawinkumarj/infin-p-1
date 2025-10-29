@@ -19,6 +19,7 @@ gsap.registerPlugin(ScrollTrigger, useGSAP);
 const ServiceList = [
   {
     id: 1,
+    section: "corporate-events",
     title: "Corporate Events",
     description:
       "We drive enterprise-wide change across people, processes, and platforms—linking strategy to execution with a focus on value realization",
@@ -26,6 +27,7 @@ const ServiceList = [
   },
   {
     id: 2,
+    section: "personal-events",
     title: "Personal Events",
     description:
       "From AI-driven fintech solutions to open banking innovations, we ensure seamless execution of cutting-edge projects.",
@@ -33,6 +35,7 @@ const ServiceList = [
   },
   {
     id: 3,
+    section: "event-production",
     title: "Event Production & Logistics",
     description:
       "Whether it’s launching new ventures, entering new markets, or integrating post-M&A platforms, we bring structured delivery to big ambitions.",

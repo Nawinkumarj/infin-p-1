@@ -5,6 +5,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { FaCirclePlus } from "react-icons/fa6";
 import { FaArrowRight } from "react-icons/fa";
+import { useSearchParams } from "next/navigation";
 import {
   Dialog,
   DialogTitle,
@@ -19,6 +20,7 @@ gsap.registerPlugin(ScrollTrigger, useGSAP);
 const ServiceList = [
   {
     id: 1,
+    section: "leading-business-transformation",
     title: "Leading Business Transformation Agendas",
     description:
       "We drive enterprise-wide change across people, processes, and platforms—linking strategy to execution with a focus on value realization",
@@ -26,6 +28,7 @@ const ServiceList = [
   },
   {
     id: 2,
+    section: "driving-digital-transformation",
     title: "Driving Digital Transformation",
     description:
       "From AI-driven fintech solutions to open banking innovations, we ensure seamless execution of cutting-edge projects.",
@@ -33,13 +36,15 @@ const ServiceList = [
   },
   {
     id: 3,
+    section: "managing-strategic-initiatives",
     title: "Managing High-Impact Strategic Initiatives",
     description:
-      "Whether it’s launching new ventures, entering new markets, or integrating post-M&A platforms, we bring structured delivery to big ambitions.",
+      "Whether it's launching new ventures, entering new markets, or integrating post-M&A platforms, we bring structured delivery to big ambitions.",
     imageUrl: "/bimg.jpeg",
   },
   {
     id: 4,
+    section: "regulatory-risk-program",
     title: "Regulatory & Risk Program Management",
     description:
       "We manage large-scale compliance and regulatory projects including AML, ESG, Basel, and IFRS programs with full traceability and transparency",
@@ -47,6 +52,7 @@ const ServiceList = [
   },
   {
     id: 5,
+    section: "regulatory-compliance",
     title: "Enhancing Regulatory & Compliance Efficiency",
     description:
       "Streamlining workflows for AML, risk management, and fraud prevention while ensuring governance excellence.",
@@ -54,6 +60,7 @@ const ServiceList = [
   },
   {
     id: 6,
+    section: "program-project-delivery",
     title: "Program & Project Delivery",
     description:
       "We lead the full lifecycle of strategic initiatives—from planning and mobilization through to execution and benefit realization.",
@@ -61,6 +68,7 @@ const ServiceList = [
   },
   {
     id: 7,
+    section: "pmo-setup",
     title: "PMO Setup & Governance",
     description:
       "We build and optimize Project Management Offices (PMOs) that bring consistency, visibility, and accountability across enterprise portfolios.",
@@ -68,6 +76,7 @@ const ServiceList = [
   },
   {
     id: 8,
+    section: "pmo-as-service",
     title: "PMO-as-a-Service",
     description:
       "For scalable delivery support across portfolios, programs, and change initiatives. Risk-aware Governance aligned with compliance, audit, and performance expectations",
@@ -75,6 +84,7 @@ const ServiceList = [
   },
   {
     id: 9,
+    section: "change-transformation",
     title: "Change & Transformation Support",
     description:
       "From digital onboarding to operating model redesign, we orchestrate change initiatives that stick—on time and on strategy.",
@@ -82,6 +92,7 @@ const ServiceList = [
   },
   {
     id: 10,
+    section: "fintech-insurtech",
     title: "Accelerating Innovation in Fintech & Insurtech ",
     description:
       "Managing complex deployments of AI-driven claims processing, embedded finance, and neobanking solutions",
@@ -89,6 +100,7 @@ const ServiceList = [
   },
   {
     id: 11,
+    section: "technology-solution",
     title: "Technology Solution",
     description:
       "We offer a range of technology solutions designed to meet the specific needs of our clients. From custom software development to cloud computing and cybersecurity, our team leverages the latest technologies to deliver innovative solutions that drive business success.",
@@ -102,6 +114,8 @@ const Page = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [open, setOpen] = useState(false);
   const [selectedService, setSelectedService] = useState(null);
+  const searchParams = useSearchParams();
+  const hasScrolled = useRef(false);
 
   const handleServiceClick = (service) => {
     setSelectedService(service);
@@ -129,7 +143,28 @@ const Page = () => {
     }
   };
 
- useGSAP(
+  // Handle URL parameter scroll on page load
+  useEffect(() => {
+    const section = searchParams.get("section");
+    
+    if (section && !hasScrolled.current) {
+      // Find the index of the service matching the section
+      const targetIndex = ServiceList.findIndex(
+        (service) => service.section === section
+      );
+
+      if (targetIndex !== -1) {
+        // Wait for GSAP animations to initialize
+        setTimeout(() => {
+          setActiveIndex(targetIndex);
+          handleClick(targetIndex);
+          hasScrolled.current = true;
+        }, 500);
+      }
+    }
+  }, [searchParams]);
+
+  useGSAP(
     () => {
       const sections = refs.current;
 
@@ -180,7 +215,7 @@ const Page = () => {
         });
       });
     },
-    { scope: scrollRef } // ensures cleanup & scoping
+    { scope: scrollRef }
   );
 
   return (
@@ -189,7 +224,7 @@ const Page = () => {
       <div className="title-service">
         <h1>Our Services</h1>
         {ServiceList.map((service, index) => (
-          <div className="service-title-box">
+          <div className="service-title-box" key={service.id}>
             <div
               className={`service-title ${
                 activeIndex === index ? "active" : ""
