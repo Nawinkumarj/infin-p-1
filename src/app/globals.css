@@ -1852,7 +1852,6 @@ a {
   padding: 0 100px;
   overflow-x: visible;
   width: max-content;
-  /* key fix to make horizontal scrolling work */
 }
 
 .about-our-values-heading {

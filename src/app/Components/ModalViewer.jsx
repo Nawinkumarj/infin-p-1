@@ -216,7 +216,6 @@ export default function BannerSection() {
             color: "white",
             marginBottom: "0.7rem",
             lineHeight: 1.1,
-            // textShadow: "0 2px 1px var(--background)",
           }}
         >
           Driving Business Through
