@@ -2093,7 +2093,6 @@ a {
 
 .know-more-btn:hover {
   background-color: var(--background);
-  /* optional hover effect */
   color: black;
 }
 
@@ -2634,7 +2633,7 @@ a {
 }
 
 .help-brand h2 {
-  font-size: var(--text-xxl);
+  font-size: 40px;
   font-weight: 900;
   letter-spacing: 0.02em;
   margin: 0;
