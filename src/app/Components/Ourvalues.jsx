@@ -134,10 +134,10 @@ export default function AboutOurValues() {
             className="about-values-card"
             style={{
               position: "absolute",
-              top: "50%",
+              top: "55%",
               left: "0",
               transform: "translateY(-50%)",
-              width: "50vw",
+              width: "45vw",
               padding: "3rem 4rem",
               display: "flex",
               alignItems: "center",
@@ -149,7 +149,7 @@ export default function AboutOurValues() {
             <h1
               className="about-values-title"
               style={{
-                fontSize: "6rem",
+                fontSize: "4.5rem",
                 fontWeight: "900",
                 color: "#ddd",
                 margin: "0",

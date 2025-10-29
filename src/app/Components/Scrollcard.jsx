@@ -145,9 +145,11 @@ export default function Scrollcard() {
         }}
       > */}
     <h1 style={{
-        fontSize: "3rem",
+        fontSize: "2rem",
         fontWeight: "400",
-        padding: "50px 20px 0px 20px",
+        padding: "70px 20px 0px 20px",
+        margin: "0 auto",
+        marginTop: '40px',
         textTransform: "uppercase",
     }} className="heading">
         Global Expertise. Local Precision.
@@ -169,7 +171,7 @@ export default function Scrollcard() {
           className="scrollcard"
           style={{
             position: "absolute",
-            width: "600px",
+            width: "550px",
             maxWidth: "90vw",
             padding: "60px 40px",
             background: "rgba(255, 255, 255, 0.05)",
@@ -181,7 +183,7 @@ export default function Scrollcard() {
           }}
         >
           <h2 style={{
-            fontSize: "2.5rem",
+            fontSize: "2rem",
             fontWeight: "300",
             marginBottom: "20px",
             letterSpacing: "2px",
@@ -194,7 +196,7 @@ export default function Scrollcard() {
             {card.title}
           </h2>
           <p style={{
-            fontSize: "1.1rem",
+            fontSize: "1rem",
             lineHeight: "1.6",
             opacity: 0.9,
             fontWeight: "300",

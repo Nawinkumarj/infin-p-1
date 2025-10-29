@@ -20,7 +20,7 @@ export default function HomeSection() {
       <Help />
 
       {/* Testimonials Section */}
-      <div
+      {/* <div
         style={{
           height: "90vh",
           position: "relative",
@@ -46,7 +46,7 @@ export default function HomeSection() {
           borderRadius={0.05}
           scrollEase={0.11}
         />
-      </div>
+      </div> */}
       {/* CTA Section */}
       <Cta />
     </>

@@ -211,7 +211,7 @@ export default function BannerSection() {
       >
         <div
           style={{
-            fontSize: "3rem",
+            fontSize: "2.3rem",
             fontWeight: 400,
             color: "white",
             marginBottom: "0.7rem",
@@ -223,7 +223,7 @@ export default function BannerSection() {
         </div>
         <div
           style={{
-            fontSize: "5rem",
+            fontSize: "4.2rem",
             fontWeight: 700,
             background: "linear-gradient(45deg, #ffffff, #ece3d0)",
             WebkitBackgroundClip: "text",
@@ -240,19 +240,22 @@ export default function BannerSection() {
       <div
         style={{
           position: "absolute",
-          bottom: "4rem",
-          right: "4rem",
+          bottom: "2rem",
+          right: "50%",
+          transform: "translateX(50%)",
           maxWidth: "600px",
           color: "white",
-          textAlign: "right",
+          textAlign: "center",
           zIndex: 10,
+          paddingTop: "1rem",
         }}
       >
         <h3
           style={{
-            fontSize: "1.5rem",
+            fontSize: "1.3rem",
             fontWeight: "bold",
             marginBottom: "1rem",
+            textTransform: "uppercase",
             color: "white",
             textShadow: "0 1px 2px rgba(0,0,0,0.5)",
           }}
@@ -353,62 +356,6 @@ export default function BannerSection() {
           </button>
         </div>
       </div>
-
-      {/* Scroll indicator */}
-      <div
-        style={{
-          position: "absolute",
-          bottom: "2rem",
-          left: "50%",
-          transform: "translateX(-50%)",
-          color: "white",
-          textAlign: "center",
-          opacity: 0.8,
-          zIndex: 10,
-        }}
-      >
-        <div
-          style={{
-            width: "2px",
-            height: "30px",
-            background: "white",
-            margin: "0 auto 10px auto",
-            animation: "bounce 2s infinite",
-            boxShadow: "0 0 10px rgba(255,255,255,0.5)",
-          }}
-        />
-        <p
-          style={{
-            fontSize: "0.9rem",
-            margin: 0,
-            textShadow: "0 1px 2px rgba(0,0,0,0.5)",
-          }}
-        >
-          Scroll Down
-        </p>
-      </div>
-      {/* CSS Animation */}
-      <style jsx>{`
-        @keyframes bounce {
-          0%,
-          20%,
-          50%,
-          80%,
-          100% {
-            transform: translateY(0);
-          }
-          40% {
-            transform: translateY(-10px);
-          }
-          60% {
-            transform: translateY(-5px);
-          }
-        }
-        button:hover {
-          transform: translateY(-2px);
-          box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-        }
-      `}</style>
     </section>
   );
 }
