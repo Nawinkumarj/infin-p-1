@@ -198,7 +198,7 @@ export default function BannerSection() {
       <div
         style={{
           position: "absolute",
-          top: "58%",
+          top: "60%",
           left: "50%",
           transform: "translate(-50%, 0)",
           zIndex: 10,
@@ -211,7 +211,7 @@ export default function BannerSection() {
       >
         <div
           style={{
-            fontSize: "2.3rem",
+            fontSize: "35px",
             fontWeight: 400,
             color: "white",
             marginBottom: "0.7rem",
@@ -223,7 +223,7 @@ export default function BannerSection() {
         </div>
         <div
           style={{
-            fontSize: "4.2rem",
+            fontSize: "60px",
             fontWeight: 700,
             background: "linear-gradient(45deg, #ffffff, #ece3d0)",
             WebkitBackgroundClip: "text",
