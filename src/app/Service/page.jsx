@@ -16,7 +16,7 @@ import {
 import { IoIosCloseCircleOutline } from "react-icons/io";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
-
+export const dynamic = 'force-dynamic'
 const ServiceList = [
   {
     id: 1,
