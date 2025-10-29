@@ -26,7 +26,7 @@ const ServiceList = [
   },
   {
     id: 2,
-    title: "Driving Digital Transformation ",
+    title: "Driving Digital Transformation",
     description:
       "From AI-driven fintech solutions to open banking innovations, we ensure seamless execution of cutting-edge projects.",
     imageUrl: "/bimg.jpeg",
