@@ -59,10 +59,18 @@ const ModelViewer = () => (
       }}
     >
       <ambientLight intensity={0.7} />
-      <directionalLight position={[8, 8, 8]} intensity={1.2} castShadow={false} />
+      <directionalLight
+        position={[8, 8, 8]}
+        intensity={1.2}
+        castShadow={false}
+      />
       <pointLight position={[-8, -8, 8]} intensity={0.6} />
       <pointLight position={[0, 10, 0]} intensity={0.4} />
-      <OrbitControls enableZoom={false} enableRotate={false} enablePan={false} />
+      <OrbitControls
+        enableZoom={false}
+        enableRotate={false}
+        enablePan={false}
+      />
       <Model />
     </Canvas>
   </div>
@@ -124,16 +132,18 @@ export default function BannerSection() {
           left: "50%",
           minWidth: "100%",
           minHeight: "100%",
-          width: "50%",
-          height: "50%",
+          width: "100%",
+          height: "100%",
           transform: "translate(-50%, -50%)",
           zIndex: -1,
           objectFit: "cover",
         }}
       >
-        <source src="/infin.mp4" type="video/mp4" autoPlay />
+        <source src="/infin.webm" type="video/webm" />
+        <source src="/infin.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
+
       <div
         style={{
           position: "absolute",
