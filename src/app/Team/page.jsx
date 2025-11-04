@@ -17,7 +17,7 @@ const teamMembers = [
   {
     name: "John Ben Victor",
     designation: "Business Development Manager",
-    image:"/ben.png",
+    image:"/ben.jpg",
     description: "Team 2",
   },
   {

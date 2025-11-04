@@ -175,14 +175,14 @@ export default function Page() {
         className="about-vision-mission"
         ref={visionMissionRef}
         style={{
-          height: "100vh",
-          background: "var(--foreground)",
+          padding: "4rem 2rem",
+          backgroundImage: "url('/infinbg.jpg')",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "center",
+          backgroundSize: "cover",
           position: "relative",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          overflow: "hidden",
-          padding: "0 4rem",
+          width: "100%",
+          height: "100vh",
         }}
       >
         {/* Vision */}
@@ -191,10 +191,10 @@ export default function Page() {
           ref={visionRef}
           style={{
             position: "absolute",
-            left: "10rem",
-            width: "600px",
-            maxWidth: "45vw",
-            height: "400px",
+            left: "200px",
+            width: "750px",
+            maxWidth: "50vw",
+            height: "450px",
             background: "var(--background)",
             borderRadius: "10px",
             padding: "3rem",
@@ -218,7 +218,32 @@ export default function Page() {
           >
             Our Vision
           </h2>
-          <p
+          <ul>
+          <li
+            style={{
+              fontSize: "1.1rem",
+              lineHeight: "1.6",
+              color: "#040d1e",
+              textAlign: "justify",
+              margin: 0,
+            }}
+          >
+            To be the leading innovator in technology solutions, transforming
+            businesses and creating sustainable value for our clients worldwide
+            through cutting-edge digital experiences.
+          </li>
+          <li
+            style={{
+              fontSize: "1.1rem",
+              lineHeight: "1.6",
+              color: "#040d1e",
+              textAlign: "justify",
+              margin: 0,
+            }}
+          >
+            To be the leading advisory partner in project execution, strategic marketing, and intelligent sourcing — enabling organizations to transform with agility, clarity, and measurable impact.
+          </li>
+          <li
             style={{
               fontSize: "1.1rem",
               lineHeight: "1.6",
@@ -228,7 +253,8 @@ export default function Page() {
             }}
           >
             To be the leading provider of integrated business solutions, empowering organizations with seamless project management, innovative marketing strategies, and efficient sourcing and procurement services. We strive to drive excellence, foster sustainable growth, and create lasting value for our clients.
-          </p>
+          </li>
+          </ul>
         </div>
 
         {/* Mission */}
@@ -237,10 +263,10 @@ export default function Page() {
           ref={missionRef}
           style={{
             position: "absolute",
-            right: "10rem",
-            width: "600px",
-            maxWidth: "45vw",
-            height: "400px",
+            right: "200px",
+            width: "750px",
+            maxWidth: "60vw",
+            height: "450px",
             background: "#040d1e",
             borderRadius: "10px",
             padding: "3rem",
@@ -264,7 +290,8 @@ export default function Page() {
           >
             Our Mission
           </h2>
-          <p
+          <ul>
+          <li
             style={{
               fontSize: "1.1rem",
               lineHeight: "1.6",
@@ -274,7 +301,55 @@ export default function Page() {
             }}
           >
            Our mission is to empower businesses with expert guidance and end-to-end support in delivering high-impact projects, building resilient brands, and optimizing procurement strategies. We combine industry insight, innovation, and precision to drive sustainable growth and operational excellence for our clients.
-          </p>
+          </li>
+          <li
+            style={{
+              fontSize: "1.1rem",
+              lineHeight: "1.6",
+              color: "rgba(255, 255, 255, 0.9)",
+              textAlign: "justify",
+              margin: 0,
+            }}
+          >
+            Our mission is to deliver strategic, results-driven solutions across project management, marketing, and procurement. We are committed to: 
+          </li>
+          <li
+            style={{
+              fontSize: "1.1rem",
+              lineHeight: "1.6",
+              color: "rgba(255, 255, 255, 0.9)",
+              textAlign: "justify",
+              margin: 0,
+              listStyleType: "none",
+            }}
+          >
+           - Executing projects with precision and efficiency to enhance business success.
+          </li>
+          <li
+            style={{
+              fontSize: "1.1rem",
+              lineHeight: "1.6",
+              color: "rgba(255, 255, 255, 0.9)",
+              textAlign: "justify",
+              margin: 0,
+              listStyleType: "none",
+            }}
+          >
+           - Crafting impactful marketing strategies that drive engagement and growth.
+          </li>
+          <li
+            style={{
+              fontSize: "1.1rem",
+              lineHeight: "1.6",
+              color: "rgba(255, 255, 255, 0.9)",
+              textAlign: "justify",
+              margin: 0,
+              listStyleType: "none",
+            }}
+          >
+          - Optimizing sourcing and procurement processes to ensure cost-effectiveness and quality. Through innovation, collaboration, and customer-centricity, we aim to be the trusted partner in accelerating business performance.
+          </li>
+          </ul>
         </div>
       </section>
     </div>

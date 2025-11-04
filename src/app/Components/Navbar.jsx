@@ -8,40 +8,66 @@ export default function Navbar() {
   const [visible, setVisible] = useState(true);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
-  
-const serviceDropdowns = [
-  {
-    id: 1,
-    title: "Project Management",
-    titleHref: "/Service?section=project-management",
-    items: [
-      { name: "Leading Business Transformation", href: "/Service?section=leading-business-transformation" },
-      { name: "Driving Digital Transformation", href: "/Service?section=driving-digital-transformation" },
-      { name: "Regulatory & Risk Program", href: "/Service?section=regulatory-risk-program" },
-    ],
-  },
-  {
-    id: 2,
-    title: "Event Management",
-    titleHref: "/EventManagement",
-    items: [
-      { name: "Corporate Events", href: "/EventManagement?section=corporate-events" },
-      { name: "Personal Events", href: "/EventManagement?section=personal-events" },
-      { name: "Event Production & Logistics", href: "/EventManagement?section=event-production" },
-    ],
-  },
-  {
-    id: 3,
-    title: "Marketing",
-    titleHref: "/Marketing",
-    items: [
-      { name: "Brand Strategy & Positioning", href: "/Marketing?section=brand-strategy" },
-      { name: "Digital Marketing", href: "/Marketing?section=digital-marketing" },
-      { name: "Social Media Management", href: "/Marketing?section=social-media" },
-    ],
-  },
-];
 
+  const serviceDropdowns = [
+    {
+      id: 1,
+      title: "Project Management",
+      titleHref: "/Service?section=project-management",
+      items: [
+        {
+          name: "Leading Business Transformation",
+          href: "/Service?section=leading-business-transformation",
+        },
+        {
+          name: "Driving Digital Transformation",
+          href: "/Service?section=driving-digital-transformation",
+        },
+        {
+          name: "Regulatory & Risk Program",
+          href: "/Service?section=regulatory-risk-program",
+        },
+      ],
+    },
+    {
+      id: 2,
+      title: "Event Management",
+      titleHref: "/EventManagement?section=corporate-events",
+      items: [
+        {
+          name: "Corporate Events",
+          href: "/EventManagement?section=corporate-events",
+        },
+        {
+          name: "Social Events",
+          href: "/EventManagement?section=social-events",
+        },
+        {
+          name: "Event Production & Logistics",
+          href: "/EventManagement?section=event-production",
+        },
+      ],
+    },
+    {
+      id: 3,
+      title: "Marketing",
+      titleHref: "/Marketing?section=brand-strategy",
+      items: [
+        {
+          name: "Brand Strategy & Positioning",
+          href: "/Marketing?section=brand-strategy",
+        },
+        {
+          name: "Digital Marketing",
+          href: "/Marketing?section=digital-marketing",
+        },
+        {
+          name: "Social Media Management",
+          href: "/Marketing?section=social-media",
+        },
+      ],
+    },
+  ];
 
   // Navbar scroll effect
   useEffect(() => {
@@ -96,13 +122,14 @@ const serviceDropdowns = [
             About
           </Link>
 
-          {/* Service with Hover Dropdown */}
           <div
             className="dropdown-wrapper"
             onMouseEnter={() => setActiveDropdown("service")}
             onMouseLeave={() => setActiveDropdown(null)}
           >
-            <Link href="/">Service</Link>
+            <span className="dropdown-trigger">
+              Service <img src="/down.svg" className="down-arrow" />
+            </span>
 
             <div
               className={`dropdown-menu ${
@@ -148,9 +175,9 @@ const serviceDropdowns = [
             </div>
           </div>
 
-          <Link href="/Industries" onClick={() => setMobileMenuOpen(false)}>
+          {/* <Link href="/Industries" onClick={() => setMobileMenuOpen(false)}>
             Industries
-          </Link>
+          </Link> */}
           <Link href="/Team" onClick={() => setMobileMenuOpen(false)}>
             Team
           </Link>

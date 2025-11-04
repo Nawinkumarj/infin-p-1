@@ -6,6 +6,7 @@ import { SiGmail } from "react-icons/si";
 import { TbLocation } from "react-icons/tb";
 import { faqData } from "./faqData";
 import { IoIosArrowRoundUp } from "react-icons/io";
+import ContactForm from "../Components/ContactForm";
 
 export default function page() {
   const [activeCategory, setActiveCategory] = useState("General");
@@ -16,121 +17,15 @@ export default function page() {
   };
 
   return (
-    <div className="contact-container ">
+    <div className="contact-container">
       <div className="contact-heading">
         <h1>
-          We're Happy to see you on this Page.Please tell us what project you
-          want to work on :)
+          Hey there! We’d love to know what you’re working on. Drop your project details below :)
         </h1>
       </div>
-      <div className="contact-section">
-        <div className="contact-left">
-          <div className="contact-ph">
-            <MdOutlinePhoneInTalk />
-            <p>+91 9841059274</p>
-          </div>
-          <div className="contact-mail">
-            <SiGmail />
-            <p>info@infinitasadvisory.com</p>
-          </div>
-          <div className="contact-address">
-            <TbLocation />
-            <p>Address: 123, ABC Street, XYZ City, India</p>
-          </div>
-        </div>
-        <div className="contact-right">
-          <div className="login-box">
-            <form>
-              <div className="row">
-                <div className="user-box">
-                  <input required type="text" name="firstName" />
-                  <label>First Name</label>
-                </div>
-                <div className="user-box">
-                  <input required type="text" name="lastName" />
-                  <label>Last Name</label>
-                </div>
-              </div>
-              <div className="row">
-                <div className="user-box">
-                  <input required type="tel" name="phone" />
-                  <label>Phone Number</label>
-                </div>
-                <div className="user-box">
-                  <input required type="email" name="email" />
-                  <label>Email</label>
-                </div>
-              </div>
-
-              <div className="user-box">
-                <select className="contact-service" name="service" required>
-                  <option value="" disabled selected>
-                    Select a Service
-                  </option>
-                  <option value="project-management">Project Management Services</option>
-                  <option value="marketing-management">Marketing Management</option>
-                  <option value="Sourcing-and-Procurement">Sourcing & Procurement Consulting</option>
-                  <option value="web-development">Tech & Development</option>
-                  <option value="digital-marketing">Digital Marketing</option>
-                </select>
-                <label></label>
-              </div>
-              <textarea
-                className="contact-message"
-                name="message"
-                placeholder="Define Your Service Requirements"
-                rows={7}
-                required
-              ></textarea>
-
-              <button type="submit" class="contact-submit">
-                <div class="svg-wrapper-1">
-                  <div class="svg-wrapper">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      width="24"
-                      height="24"
-                    >
-                      <path fill="none" d="M0 0h24v24H0z"></path>
-                      <path
-                        fill="currentColor"
-                        d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"
-                      ></path>
-                    </svg>
-                  </div>
-                </div>
-                <span>Send</span>
-              </button>
-
-            </form>
-          </div>
-        </div>
-      </div>
+      <ContactForm />
       <div className="contact-social">
-        <div className="contact-social-heading heading">
-          <h1>Follow us on</h1>
-        </div>
-        <div className="contact-social-links">
-          <div className="contact-social-link">
-            <a href="">
-              <img src="/insta.jpeg" alt="" />
-            </a>
-            <p className="contact-arrow-icon">
-              <IoIosArrowRoundUp />
-            </p>
-          </div>
-          <div className="contact-social-link">
-            <a href="">
-              <img src="/insta.jpeg" alt="" />
-            </a>
-          </div>
-          <div className="contact-social-link">
-            <a href="">
-              <img src="/insta.jpeg" alt="" />
-            </a>
-          </div>
-        </div>
+        
         <div className="contact-faq">
           <div className="contact-faq-heading heading">
             <h1>FAQ</h1>

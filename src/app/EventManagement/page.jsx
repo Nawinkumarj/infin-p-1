@@ -23,15 +23,15 @@ const ServiceList = [
     title: "Corporate Events",
     description:
       "We drive enterprise-wide change across people, processes, and platforms—linking strategy to execution with a focus on value realization",
-    imageUrl: "/bimg.jpeg",
+    imageUrl: "/ems-1.jpg",
   },
   {
     id: 2,
-    section: "personal-events",
-    title: "Personal Events",
+    section: "social-events",
+    title: "Social Events",
     description:
       "From AI-driven fintech solutions to open banking innovations, we ensure seamless execution of cutting-edge projects.",
-    imageUrl: "/bimg.jpeg",
+    imageUrl: "/ems-2.jpg",
   },
   {
     id: 3,
@@ -39,14 +39,15 @@ const ServiceList = [
     title: "Event Production & Logistics",
     description:
       "Whether it’s launching new ventures, entering new markets, or integrating post-M&A platforms, we bring structured delivery to big ambitions.",
-    imageUrl: "/bimg.jpeg",
+    imageUrl: "/ems-3.jpg",
   },
   {
     id: 4,
+    section: "virtual-hybrid-events",
     title: "Virtual & Hybrid Events",
     description:
       "We manage large-scale compliance and regulatory projects including AML, ESG, Basel, and IFRS programs with full traceability and transparency",
-    imageUrl: "/bimg.jpeg",
+    imageUrl: "/ems-4.jpg",
   },
 ];
 
@@ -141,7 +142,7 @@ const Page = () => {
     <div className="service-container">
       {/* Left Side */}
       <div className="title-service">
-        <h1>Our Services</h1>
+        <h1>Event Management</h1>
         {ServiceList.map((service, index) => (
           <div className="service-title-box">
             <div
@@ -162,7 +163,6 @@ const Page = () => {
           </div>
         ))}
       </div>
-
       {/* Right Side */}
       <div ref={scrollRef} className="description-service">
         {ServiceList.map((service, index) => (

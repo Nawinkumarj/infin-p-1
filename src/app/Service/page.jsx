@@ -24,7 +24,7 @@ const ServiceList = [
     title: "Leading Business Transformation Agendas",
     description:
       "We drive enterprise-wide change across people, processes, and platforms—linking strategy to execution with a focus on value realization",
-    imageUrl: "/bimg.jpeg",
+    imageUrl: "/pms-1.jpg",
   },
   {
     id: 2,
@@ -32,7 +32,7 @@ const ServiceList = [
     title: "Driving Digital Transformation",
     description:
       "From AI-driven fintech solutions to open banking innovations, we ensure seamless execution of cutting-edge projects.",
-    imageUrl: "/bimg.jpeg",
+    imageUrl: "/pms-2.jpg",
   },
   {
     id: 3,
@@ -40,7 +40,7 @@ const ServiceList = [
     title: "Managing High-Impact Strategic Initiatives",
     description:
       "Whether it's launching new ventures, entering new markets, or integrating post-M&A platforms, we bring structured delivery to big ambitions.",
-    imageUrl: "/bimg.jpeg",
+    imageUrl: "/pms-3.jpg",
   },
   {
     id: 4,
@@ -48,7 +48,7 @@ const ServiceList = [
     title: "Regulatory & Risk Program Management",
     description:
       "We manage large-scale compliance and regulatory projects including AML, ESG, Basel, and IFRS programs with full traceability and transparency",
-    imageUrl: "/bimg.jpeg",
+    imageUrl: "/pms-4.jpg",
   },
   {
     id: 5,
@@ -56,7 +56,7 @@ const ServiceList = [
     title: "Enhancing Regulatory & Compliance Efficiency",
     description:
       "Streamlining workflows for AML, risk management, and fraud prevention while ensuring governance excellence.",
-    imageUrl: "/bimg.jpeg",
+    imageUrl: "/pms-5.jpg",
   },
   {
     id: 6,
@@ -64,7 +64,7 @@ const ServiceList = [
     title: "Program & Project Delivery",
     description:
       "We lead the full lifecycle of strategic initiatives—from planning and mobilization through to execution and benefit realization.",
-    imageUrl: "/bimg.jpeg",
+    imageUrl: "/pms-6.jpg",
   },
   {
     id: 7,
@@ -72,7 +72,7 @@ const ServiceList = [
     title: "PMO Setup & Governance",
     description:
       "We build and optimize Project Management Offices (PMOs) that bring consistency, visibility, and accountability across enterprise portfolios.",
-    imageUrl: "/bimg.jpeg",
+    imageUrl: "/pms-7.jpg",
   },
   {
     id: 8,
@@ -80,7 +80,7 @@ const ServiceList = [
     title: "PMO-as-a-Service",
     description:
       "For scalable delivery support across portfolios, programs, and change initiatives. Risk-aware Governance aligned with compliance, audit, and performance expectations",
-    imageUrl: "/bimg.jpeg",
+    imageUrl: "/pms-8.jpg",
   },
   {
     id: 9,
@@ -88,7 +88,7 @@ const ServiceList = [
     title: "Change & Transformation Support",
     description:
       "From digital onboarding to operating model redesign, we orchestrate change initiatives that stick—on time and on strategy.",
-    imageUrl: "/bimg.jpeg",
+    imageUrl: "/pms-9.jpg",
   },
   {
     id: 10,
@@ -96,7 +96,7 @@ const ServiceList = [
     title: "Accelerating Innovation in Fintech & Insurtech ",
     description:
       "Managing complex deployments of AI-driven claims processing, embedded finance, and neobanking solutions",
-    imageUrl: "/bimg.jpeg",
+    imageUrl: "/pms-10.jpg",
   },
   {
     id: 11,
@@ -104,7 +104,7 @@ const ServiceList = [
     title: "Technology Solution",
     description:
       "We offer a range of technology solutions designed to meet the specific needs of our clients. From custom software development to cloud computing and cybersecurity, our team leverages the latest technologies to deliver innovative solutions that drive business success.",
-    imageUrl: "/bimg.jpeg",
+    imageUrl: "/pms-11.jpg",
   },
 ];
 
@@ -222,7 +222,7 @@ const Page = () => {
     <div className="service-container">
       {/* Left Side */}
       <div className="title-service">
-        <h1>Our Services</h1>
+        <h1>Project Management</h1>
         {ServiceList.map((service, index) => (
           <div className="service-title-box" key={service.id}>
             <div
@@ -269,7 +269,7 @@ const Page = () => {
                   <FaCirclePlus size={20} />
                 </div>
               </div>
-              <img src={service.imageUrl} alt={service.title} />
+              <img src={service.imageUrl} alt={service.title} className="service-img" />
             </div>
           </div>
         ))}

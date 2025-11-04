@@ -23,7 +23,7 @@ const ServiceList = [
     title: "Brand Strategy & Positioning",
     description:
       "We drive enterprise-wide change across people, processes, and platforms—linking strategy to execution with a focus on value realization",
-    imageUrl: "/bimg.jpeg",
+    imageUrl: "/ms-1.jpg",
   },
   {
     id: 2,
@@ -31,7 +31,7 @@ const ServiceList = [
     title: "Digital Marketing",
     description:
       "From AI-driven fintech solutions to open banking innovations, we ensure seamless execution of cutting-edge projects.",
-    imageUrl: "/bimg.jpeg",
+    imageUrl: "/ms-2.jpg",
   },
   {
     id: 3,
@@ -39,42 +39,42 @@ const ServiceList = [
     title: "Social Media Management",
     description:
       "Whether it’s launching new ventures, entering new markets, or integrating post-M&A platforms, we bring structured delivery to big ambitions.",
-    imageUrl: "/bimg.jpeg",
+    imageUrl: "/ms-3.jpg",
   },
   {
     id: 4,
     title: "Content Creation & Marketing",
     description:
       "We manage large-scale compliance and regulatory projects including AML, ESG, Basel, and IFRS programs with full traceability and transparency",
-    imageUrl: "/bimg.jpeg",
+    imageUrl: "/ms-4.jpg",
   },
   {
     id: 5,
     title: "Email Marketing & Automation",
     description:
       "We manage large-scale compliance and regulatory projects including AML, ESG, Basel, and IFRS programs with full traceability and transparency",
-    imageUrl: "/bimg.jpeg",
+    imageUrl: "/ms-5.jpg",
   },
   {
     id: 6,
     title: "Creative & Graphic Design",
     description:
       "We manage large-scale compliance and regulatory projects including AML, ESG, Basel, and IFRS programs with full traceability and transparency",
-    imageUrl: "/bimg.jpeg",
+    imageUrl: "/ms-6.jpg",
   },
   {
     id: 7,
     title: "Website Design & Development",
     description:
       "We manage large-scale compliance and regulatory projects including AML, ESG, Basel, and IFRS programs with full traceability and transparency",
-    imageUrl: "/bimg.jpeg",
+    imageUrl: "/ms-7.jpg",
   },
   {
     id: 8,
     title: "Marketing Analytics & Reporting",
     description:
       "We manage large-scale compliance and regulatory projects including AML, ESG, Basel, and IFRS programs with full traceability and transparency",
-    imageUrl: "/bimg.jpeg",
+    imageUrl: "/ms-8.jpg",
   },
 ];
 
@@ -162,14 +162,14 @@ const Page = () => {
         });
       });
     },
-    { scope: scrollRef } // ensures cleanup & scoping
+    { scope: scrollRef }
   );
 
   return (
     <div className="service-container">
       {/* Left Side */}
       <div className="title-service">
-        <h1>Our Services</h1>
+        <h1>Marketing Service</h1>
         {ServiceList.map((service, index) => (
           <div className="service-title-box">
             <div

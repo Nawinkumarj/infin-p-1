@@ -20,7 +20,7 @@ export default function Footer() {
             <Link href="/" className={pathname === "/" ? "active-link" : ""}>Home</Link>
             <Link href="/About" className={pathname === "/About" ? "active-link" : ""}>About</Link>
             <Link href="/Service" className={pathname === "/Service" ? "active-link" : ""}>Service</Link>
-            <Link href="/Industries" className={pathname === "/Industries" ? "active-link" : ""}>Industries</Link>
+            {/* <Link href="/Industries" className={pathname === "/Industries" ? "active-link" : ""}>Industries</Link> */}
             <Link href="/Team" className={pathname === "/Team" ? "active-link" : ""}>Team</Link>
             <Link href="/Career" className={pathname === "/Career" ? "active-link" : ""}>Careers</Link>
             <Link href="/Contact" className={pathname === "/Contact" ? "active-link" : ""}>Contact</Link>
