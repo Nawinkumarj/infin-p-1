@@ -174,10 +174,9 @@ export default function Navbar() {
               ))}
             </div>
           </div>
-
-          {/* <Link href="/Industries" onClick={() => setMobileMenuOpen(false)}>
+          <Link href="/Industries" onClick={() => setMobileMenuOpen(false)}>
             Industries
-          </Link> */}
+          </Link>
           <Link href="/Team" onClick={() => setMobileMenuOpen(false)}>
             Team
           </Link>
@@ -185,7 +184,6 @@ export default function Navbar() {
             Careers
           </Link>
         </div>
-
         <div className="navbar-contact">
           <Link href="/Contact">contact</Link>
         </div>

@@ -178,7 +178,7 @@ const Page = () => {
               }`}
               onClick={() => handleClick(index)}
             >
-              <h2 style={{ margin: 0, padding: 0 }}>{service.title}</h2>
+              <h3 style={{ margin: 0, padding: 0 }}>{service.title}</h3>
             </div>
             {activeIndex === index && (
               <div className="arrow-indicator">
@@ -226,7 +226,7 @@ const Page = () => {
         {selectedService && (
           <>
             <DialogTitle sx={{ display: "flex", alignItems: "center", pr: 6 }}>
-              <Typography variant="h3" sx={{ flex: 1 }}>
+              <Typography variant="h4" sx={{ flex: 1 }}>
                 {selectedService.title}
               </Typography>
               <IconButton
@@ -238,7 +238,7 @@ const Page = () => {
                   color: "white",
                 }}
               >
-                <IoIosCloseCircleOutline size={40} color="black" />
+                <IoIosCloseCircleOutline size={40} color="#ab9d92ff" />
               </IconButton>
             </DialogTitle>
             <DialogContent>

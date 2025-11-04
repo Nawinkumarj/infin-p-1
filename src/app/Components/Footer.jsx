@@ -20,7 +20,7 @@ export default function Footer() {
             <Link href="/" className={pathname === "/" ? "active-link" : ""}>Home</Link>
             <Link href="/About" className={pathname === "/About" ? "active-link" : ""}>About</Link>
             <Link href="/Service" className={pathname === "/Service" ? "active-link" : ""}>Service</Link>
-            {/* <Link href="/Industries" className={pathname === "/Industries" ? "active-link" : ""}>Industries</Link> */}
+            <Link href="/Industries" className={pathname === "/Industries" ? "active-link" : ""}>Industries</Link>
             <Link href="/Team" className={pathname === "/Team" ? "active-link" : ""}>Team</Link>
             <Link href="/Career" className={pathname === "/Career" ? "active-link" : ""}>Careers</Link>
             <Link href="/Contact" className={pathname === "/Contact" ? "active-link" : ""}>Contact</Link>
@@ -30,7 +30,7 @@ export default function Footer() {
           <Link href="mailto:/info@infinitasadvisory.com"><TbMailFilled size='23'/> info@infinitasadvisory.com</Link>
         </div>
         <div className="footer-grid-item-3">
-          <Link href="tel:/"><FiPhone size='23'/> +91 9841059274</Link>
+          <Link href="tel:/919841059274"><FiPhone size='23'/> +91 9841059274</Link>
         </div>
         <div className="footer-grid-item-4">
           <div className="footer-item">
@@ -40,14 +40,10 @@ export default function Footer() {
         </div>
         <div className="footer-grid-item-5">
           <div className="footer-item">
-            <Link href="" style={{fontSize:'20px'}}>Follow us on social media</Link>
+            <Link href="" style={{fontSize:'20px'}}>Follow us on</Link>
             <Link href=""><FaFacebook size='20'/>Facebook</Link>
-            <Link href=""> <FaXTwitter size='20'/>
-            Twitter</Link>
-            <Link href=""> <FaLinkedin size='20'/>
-            LinkedIn</Link>
-            <Link href=""> <FaInstagram size='20'/>
-            Instagram</Link>
+            <Link href=""> <FaLinkedin size='20'/>LinkedIn</Link>
+            <Link href=""> <FaInstagram size='20'/>Instagram</Link>
           </div>
         </div>
         <div style={{gridRow: '1 / span 4',gridColumnStart: '4', display:'flex',justifyContent: 'space-between',flexDirection: 'column' , textAlign: 'center', padding: '16px 0 0 0', fontSize: '18px', color: 'orange'}}>

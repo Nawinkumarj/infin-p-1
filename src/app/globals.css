@@ -506,7 +506,7 @@ a {
 .home-about-promise h2 {
   font-size: 38px;
   font-weight: 700;
-  color: #ffffff;
+  color: var(--background);
   margin-bottom: 1.5rem;
   line-height: 1.2;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
@@ -1631,10 +1631,8 @@ a {
   background: #CEAE95;
   background: linear-gradient(328deg, rgba(206, 174, 149, 1) 0%, rgba(255, 255, 255, 1) 80%);
   --r: 20px;
-  /* the radius */
   --s: 30px;
-  /* size of inner curve */
-  --x: 320px;
+  --x: 270px;
   --y: 40px;
   aspect-ratio: 1;
   border-radius: var(--r);
@@ -1665,13 +1663,32 @@ a {
 }
 
 .careers-open-position button {
-  background-color: #fff;
-  padding: 10px;
-  border: none;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px) saturate(180%);
+  -webkit-backdrop-filter: blur(15px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 10px;
+  padding: 10px;
   cursor: pointer;
   color: var(--background);
   font-size: var(--text-l);
+  box-shadow: 
+    0 4px 16px rgba(0, 0, 0, 0.1),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.careers-open-position button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.15),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+  transform: translateY(-3px);
+}
+
+.careers-open-position button:active {
+  transform: translateY(-1px);
 }
 
 .careers-list {
@@ -2229,8 +2246,6 @@ a {
 }
 /* Vision & mission */
 /* About us ends */
-
-
 /* Service Page */
 .service-container {
   height: 100vh;
@@ -2257,16 +2272,29 @@ a {
   width: 0px;
   display: none;
 }
-.title-service h1{
-  font: var(--text-xl) sans-serif;
-  margin-bottom: 1rem;
+.title-service h1 {
+  font-size: 25px;
+  text-transform: uppercase;
+  color: var(--background);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 16px 10px;
+  margin-bottom: 18px;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
+
 .service-title-box {
   display: flex;
   align-items: center;
   min-width: 0;
   width: 100%;
   max-width: 100%;
+  border-top: 1px solid gray;
+  padding: 10px 10px;
 }
 
 .service-title {
@@ -2288,7 +2316,7 @@ a {
   transition: all .5s ease-in-out;
 }
 
-.service-title h2 {
+.service-title h3 {
   min-width: 0;
   /* word-wrap: break-word;
   overflow-wrap: break-word;
@@ -2298,7 +2326,7 @@ a {
   padding: 0;
   max-width: 100%;
   box-sizing: border-box;
-  font-size: var(--text-s);
+  font-size: 18px;
 }
 
 .service-title.active {
@@ -2309,19 +2337,6 @@ a {
   color: var(--background);
 }
 
-/* .arrow-indicator {
-  background-color: #ceae95;
-  border: 2px solid transparent;
-  padding: 8px;
-  margin: 5px;
-  border-radius: 50px;
-  flex-shrink: 0;
-}
-
-.arrow-indicator span {
-  font-weight: 600;
-  color: black;
-} */
 .description-service {
   width: 75%;
   height: 80vh;
@@ -2349,6 +2364,20 @@ a {
   font-weight: 600;
   word-wrap: break-word;
   overflow-wrap: break-word;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 12px;
+}
+
+.service-heading::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 160px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--foreground), var(--background));
+  border-radius: 2px;
 }
 
 .service-content {
@@ -2404,9 +2433,17 @@ a {
 }
 
 .MuiDialog-paper {
-  background-color: var(--background) !important;
-  color: var(--foreground) !important;
+  background: rgba(46, 46, 46, 0.85) !important;
+  backdrop-filter: blur(16px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  border-radius: 16px !important;
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.1),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.1) !important;
+  color: var(--background) !important;
 }
+
 
 @media (max-width: 1200px) {
   .service-heading {
@@ -2542,14 +2579,11 @@ a {
   display: flex;
   overflow-x: auto;
   scrollbar-width: none;
-  /* Firefox */
   -ms-overflow-style: none;
-  /* IE/Edge */
 }
 
 .cs-scroll-section::-webkit-scrollbar {
   display: none;
-  /* Chrome/Safari */
 }
 
 /* Card */
@@ -2600,6 +2634,175 @@ a {
   font-size: 17px;
   color: grey;
   display: flex;
+}
+/* Popup Overlay */
+.cs-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Popup Content - Glassmorphism */
+.cs-popup-content {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  padding: 40px;
+  max-width: 600px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.2),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Close Button */
+.cs-popup-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 20px;
+  color: var(--background);
+  transition: all 0.3s ease;
+}
+
+.cs-popup-close:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: rotate(90deg);
+}
+
+.cs-popup-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.cs-popup-icon {
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: var(--foreground);
+}
+
+.cs-popup-title {
+  font-size: 28px;
+  font-weight: 600;
+  margin: 0;
+  color: white;
+}
+
+/* Description */
+.cs-popup-description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--background);
+  opacity: 0.9;
+  margin-bottom: 30px;
+}
+
+/* Points Section */
+.cs-popup-points h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: var(--background);
+}
+
+.cs-popup-points ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cs-popup-points li {
+  position: relative;
+  padding-left: 28px;
+  margin-bottom: 14px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--background);
+  opacity: 0.9;
+}
+
+.cs-popup-points li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* Scrollbar Styling */
+.cs-popup-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.cs-popup-content::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+.cs-popup-content::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+}
+
+.cs-popup-content::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
 }
 
 /* Scroll Card */

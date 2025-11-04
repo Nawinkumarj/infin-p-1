@@ -131,7 +131,7 @@ export default function BannerSection() {
           objectFit: "cover",
         }}
       >
-        <source src="/infin.mp4" type="video/mp4" />
+        <source src="/infin.mp4" type="video/mp4" autoPlay />
         Your browser does not support the video tag.
       </video>
       <div

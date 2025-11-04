@@ -122,7 +122,7 @@ export default function Scrollcard() {
         },
       });
     },
-    { scope: containerRef } // ✅ Automatically cleans up on unmount
+    { scope: containerRef }
   );
 
 
@@ -171,9 +171,9 @@ export default function Scrollcard() {
           className="scrollcard"
           style={{
             position: "absolute",
-            width: "550px",
+            width: "450px",
             maxWidth: "90vw",
-            padding: "60px 40px",
+            padding: "30px 40px",
             background: "rgba(255, 255, 255, 0.05)",
             backdropFilter: "blur(20px)",
             borderRadius: "20px",
