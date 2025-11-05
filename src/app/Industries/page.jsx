@@ -165,7 +165,6 @@ export default function Page() {
                 <img src="/Infinitas.png" alt="Infinitas" />
               </div>
 
-              {/* Render industry icons */}
               {industries.map((industry) => {
                 const ringRadius = industry.ring * 90; // spacing per ring
                 const angleRad = (industry.angle * Math.PI) / 180;

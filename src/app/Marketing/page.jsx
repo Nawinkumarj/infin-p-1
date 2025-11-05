@@ -305,7 +305,7 @@ const Page = () => {
             padding: "1.5rem",
             background: "linear-gradient(135deg, #1a1a2e 0%, #16213e 100%)",
             boxShadow: "0 20px 60px rgba(0, 0, 0, 0.5)",
-            maxHeight: "90vh",
+            maxHeight: "70vh",
             overflow: "hidden",
           },
         }}
