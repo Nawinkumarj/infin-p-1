@@ -87,6 +87,11 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [prevScrollPos]);
 
+  // Toggle mobile dropdown
+  const toggleMobileDropdown = () => {
+    setActiveDropdown(activeDropdown === "service" ? null : "service");
+  };
+
   return (
     <div className="navbar-container">
       <div
@@ -96,6 +101,11 @@ export default function Navbar() {
       >
         <div className="navbar-logo">
           <img src="/Infinitas.png" alt="Logo" />
+        </div>
+
+        {/* Case Study - Desktop Only */}
+        <div className="navbar-item">
+          <Link href="/CaseStudy">casestudy</Link>
         </div>
 
         {/* Hamburger Menu Button */}
@@ -109,11 +119,7 @@ export default function Navbar() {
           <span></span>
         </button>
 
-        <div className="navbar-item">
-          <Link href="/CaseStudy">casestudy</Link>
-        </div>
-
-        {/* Desktop Navigation */}
+        {/* Desktop & Mobile Navigation */}
         <div className={`navbar-list ${mobileMenuOpen ? "mobile-open" : ""}`}>
           <Link href="/" onClick={() => setMobileMenuOpen(false)}>
             Home
@@ -122,12 +128,16 @@ export default function Navbar() {
             About
           </Link>
 
+          {/* Service Dropdown */}
           <div
             className="dropdown-wrapper"
             onMouseEnter={() => setActiveDropdown("service")}
             onMouseLeave={() => setActiveDropdown(null)}
           >
-            <span className="dropdown-trigger">
+            <span 
+              className="dropdown-trigger"
+              onClick={toggleMobileDropdown}
+            >
               Service <img src="/down.svg" className="down-arrow" />
             </span>
 
@@ -174,6 +184,7 @@ export default function Navbar() {
               ))}
             </div>
           </div>
+
           <Link href="/Industries" onClick={() => setMobileMenuOpen(false)}>
             Industries
           </Link>
@@ -183,7 +194,17 @@ export default function Navbar() {
           <Link href="/Career" onClick={() => setMobileMenuOpen(false)}>
             Careers
           </Link>
+
+          {/* Case Study & Contact - Mobile Only */}
+          <Link href="/CaseStudy" onClick={() => setMobileMenuOpen(false)} className="mobile-only">
+            Case Study
+          </Link>
+          <Link href="/Contact" onClick={() => setMobileMenuOpen(false)} className="mobile-only">
+            Contact
+          </Link>
         </div>
+
+        {/* Contact - Desktop Only */}
         <div className="navbar-contact">
           <Link href="/Contact">contact</Link>
         </div>

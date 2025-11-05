@@ -186,17 +186,12 @@ const Page = () => {
 
   return (
     <div className="cs-container">
-      
-      {/* Top Section */}
       <div className="cs-top-section">
+        <h1 className="cs-heading">Success Stories That Speak for Themselves</h1>
         <p className="cs-subtext">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Error autem,
-          animi molestias at esse ea distinctio officiis veniam obcaecati pariatur
-          corrupti nemo sequi optio magni delectus libero commodi, similique omnis.
+          Explore how we've partnered with leading organizations across industries to drive measurable business transformation. From financial services innovation to global capability center optimization, our proven expertise turns complex challenges into strategic opportunities. Discover real-world solutions that deliver lasting impact.
         </p>
       </div>
-      
-      {/* Horizontal Scroll Section */}
       <div ref={scrollRef} className="cs-scroll-section">
         {caseStudyList.map((list, index) => (
           <div 

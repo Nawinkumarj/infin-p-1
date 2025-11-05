@@ -11,8 +11,11 @@ import {
   DialogContent,
   Typography,
   IconButton,
+  Box,
+  Divider,
 } from "@mui/material";
 import { IoIosCloseCircleOutline } from "react-icons/io";
+import { FaCheckCircle } from "react-icons/fa";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
@@ -21,33 +24,64 @@ const ServiceList = [
     id: 1,
     section: "corporate-events",
     title: "Corporate Events",
-    description:
-      "We drive enterprise-wide change across people, processes, and platforms—linking strategy to execution with a focus on value realization",
+    description: "Our corporate offerings cover:",
     imageUrl: "/ems-1.jpg",
+    detailedDescription: [
+      "Conferences, Seminars, and Workshops",
+      "Product Launches and Brand Activations",
+      "Awards Ceremonies and Gala Dinners",
+      "Board Meetings and Executive Retreats",
+      "Team-Building Activities and Offsites",
+      "Your brand is amplified through cutting-edge event technology, creative design, and seamless attendee experience.​",
+    ],
   },
   {
     id: 2,
     section: "social-events",
     title: "Social Events",
     description:
-      "From AI-driven fintech solutions to open banking innovations, we ensure seamless execution of cutting-edge projects.",
+      "Celebrate life's milestones with events tailored to your unique story. We manage:",
     imageUrl: "/ems-2.jpg",
+    detailedDescription: [
+      "Weddings and Engagements",
+      "Birthday Parties and Anniversaries",
+      "Cultural and Religious Celebrations",
+      "Private Dinners and Social Gatherings",
+      "From concept to completion, we handle every detail—so you focus on making memories.​",
+    ],
   },
   {
     id: 3,
     section: "event-production",
     title: "Event Production & Logistics",
     description:
-      "Whether it’s launching new ventures, entering new markets, or integrating post-M&A platforms, we bring structured delivery to big ambitions.",
+      "Ensure every event runs smoothly with our comprehensive production and logistics expertise:",
     imageUrl: "/ems-3.jpg",
+    detailedDescription: [
+      "Venue & equipment coordination, setup, and breakdown",
+      "Transport and warehousing of event assets",
+      "AV, lighting, and stage design",
+      "Onsite workflow, safety, and staff management",
+      "Vendor coordination",
+      "With robust planning and execution, your event is supported by efficient, secure, and flexible logistics—all tailored for seamless operations and guest satisfaction.",
+    ],
   },
   {
     id: 4,
     section: "virtual-hybrid-events",
     title: "Virtual & Hybrid Events",
     description:
-      "We manage large-scale compliance and regulatory projects including AML, ESG, Basel, and IFRS programs with full traceability and transparency",
+      "Reach attendees anywhere and combine live and digital engagement through smart, scalable solutions:",
     imageUrl: "/ems-4.jpg",
+    detailedDescription: [
+      "Virtual conferences, expos, and webinars",
+      "Hybrid events blending in-person and online participation",
+      "Powerful streaming technology, live interaction, and on-demand sessions",
+      "AI-driven networking, real-time analytics, and branded digital environments",
+      "Mobile-friendly platforms for attendee flexibility",
+      "Seamless integration of content, engagement, and sponsor features",
+      "Deliver impactful, engaging experiences for both in-person and remote audiences, maximizing your event reach and ROI.",
+    ],
   },
 ];
 
@@ -84,7 +118,7 @@ const Page = () => {
     }
   };
 
- useGSAP(
+  useGSAP(
     () => {
       const sections = refs.current;
 
@@ -135,7 +169,7 @@ const Page = () => {
         });
       });
     },
-    { scope: scrollRef } // ensures cleanup & scoping
+    { scope: scrollRef }
   );
 
   return (
@@ -144,7 +178,7 @@ const Page = () => {
       <div className="title-service">
         <h1>Event Management</h1>
         {ServiceList.map((service, index) => (
-          <div className="service-title-box">
+          <div className="service-title-box" key={service.id}>
             <div
               className={`service-title ${
                 activeIndex === index ? "active" : ""
@@ -187,29 +221,156 @@ const Page = () => {
         ))}
       </div>
 
-      <Dialog open={open} onClose={handleClose} maxWidth="md" fullWidth>
+      <Dialog
+        open={open}
+        onClose={handleClose}
+        maxWidth="md"
+        fullWidth
+        PaperProps={{
+          sx: {
+            borderRadius: "20px",
+            padding: "1.5rem",
+            background: "linear-gradient(135deg, #1a1a2e 0%, #16213e 100%)",
+            boxShadow: "0 20px 60px rgba(0, 0, 0, 0.5)",
+            maxHeight: "90vh",
+            overflow: "hidden",
+          },
+        }}
+      >
         {selectedService && (
           <>
-            <DialogTitle sx={{ display: "flex", alignItems: "center", pr: 6 }}>
-              <Typography variant="h4" sx={{ flex: 1 }}>
+            <DialogTitle
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                pr: 6,
+                pb: 2,
+                pt: 1,
+              }}
+            >
+              <Typography
+                variant="h4"
+                sx={{
+                  flex: 1,
+                  fontWeight: "700",
+                  fontSize: { xs: "1.5rem", sm: "2rem", md: "2.2rem" },
+                  background: "linear-gradient(135deg, #ceae95 0%, #f5e6d3 100%)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
+                }}
+              >
                 {selectedService.title}
               </Typography>
               <IconButton
                 onClick={handleClose}
                 sx={{
                   position: "absolute",
-                  right: 8,
-                  top: 8,
-                  color: "white",
+                  right: 12,
+                  top: 12,
+                  backgroundColor: "rgba(207, 165, 133, 0.1)",
+                  "&:hover": {
+                    transform: "scale(1.1) rotate(90deg)",
+                    transition: "all 0.3s ease",
+                    backgroundColor: "rgba(207, 165, 133, 0.2)",
+                  },
                 }}
               >
-                <IoIosCloseCircleOutline size={40} color="#ab9d92ff" />
+                <IoIosCloseCircleOutline size={36} color="#cfa585ff" />
               </IconButton>
             </DialogTitle>
-            <DialogContent>
-              <Typography variant="h6" sx={{ mb: 2, size: "38px" }}>
-                {selectedService.description}
-              </Typography>
+
+            <Divider
+              sx={{
+                backgroundColor: "rgba(206, 174, 149, 0.3)",
+                mb: 3,
+                height: "2px",
+              }}
+            />
+
+            <DialogContent
+              sx={{
+                pt: 0,
+                pb: 3,
+                maxHeight: "calc(90vh - 150px)",
+                overflowY: "auto",
+                "&::-webkit-scrollbar": {
+                  width: "8px",
+                },
+                "&::-webkit-scrollbar-track": {
+                  background: "rgba(255, 255, 255, 0.05)",
+                  borderRadius: "10px",
+                },
+                "&::-webkit-scrollbar-thumb": {
+                  background: "rgba(206, 174, 149, 0.5)",
+                  borderRadius: "10px",
+                  "&:hover": {
+                    background: "rgba(206, 174, 149, 0.7)",
+                  },
+                },
+              }}
+            >
+              <Box component="ul" sx={{ listStyle: "none", padding: 0, margin: 0 }}>
+                {selectedService.detailedDescription.map((item, index) => {
+                  const isLastItem = index === selectedService.detailedDescription.length - 1;
+                  
+                  return (
+                    <Box
+                      component="li"
+                      key={index}
+                      sx={{
+                        display: "flex",
+                        alignItems: isLastItem ? "flex-start" : "center",
+                        gap: "1rem",
+                        mb: 2.5,
+                        pb: 2.5,
+                        borderBottom: !isLastItem
+                          ? "1px solid rgba(206, 174, 149, 0.15)"
+                          : "none",
+                        animation: `fadeInUp 0.5s ease ${index * 0.1}s both`,
+                        "@keyframes fadeInUp": {
+                          from: {
+                            opacity: 0,
+                            transform: "translateY(20px)",
+                          },
+                          to: {
+                            opacity: 1,
+                            transform: "translateY(0)",
+                          },
+                        },
+                      }}
+                    >
+                      {!isLastItem && (
+                        <FaCheckCircle
+                          size={20}
+                          style={{
+                            color: "#ceae95",
+                            minWidth: "20px",
+                            marginTop: "2px",
+                          }}
+                        />
+                      )}
+                      <Typography
+                        variant="body1"
+                        sx={{
+                          fontSize: isLastItem ? "1.05rem" : "1.1rem",
+                          lineHeight: 1.7,
+                          color: isLastItem
+                            ? "rgba(206, 174, 149, 0.9)"
+                            : "#e0e0e0",
+                          fontWeight: isLastItem ? "500" : "400",
+                          fontStyle: isLastItem ? "italic" : "normal",
+                          textAlign: isLastItem ? "left" : "left",
+                          flex: 1,
+                          letterSpacing: "0.3px",
+                        }}
+                      >
+                        {item}
+                      </Typography>
+                    </Box>
+                  );
+                })}
+              </Box>
             </DialogContent>
           </>
         )}
