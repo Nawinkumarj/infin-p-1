@@ -175,15 +175,12 @@ const Page = () => {
     window.addEventListener("wheel", onWheel, { passive: false });
     return () => window.removeEventListener("wheel", onWheel);
   }, []);
-
   const handleCardClick = (service) => {
     setSelectedService(service);
   }
-
   const closePopup = () => {
     setSelectedService(null);
   }
-
   return (
     <div className="cs-container">
       <div className="cs-top-section">

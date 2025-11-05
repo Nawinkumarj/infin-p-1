@@ -162,7 +162,7 @@ export default function Page() {
           <div className="card-face industries-section-2">
             <div className="industries-circles-container">
               <div className="center-logo">
-                <img src="/infinitas.png" alt="Infinitas" />
+                <img src="/Infinitas.png" alt="Infinitas" />
               </div>
 
               {/* Render industry icons */}
