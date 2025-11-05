@@ -118,6 +118,7 @@ export default function BannerSection() {
         height: "100vh",
         position: "relative",
         overflow: "hidden",
+        touchAction: "pan-y", // Allow vertical scroll on mobile
       }}
     >
       {/* Video Background */}
@@ -137,6 +138,7 @@ export default function BannerSection() {
           transform: "translate(-50%, -50%)",
           zIndex: -1,
           objectFit: "cover",
+          pointerEvents: "none", // Keep this to prevent video blocking
         }}
       >
         <source src="/infin.webm" type="video/webm" />
@@ -144,6 +146,7 @@ export default function BannerSection() {
         Your browser does not support the video tag.
       </video>
 
+      {/* Dark overlays - REMOVED pointer-events: none */}
       <div
         style={{
           position: "absolute",
@@ -167,7 +170,7 @@ export default function BannerSection() {
         }}
       />
 
-      {/* 3D Model */}
+      {/* 3D Model - KEPT pointer-events: none */}
       <div
         style={{
           position: "absolute",
@@ -177,7 +180,7 @@ export default function BannerSection() {
           width: "100%",
           height: "100%",
           zIndex: 5,
-          pointerEvents: "none",
+          pointerEvents: "none", // Keep this for 3D model
         }}
       >
         <ErrorBoundary>
@@ -204,7 +207,7 @@ export default function BannerSection() {
         </ErrorBoundary>
       </div>
 
-      {/* Headline block */}
+      {/* Headline block - KEPT pointer-events: none */}
       <div
         style={{
           position: "absolute",
@@ -216,12 +219,13 @@ export default function BannerSection() {
           width: "100%",
           maxWidth: "900px",
           color: "white",
-          pointerEvents: "none",
+          pointerEvents: "none", // Keep this for text
+          padding: "0 20px", // Added padding for mobile
         }}
       >
         <div
           style={{
-            fontSize: "35px",
+            fontSize: "clamp(20px, 5vw, 35px)", // Responsive font size
             fontWeight: 400,
             color: "white",
             marginBottom: "0.7rem",
@@ -232,7 +236,7 @@ export default function BannerSection() {
         </div>
         <div
           style={{
-            fontSize: "60px",
+            fontSize: "clamp(30px, 8vw, 60px)", // Responsive font size
             fontWeight: 700,
             background: "linear-gradient(45deg, #ffffff, #ece3d0)",
             WebkitBackgroundClip: "text",
@@ -245,7 +249,7 @@ export default function BannerSection() {
         </div>
       </div>
 
-      {/* Socials */}
+      {/* Socials - REMOVED pointer-events from buttons */}
       <div
         style={{
           position: "fixed",
@@ -259,18 +263,6 @@ export default function BannerSection() {
           paddingTop: "1rem",
         }}
       >
-        {/* <h3
-          style={{
-            fontSize: "1.3rem",
-            fontWeight: "bold",
-            marginBottom: "1rem",
-            textTransform: "uppercase",
-            color: "white",
-            textShadow: "0 1px 2px rgba(0,0,0,0.5)",
-          }}
-        >
-          Connect with us:
-        </h3> */}
         <div
           style={{
             display: "flex",
@@ -281,6 +273,7 @@ export default function BannerSection() {
           }}
         >
           <button
+            onClick={() => window.open("https://facebook.com", "_blank")}
             style={{
               width: "60px",
               height: "60px",
@@ -297,11 +290,13 @@ export default function BannerSection() {
               alignItems: "center",
               justifyContent: "center",
               boxShadow: "0 4px 15px rgba(0,0,0,0.2)",
+              pointerEvents: "auto", // Enable clicking
             }}
           >
             f
           </button>
           <button
+            onClick={() => window.open("https://instagram.com", "_blank")}
             style={{
               width: "60px",
               height: "60px",
@@ -318,6 +313,7 @@ export default function BannerSection() {
               alignItems: "center",
               justifyContent: "center",
               boxShadow: "0 4px 15px rgba(0,0,0,0.2)",
+              pointerEvents: "auto", // Enable clicking
             }}
           >
             <svg
@@ -331,6 +327,7 @@ export default function BannerSection() {
             </svg>
           </button>
           <button
+            onClick={() => window.open("https://linkedin.com", "_blank")}
             style={{
               width: "60px",
               height: "60px",
