@@ -118,7 +118,6 @@ export default function BannerSection() {
         height: "100vh",
         position: "relative",
         overflow: "hidden",
-        touchAction: "pan-y", // Allow vertical scroll on mobile
       }}
     >
       {/* Video Background */}
@@ -138,7 +137,6 @@ export default function BannerSection() {
           transform: "translate(-50%, -50%)",
           zIndex: -1,
           objectFit: "cover",
-          pointerEvents: "none", // Keep this to prevent video blocking
         }}
       >
         <source src="/infin.webm" type="video/webm" />
@@ -146,7 +144,7 @@ export default function BannerSection() {
         Your browser does not support the video tag.
       </video>
 
-      {/* Dark overlays - REMOVED pointer-events: none */}
+      {/* Dark overlays - NOW with pointer-events: none */}
       <div
         style={{
           position: "absolute",
@@ -156,6 +154,7 @@ export default function BannerSection() {
           bottom: 0,
           background: "rgba(0, 0, 0, 0.5)",
           zIndex: 0,
+          pointerEvents: "auto", // Added this
         }}
       />
       <div
@@ -167,10 +166,11 @@ export default function BannerSection() {
           bottom: 0,
           background: "rgba(0, 0, 0, 0.4)",
           zIndex: 1,
+          pointerEvents: "noautone", 
         }}
       />
 
-      {/* 3D Model - KEPT pointer-events: none */}
+      {/* 3D Model */}
       <div
         style={{
           position: "absolute",
@@ -179,8 +179,8 @@ export default function BannerSection() {
           transform: "translate(-50%, -50%)",
           width: "100%",
           height: "100%",
-          zIndex: 5,
-          pointerEvents: "none", // Keep this for 3D model
+          zIndex: -1,
+          pointerEvents: "auto",
         }}
       >
         <ErrorBoundary>
@@ -207,7 +207,7 @@ export default function BannerSection() {
         </ErrorBoundary>
       </div>
 
-      {/* Headline block - KEPT pointer-events: none */}
+      {/* Headline block */}
       <div
         style={{
           position: "absolute",
@@ -219,13 +219,13 @@ export default function BannerSection() {
           width: "100%",
           maxWidth: "900px",
           color: "white",
-          pointerEvents: "none", // Keep this for text
-          padding: "0 20px", // Added padding for mobile
+          pointerEvents: "none",
+          padding: "0 20px",
         }}
       >
         <div
           style={{
-            fontSize: "clamp(20px, 5vw, 35px)", // Responsive font size
+            fontSize: "clamp(20px, 5vw, 35px)",
             fontWeight: 400,
             color: "white",
             marginBottom: "0.7rem",
@@ -236,7 +236,7 @@ export default function BannerSection() {
         </div>
         <div
           style={{
-            fontSize: "clamp(30px, 8vw, 60px)", // Responsive font size
+            fontSize: "clamp(30px, 8vw, 60px)",
             fontWeight: 700,
             background: "linear-gradient(45deg, #ffffff, #ece3d0)",
             WebkitBackgroundClip: "text",
@@ -249,14 +249,12 @@ export default function BannerSection() {
         </div>
       </div>
 
-      {/* Socials - REMOVED pointer-events from buttons */}
+      {/* Socials */}
       <div
         style={{
           position: "fixed",
           bottom: "20%",
-          right: "40px",
-          transform: "translateX(50%)",
-          maxWidth: "600px",
+          right: "20px",
           color: "white",
           textAlign: "center",
           zIndex: 10,
@@ -274,10 +272,10 @@ export default function BannerSection() {
         >
           <button
             onClick={() => window.open("https://facebook.com", "_blank")}
+            aria-label="Facebook"
             style={{
               width: "60px",
               height: "60px",
-              aspectRatio: 1,
               clipPath: "polygon(50% 0,100% 50%,50% 100%,0 50%)",
               background: "rgba(255, 255, 255, 0.05)",
               backdropFilter: "blur(20px)",
@@ -290,17 +288,24 @@ export default function BannerSection() {
               alignItems: "center",
               justifyContent: "center",
               boxShadow: "0 4px 15px rgba(0,0,0,0.2)",
-              pointerEvents: "auto", // Enable clicking
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.background = "rgba(255, 255, 255, 0.15)";
+              e.currentTarget.style.transform = "scale(1.1)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.background = "rgba(255, 255, 255, 0.05)";
+              e.currentTarget.style.transform = "scale(1)";
             }}
           >
             f
           </button>
           <button
             onClick={() => window.open("https://instagram.com", "_blank")}
+            aria-label="Instagram"
             style={{
               width: "60px",
               height: "60px",
-              aspectRatio: 1,
               clipPath: "polygon(50% 0,100% 50%,50% 100%,0 50%)",
               background: "rgba(255, 255, 255, 0.05)",
               backdropFilter: "blur(20px)",
@@ -313,7 +318,14 @@ export default function BannerSection() {
               alignItems: "center",
               justifyContent: "center",
               boxShadow: "0 4px 15px rgba(0,0,0,0.2)",
-              pointerEvents: "auto", // Enable clicking
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.background = "rgba(255, 255, 255, 0.15)";
+              e.currentTarget.style.transform = "scale(1.1)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.background = "rgba(255, 255, 255, 0.05)";
+              e.currentTarget.style.transform = "scale(1)";
             }}
           >
             <svg
@@ -328,10 +340,10 @@ export default function BannerSection() {
           </button>
           <button
             onClick={() => window.open("https://linkedin.com", "_blank")}
+            aria-label="LinkedIn"
             style={{
               width: "60px",
               height: "60px",
-              aspectRatio: 1,
               clipPath: "polygon(50% 0,100% 50%,50% 100%,0 50%)",
               background: "rgba(255, 255, 255, 0.05)",
               backdropFilter: "blur(20px)",
@@ -344,6 +356,14 @@ export default function BannerSection() {
               alignItems: "center",
               justifyContent: "center",
               boxShadow: "0 4px 15px rgba(0,0,0,0.2)",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.background = "rgba(255, 255, 255, 0.15)";
+              e.currentTarget.style.transform = "scale(1.1)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.background = "rgba(255, 255, 255, 0.05)";
+              e.currentTarget.style.transform = "scale(1)";
             }}
           >
             in
