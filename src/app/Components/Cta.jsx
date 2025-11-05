@@ -1,10 +1,19 @@
 import React from 'react'
+import Image from 'next/image'
 
 export default function Cta() {
   return (
     <section className="cta-section">
       <div className="logo-container">
-        <div className="animated-logo" />
+        <Image 
+          src="/cta.gif" 
+          alt="Infinitas Animated Logo" 
+          width={400}
+          height={200}
+          className="animated-logo"
+          priority
+          unoptimized 
+        />
       </div>
 
       <h1 className="cta-heading">
@@ -12,13 +21,13 @@ export default function Cta() {
       </h1>
 
       <div className="cta-buttons">
-        <button className="btn btn-primary">
-          Contact Infinitas
-        </button>
+        <a href='tel:/919841059274' className="btn btn-primary">
+          Contact&nbsp;Infinitas
+        </a>
         
-        <button className="btn btn-secondary">
+        <a href='mailto:/info@infinitasadvisory.com' className="btn btn-secondary">
           Drop a Mail
-        </button>
+        </a>
       </div>
     </section>
   )
