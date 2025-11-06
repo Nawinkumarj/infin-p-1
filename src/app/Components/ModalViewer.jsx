@@ -225,23 +225,28 @@ export default function BannerSection() {
       >
         <div
           style={{
-            fontSize: "clamp(20px, 5vw, 35px)",
+            fontSize: "28px",
             fontWeight: 400,
             color: "white",
             marginBottom: "0.7rem",
             lineHeight: 1.1,
+            fontFamily: "var(--font)",
+            textShadow: "0 2px 6px var(--background)",
+            textTransform: "uppercase",
           }}
         >
           Driving Business Through
         </div>
         <div
           style={{
-            fontSize: "clamp(30px, 8vw, 60px)",
+            fontSize: "clamp(30px, 8vw, 62px)",
             fontWeight: 700,
             background: "linear-gradient(45deg, #ffffff, #ece3d0)",
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
             lineHeight: 1,
+            fontFamily: "var(--font)",
+            textTransform: "uppercase",
             textShadow: "0 2px 6px var(--background)",
           }}
         >
@@ -271,7 +276,7 @@ export default function BannerSection() {
           }}
         >
           <button
-            onClick={() => window.open("https://facebook.com", "_blank")}
+            onClick={() => window.open("https://facebook.com/", "_blank")}
             aria-label="Facebook"
             style={{
               width: "60px",
@@ -301,7 +306,7 @@ export default function BannerSection() {
             f
           </button>
           <button
-            onClick={() => window.open("https://instagram.com", "_blank")}
+            onClick={() => window.open("https://instagram.com/", "_blank")}
             aria-label="Instagram"
             style={{
               width: "60px",

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Elms+Sans:ital,wght@0,100..900;1,100..900&family=Manrope:wght@200..800&display=swap');
 
 :root {
     --background: #ceae95;
@@ -10,7 +10,8 @@
     --text-xxl: 52px;
     --text-x: 82px;
     --text-navbar: 19px;
-    --font: "Manrope", sans-serif;
+    --font: "Elms Sans", sans-serif;
+    --heading: 'Manrope', sans-serif;
 }
 
 p{
@@ -26,9 +27,8 @@ body {
 }
 
 body {
-  color: var(--foreground);
   background: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -48,12 +48,6 @@ a {
   html {
     color-scheme: dark;
   }
-}
-
-/* Common bg */
-.scrollcard-section,
-.cta-section {
-  /* background-color:  var(--foreground); */
 }
 /* Loader starts */
 .loader-overlay {
@@ -144,6 +138,7 @@ a {
   margin: 3rem 0;
   text-transform: uppercase;
   color: var(--background);
+  font-family: var(--heading);
 }
 
 /* heading */
@@ -204,12 +199,9 @@ a {
   color: var(--background);
 }
 
-/* Hide mobile-only links on desktop */
 .mobile-only {
   display: none;
 }
-
-/* Case Study - Desktop */
 .navbar-item {
   position: relative;
   padding: 0.5rem 1rem;
@@ -242,7 +234,6 @@ a {
   background-color: var(--background);
 }
 
-/* Contact - Desktop */
 .navbar-contact {
   position: relative;
   padding: 0.5rem 1rem;
@@ -355,6 +346,7 @@ a {
   text-transform: uppercase;
   border-bottom: 1px solid var(--background);
   padding-bottom: 0.5rem;
+  font-family: var(--heading);
 }
 
 .dropdown-column a {
@@ -403,7 +395,6 @@ a {
     display: none;
   }
 
-  /* Show mobile-only links */
   .mobile-only {
     display: block !important;
   }
@@ -533,7 +524,6 @@ a {
 /* Home starts */
 .home-banner {
   position: relative;
-  /* height: 90vh; */
   width: 100%;
   margin: auto;
   border-radius: 10px;
@@ -694,6 +684,7 @@ a {
 .home-about-mission h2,
 .home-about-promise h2 {
   font-size: 38px;
+  font-family: var(--heading);
   font-weight: 700;
   color: var(--background);
   margin-bottom: 1.5rem;
@@ -704,6 +695,7 @@ a {
 .home-about-mission p,
 .home-about-promise p {
   font-size: 1.1rem;
+  font-family: var(--font);
   color: rgba(255, 255, 255, 0.9);
   line-height: 1.6;
   margin-bottom: 2rem;
@@ -802,6 +794,7 @@ a {
 
 .home-about-right p {
   font-size: 21px;
+  font-family: var(--font);
   color: rgba(255, 255, 255, 0.9);
   line-height: 1.8;
   margin: 0;
@@ -915,6 +908,7 @@ a {
   margin: 150px auto;
   font-size: var(--text-l);
   color: var(--background);
+  font-family: var(--heading);
 }
 /* Contact for starts */
 .contact-form-container {
@@ -975,6 +969,7 @@ a {
   font-size: 15px;
   line-height: 1.5;
   margin: 0;
+  font-family: var(--font);
 }
 
 .contact-info-item a {
@@ -1400,6 +1395,7 @@ a {
   font-size: 18px;
   color: rgba(255, 255, 255, 0.8);
   margin-bottom: 30px;
+  font-family: var(--font);
 }
 
 .decorative-emojis {
@@ -1904,11 +1900,13 @@ a {
 .contact-faq-heading {
   text-align: center;
   margin-bottom: 30px;
+  font-family: var(--heading);
 }
 
 .contact-faq-heading h1 {
   font-size: clamp(2rem, 5vw, 3rem);
   color: var(--background);
+  font-family: var(--heading);
 }
 
 .contact-faq-items {
@@ -2310,13 +2308,9 @@ a {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  font-family: var(--heading);
 }
 
-.industries-banner-text p {
-  font-size: clamp(1rem, 2.5vw, 1.5rem);
-  color: rgba(255, 255, 255, 0.8);
-  margin: 0;
-}
 
 /* BACK SIDE */
 .industries-section-2 {
@@ -2788,6 +2782,7 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: var(--heading);
 }
 
 .careers-open-position {
@@ -2853,6 +2848,7 @@ a {
   left: 50%;
   transform: translateX(-50%);
   z-index: -1;
+  font-family: var(--heading);
 }
 
 .footer-heading h2 {
@@ -2863,6 +2859,8 @@ a {
   -webkit-text-stroke: 2px var(--background);
   -webkit-text-fill-color: transparent;
   text-stroke: 2px #ffffff;
+  font-family: var(--heading);
+
 }
 
 
@@ -3119,6 +3117,7 @@ a {
 
 .about-us-watermark p {
   margin: 0;
+  font-family: var(--font);
 }
 
 /* Right Side - Text */
@@ -3130,7 +3129,6 @@ a {
 }
 
 .about-us-text-block {
-  /* background-color: #fff; */
   padding: 30px;
   border-radius: 12px;
 }
@@ -3140,6 +3138,7 @@ a {
   font-weight: 600;
   color: #333;
   margin-bottom: 15px;
+  font-family: var(--heading);
 }
 
 .about-us-description {
@@ -3270,6 +3269,7 @@ a {
 .about-who-we-content p {
   font-size: var(--text-sm);
   line-height: 1.6;
+  font-family: var(--font);
 }
 
 .about-who-experience {
@@ -3301,10 +3301,12 @@ a {
 .about-Project p {
   margin: 0;
   font-size: var(--text-sm);
+  font-family: var(--font);
 }
 
 .about-who-para {
   font-size: var(--text-sm);
+  font-family: var(--font);
 }
 
 /* Tablet Responsive (769px - 1024px) */
@@ -3562,6 +3564,7 @@ a {
   margin-top: 10px;
   line-height: 25px;
   text-align: justify;
+  font-family: var(--font);
 }
 
 .about-values-title {
@@ -4028,6 +4031,7 @@ a {
   display: inline-block;
   padding-bottom: 12px;
   color: var(--background);
+  font-family: var(--heading);
 }
 
 .service-heading::after {
@@ -4064,6 +4068,7 @@ a {
   overflow-wrap: break-word;
   line-height: 1.6;
   color: rgba(255, 255, 255, 0.9);
+  font-family: var(--font);
 }
 
 .service-content img {
@@ -4402,6 +4407,7 @@ a {
   font-size: 50px;
   font-weight: 600;
   color: #ceae95;
+  font-family: var(--heading);
 }
 
 .cs-subtext {
@@ -4474,6 +4480,7 @@ a {
   color: grey;
   display: flex;
 }
+
 /* Popup Overlay */
 .cs-popup-overlay {
   position: fixed;
@@ -4644,14 +4651,131 @@ a {
   background: rgba(255, 255, 255, 0.3);
 }
 
-/* Scroll Card */
-/* .scrollcard {
-  border-width: 3px;
-  border-style: solid;
-  border-image: linear-gradient(to right, rgb(30, 30, 30), var(--background)) 1;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-} */
 
+
+/* Responsive Styles */
+
+/* Large tablets and small desktops */
+@media (max-width: 1024px) {
+  .cs-top-section {
+    padding: 3rem;
+    height: 40vh;
+  }
+  .cs-heading {
+    font-size: 40px;
+  }
+  .cs-subtext {
+    font-size: 18px;
+  }
+  .cs-scroll-section {
+    height: 40vh;
+  }
+  .cs-card {
+    width: 320px;
+    padding: 0.8rem;
+  }
+  .cs-card-title {
+    font-size: 44px;
+  }
+  .cs-card-description {
+    font-size: 15px;
+  }
+  .cs-popup-content {
+    padding: 30px;
+    max-width: 500px;
+  }
+  .cs-popup-title {
+    font-size: 24px;
+  }
+}
+
+/* Tablets and small screens */
+@media (max-width: 768px) {
+  .cs-container {
+    width: 100vw;
+    padding-top: 90px;
+  }
+  .cs-top-section {
+    padding: 2rem;
+    height: auto;
+  }
+  .cs-heading {
+    font-size: 32px;
+    text-align: center;
+  }
+  .cs-subtext {
+    font-size: 14px;
+    text-align: center;
+  }
+  .cs-scroll-section {
+    height: auto;
+    flex-wrap: nowrap;
+  }
+  .cs-card {
+    width: 280px;
+    padding: 10px;
+  }
+  .cs-card-title {
+    font-size: 36px;
+  }
+  .cs-card-description {
+    font-size: 14px;
+  }
+  .cs-popup-content {
+    padding: 25px;
+    max-width: 400px;
+  }
+}
+
+/* Mobile Portrait */
+@media (max-width: 480px) {
+  .cs-top-section {
+    padding: 1.2rem;
+    gap: 12px;
+  }
+  .cs-heading {
+    font-size: 24px;
+  }
+  .cs-subtext {
+    font-size: 12px;
+  }
+  .cs-scroll-section {
+    flex-direction: column;
+    height: auto;
+    overflow-y: auto;
+  }
+  .cs-card {
+    width: 100%;
+    padding: 8px 10px;
+  }
+  .cs-card-title {
+    font-size: 28px;
+  }
+  .cs-card-description {
+    font-size: 13px;
+  }
+  .cs-popup-content {
+    padding: 20px;
+    max-width: 300px;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 360px) {
+  .cs-heading {
+    font-size: 20px;
+  }
+  .cs-subtext {
+    font-size: 11px;
+  }
+  .cs-card-title {
+    font-size: 24px;
+  }
+  .cs-card-description {
+    font-size: 12px;
+  }
+}
+/* Case study ends */
 /* Scroll Card ends */
 /* CTA */
 .cta-section {
@@ -4716,6 +4840,7 @@ a {
 
 .cta-heading {
   font-size: var(--text-xl);
+  font-family: var(--heading);
   font-weight: 300;
   color: white;
   text-align: center;
@@ -4887,6 +5012,7 @@ a {
   line-height: 1.4;
   margin-bottom: 1.5rem;
   color: white;
+  font-family: var(--font);
 }
 
 .help-mission {
