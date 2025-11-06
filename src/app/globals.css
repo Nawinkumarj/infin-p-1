@@ -2858,7 +2858,7 @@ a {
   letter-spacing: 20px;
   -webkit-text-stroke: 2px var(--background);
   -webkit-text-fill-color: transparent;
-  text-stroke: 2px #ffffff;
+  /* text-stroke: 2px #ffffff; */
   font-family: var(--heading);
 
 }
