@@ -1,73 +1,60 @@
-'use client';
-import React, { useState, useEffect } from 'react';
+"use client";
+import React, { useState, useEffect } from "react";
 
-export default function Loader() {
-  const [loading, setLoading] = useState(true);
+export default function InfinityLoader() {
   const [progress, setProgress] = useState(0);
+  const [visible, setVisible] = useState(true);
 
   useEffect(() => {
+    // Increase progress over time
     const interval = setInterval(() => {
-      setProgress(prev => {
-        if (prev >= 100) {
+      setProgress((p) => {
+        if (p >= 100) {
           clearInterval(interval);
-          setTimeout(() => setLoading(false), 800);
+          setTimeout(() => setVisible(false), 700); // Hide loader after delay
           return 100;
         }
-        return prev + 2;
+        return p + 2;
       });
-    }, 50);
+    }, 40);
 
     return () => clearInterval(interval);
   }, []);
 
-  if (!loading) return null;
+  if (!visible) return null;
 
   return (
     <div className="loader-overlay">
-      <div className="loader-content">
-        <div className="infinity-container">
-          {/* SVG for border only */}
-          <svg
-            className="infinity-symbol"
-            viewBox="0 0 300 150"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            {/* Infinity border outline */}
-            <path
-              d="M 85,75 C 85,42 62,20 40,20 C 18,20 0,42 0,75 C 0,108 18,130 40,130 C 62,130 85,108 85,75 M 85,75 C 85,108 108,130 130,130 L 170,130 C 192,130 215,108 215,75 M 215,75 C 215,108 238,130 260,130 C 282,130 300,108 300,75 C 300,42 282,20 260,20 C 238,20 215,42 215,75 M 215,75 C 215,42 192,20 170,20 L 130,20 C 108,20 85,42 85,75"
-              fill="none"
-              stroke="#ceae95"
-              strokeWidth="6"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="infinity-border"
-            />
-          </svg>
-
-          {/* Liquid fill wrapper */}
-          <div className="liquid-wrapper">
-            <div className="liquid-fill" style={{ height: `${progress}%` }}>
-              <svg
-                className="liquid-svg"
-                viewBox="0 0 300 150"
-                xmlns="http://www.w3.org/2000/svg"
-                preserveAspectRatio="none"
-              >
-                <path
-                  d="M 85,75 C 85,42 62,20 40,20 C 18,20 0,42 0,75 C 0,108 18,130 40,130 C 62,130 85,108 85,75 M 85,75 C 85,108 108,130 130,130 L 170,130 C 192,130 215,108 215,75 M 215,75 C 215,108 238,130 260,130 C 282,130 300,108 300,75 C 300,42 282,20 260,20 C 238,20 215,42 215,75 M 215,75 C 215,42 192,20 170,20 L 130,20 C 108,20 85,42 85,75"
-                  fill="#ceae95"
-                  className="liquid-path"
-                />
-              </svg>
-              <div className="liquid-wave"></div>
-              <div className="liquid-wave liquid-wave-2"></div>
-              <div className="glassmorphism-overlay"></div>
-            </div>
-          </div>
-        </div>
-
-        <div className="progress-text">{progress}%</div>
-      </div>
+      <div className="loader-background" />
+      <svg
+        className="infinity-svg"
+        preserveAspectRatio="xMidYMid meet"
+        viewBox="0 0 187.3 93.7"
+      >
+        <path
+          d="M93.9,46.4c9.3,9.5,13.8,17.9,23.5,17.9s17.5-7.8,17.5-17.5s-7.8-17.6-17.5-17.5c-9.7,0.1-13.3,7.2-22.1,17.1 
+                    c-8.9,8.8-15.7,17.9-25.4,17.9s-17.5-7.8-17.5-17.5s7.8-17.5,17.5-17.5S86.2,38.6,93.9,46.4z"
+          strokeMiterlimit="10"
+          strokeLinejoin="round"
+          strokeLinecap="round"
+          strokeWidth="4"
+          fill="none"
+          id="outline"
+          stroke="#ceae95"
+        />
+        <path
+          d="M93.9,46.4c9.3,9.5,13.8,17.9,23.5,17.9s17.5-7.8,17.5-17.5s-7.8-17.6-17.5-17.5c-9.7,0.1-13.3,7.2-22.1,17.1 
+                    c-8.9,8.8-15.7,17.9-25.4,17.9s-17.5-7.8-17.5-17.5s7.8-17.5,17.5-17.5S86.2,38.6,93.9,46.4z"
+          strokeMiterlimit="10"
+          strokeLinejoin="round"
+          strokeLinecap="round"
+          strokeWidth="4"
+          stroke="#ceae95"
+          fill="none"
+          opacity="0.05"
+        />
+      </svg>
+      <div className="progress-text">{progress}%</div>
     </div>
   );
 }
