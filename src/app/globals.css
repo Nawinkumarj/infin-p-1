@@ -64,20 +64,28 @@ a {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  background: rgba(24, 26, 46, 0.97);
+  transition: transform 1.5s ease, opacity 1.5s ease;
+}
+
+.loader-overlay.hide-slide-up {
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
 }
 
 .loader-background {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0);
+  background: var(--foreground);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   z-index: -1;
 }
 
 .infinity-svg {
-  width: 500px;
-  height: 350px;
+  width: 400px;
+  height: 250px;
   filter: drop-shadow(0 0 10px rgba(206, 174, 149, 0.7));
 }
 
@@ -112,6 +120,7 @@ a {
   font-size: 24px;
   color: #ceae95;
   filter: drop-shadow(0 0 5px #ceae95cc);
+  z-index: 10000;
 }
 
 /* Responsive */

@@ -4,14 +4,17 @@ import React, { useState, useEffect } from "react";
 export default function InfinityLoader() {
   const [progress, setProgress] = useState(0);
   const [visible, setVisible] = useState(true);
+  const [hideAnim, setHideAnim] = useState(false);
 
   useEffect(() => {
-    // Increase progress over time
     const interval = setInterval(() => {
       setProgress((p) => {
         if (p >= 100) {
           clearInterval(interval);
-          setTimeout(() => setVisible(false), 700); // Hide loader after delay
+          // Start hide animation
+          setHideAnim(true);
+          // Actually hide after animation duration
+          setTimeout(() => setVisible(false), 1500); // Duration should match css animation
           return 100;
         }
         return p + 2;
@@ -24,7 +27,7 @@ export default function InfinityLoader() {
   if (!visible) return null;
 
   return (
-    <div className="loader-overlay">
+    <div className={"loader-overlay " + (hideAnim ? "hide-slide-up" : "")}>
       <div className="loader-background" />
       <svg
         className="infinity-svg"
