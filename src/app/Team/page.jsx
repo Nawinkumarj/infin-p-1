@@ -12,19 +12,25 @@ const teamMembers = [
     name: "Dr. Uma Jagadeesan",
     designation: "Director",
     image: "/dr.uma.jpeg",
-    description: "bgywe vg",
+    description: 
+    <>
+      <p>Uma, a seasoned and highly experienced Banking Professional with over 27 years of experience in the industry. She joined Euro Exim Bank in April 2022. Her specialization is in on Large Scale Transformation and Change Management Programmes, Business Process Management, Data Analytics and Information systems, Outsourcing, Offshoring, and the Creation of Centres of Excellence. With a diverse background in progressive leadership roles, Uma has excelled in Client Lifecycle Management, New Setups, Mergers and Acquisitions, Transition, Re-engineering, and Shared Services & Global Capability Centres. She has successfully Strategized and led cross-functional teams to drive change and transformation in Strategy and operations Best Practices.</p>
+      <p>Her career spans Banking and Management Consulting globally. She has been with Standard Chartered Bank for 20 years in Regional and Global Roles based out of India, Dubai & Singapore. Her last role was Global Head of Client Onboarding and Lifecycle Management for Corporate, Institutional, and Commercial Banking at SCB based in Singapore. Her Consulting career spans around 5 years in Financial Services and FINTECH domains across geographies.</p>
+      <p>Her approach to banking is characterized by a combination of analytical thinking, strategic planning, and a customer-centric mindset.</p>
+      <p>She embraces innovation and leverages the latest technology to streamline processes, enhance operational efficiency, and provide clients with convenient and seamless banking experiences. Her mission is to positively impact clients' lives, helping them navigate the ever-changing financial landscape and guiding them toward financial success.</p>
+    </>
   },
   {
-    name: "John Ben Victor",
-    designation: "Business Development Manager",
+    name: "John Bennett Victor",
+    designation: "Business Manager",
     image:"/ben.jpg",
     description: "Team 2",
   },
   {
     name: "Lakshmi",
-    designation: "Director",
+    designation: "Operations Manager",
     image:
-      "https://cdn.pixabay.com/photo/2016/06/06/17/05/man-1439909_1280.jpg",
+      "lakshmi1.png",
     description: "Team Member 3",
   },
 ];
@@ -104,9 +110,9 @@ export default function TeamScroll() {
                   padding: "1rem",
                 }}
               >
-                <h2>{member.name}</h2>
-                <p>{ member.designation}</p>
-                <p>{member.description}</p>
+                <h2 className="team-name">{member.name}</h2>
+                <p className="team-designation">{ member.designation}</p>
+                <p className="team-description">{member.description}</p>
               </div>
             </React.Fragment>
           ))}

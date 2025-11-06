@@ -2974,9 +2974,9 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* z-index: -999; */
 }
 
+/* Image Layer */
 .image-layer {
   position: absolute;
   top: 0;
@@ -2991,25 +2991,180 @@ a {
   border-radius: 10px;
 }
 
+/* Text Layer */
 .text-layer {
   position: absolute;
   right: 0;
-  width: calc(100% - 700px);
-  height: 100%;
-  padding: 2rem;
+  width: calc(100% - 600px);
+  height: 105%;
   opacity: 0;
   transition: all 0.3s ease;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  color: var(--background);
 }
 
 .image-layer:first-of-type {
   opacity: 1;
   clip-path: inset(0% 0 0 0);
   transform: scale(1);
+}
+
+/* Team Member Name */
+.team-name {
+  font-family: cursive !important;
+  font-size: 32px;
+  margin: 10px 0px;
+  color: var(--background);
+}
+
+.team-designation {
+  font-weight: 600;
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-family: var(--font);
+  text-transform: uppercase;
+  color: whitesmoke !important;
+}
+
+.team-description {
+  font-size: 17px;
+  text-align: justify;
+  line-height: 1.5;
+  color: whitesmoke;
+}
+
+.team-description p {
+  margin-bottom: 1rem;
+}
+
+.text-layer::-webkit-scrollbar {
+  width: 6px;
+}
+
+.text-layer::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.text-layer::-webkit-scrollbar-thumb {
+  background: rgba(206, 174, 149, 0.3);
+  border-radius: 10px;
+}
+@media (max-width: 1024px) {
+  .team-container {
+    margin-left: 15px;
+  }
+
+  .team-image {
+    height: 500px;
+  }
+
+  .image-layer {
+    width: 450px;
+  }
+
+  .text-layer {
+    width: calc(100% - 550px);
+    padding: 1.5rem;
+  }
+
+  .team-name {
+    font-size: 28px;
+  }
+
+  .team-designation {
+    font-size: 16px;
+  }
+
+  .team-description {
+    font-size: 15px;
+  }
+}
+@media (max-width: 768px) {
+  .team-container {
+    margin-left: 10px;
+  }
+
+  .team-image {
+    flex-direction: column;
+    height: auto;
+    gap: 20px;
+  }
+
+  .image-layer {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    clip-path: none !important; 
+    opacity: 1 !important;
+    transition: none !important;
+  }
+
+  .text-layer {
+    position: relative;
+    width: 100% !important;
+    height: auto;
+    padding: 1rem 1.5rem;
+    opacity: 1 !important;
+    overflow: visible !important;
+  }
+
+  .team-name {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .team-designation {
+    font-size: 14px;
+    margin-bottom: 15px;
+  }
+
+  .team-description {
+    font-size: 14px;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+  .team-image {
+    height: auto;
+  }
+
+  .image-layer {
+    height: 220px;
+  }
+
+  .text-layer {
+    padding: 0.75rem 1rem;
+  }
+
+  .team-name {
+    font-size: 20px;
+  }
+
+  .team-designation {
+    font-size: 13px;
+  }
+
+  .team-description {
+    font-size: 13px;
+  }
+}
+
+/* Extra small phones */
+@media (max-width: 360px) {
+  .team-name {
+    font-size: 18px;
+  }
+
+  .team-designation {
+    font-size: 12px;
+  }
+
+  .team-description {
+    font-size: 12px;
+  }
 }
 
 /* Team ends */
@@ -3061,7 +3216,7 @@ a {
 }
 
 .about-us-infinity-circle {
-  width: 300px;
+  width: 380px;
   height: 450px;
   border-radius: 50%;
   overflow: hidden;
@@ -4053,6 +4208,7 @@ a {
   padding: 20px;
   min-height: 350px;
   align-items: center;
+  justify-content: space-between;
   transition: all 0.3s ease;
 }
 

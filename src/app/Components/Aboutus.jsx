@@ -78,8 +78,8 @@ export default function Aboutus() {
         </div>
         <div className="about-us-hero-symbol">
           <div className="about-us-infinity">
-            <div className="about-us-infinity-circle about-us-infinity-top">
-              <img src="/infinity-icon.png" alt="infinitas" />
+            <div className="about-us-infinity-circle">
+              <img src="/infinity.svg" alt="infinitas" />
             </div>
           </div>
         </div>
