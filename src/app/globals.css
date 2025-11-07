@@ -2394,7 +2394,7 @@ a {
 /* Industry Icons */
 .industry-icon-wrapper {
   position: absolute;
-  width: 100px;
+  width: 90px;
   height: 100px;
   display: flex;
   align-items: center;
@@ -2469,7 +2469,7 @@ a {
 }
 
 .industry-icon .label {
-  font-size: 8px;
+  font-size: 7.5px;
   font-weight: 600;
   color: rgba(255, 255, 255, 0.9);
   text-align: center;
@@ -2481,7 +2481,7 @@ a {
   z-index: 2;
 }
 
-/* Tablet Large (769px - 1024px) */
+/* Tablet Large */
 @media (max-width: 1024px) {
   .flip-wrapper {
     height: 180vh !important;

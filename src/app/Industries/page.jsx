@@ -17,7 +17,7 @@ export default function Page() {
   // Ring 2 - 3 items
   { id: 3, name: "Telecommunication", icon: "/icons/tc.svg", ring: 2, angle: 320 },
   { id: 4, name: "Management Consulting", icon: "/icons/mc.svg", ring: 2, angle: 80 },
-  { id: 5, name: "(GCC)", icon: "/icons/gcc.svg", ring: 2, angle: 240 },
+  { id: 5, name: "GCC", icon: "/icons/gcc.svg", ring: 2, angle: 240 },
   
 
   // Ring 3 - 5 items
@@ -39,7 +39,6 @@ export default function Page() {
 
   useGSAP(
     () => {
-      // Flip card animation
       gsap.to(".card", {
         rotateX: 180,
         ease: "power2.inOut",
