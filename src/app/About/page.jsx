@@ -330,7 +330,7 @@ export default function Page() {
             position: isMobile ? "relative" : "absolute",
             left: isMobile ? "auto" : "200px",
             top: isMobile ? "auto" : "200px",
-            width: isMobile ? "100%" : "750px",
+            width: isMobile ? "100%" : "650px",
             maxWidth: isMobile ? "100%" : "50vw",
             height: isMobile ? "auto" : "500px",
             minHeight: isMobile ? "auto" : "450px",
@@ -366,7 +366,7 @@ export default function Page() {
           >
             <li
               style={{
-                fontSize: isMobile ? "0.95rem" : "1.1rem",
+                fontSize: isMobile ? "0.95rem" : "16px",
                 lineHeight: "1.6",
                 color: "#040d1e",
                 textAlign: "justify",
@@ -379,7 +379,7 @@ export default function Page() {
             </li>
             <li
               style={{
-                fontSize: isMobile ? "0.95rem" : "1.1rem",
+                fontSize: isMobile ? "0.95rem" : "16px",
                 lineHeight: "1.6",
                 color: "#040d1e",
                 textAlign: "justify",
@@ -392,7 +392,7 @@ export default function Page() {
             </li>
             <li
               style={{
-                fontSize: isMobile ? "0.95rem" : "1.1rem",
+                fontSize: isMobile ? "0.95rem" : "16px",
                 lineHeight: "1.6",
                 color: "#040d1e",
                 textAlign: "justify",
@@ -417,13 +417,13 @@ export default function Page() {
             right: isMobile ? "auto" : "200px",
             top: isMobile ? "auto" : "200px",
             left: isMobile ? "auto" : "initial",
-            width: isMobile ? "100%" : "750px",
+            width: isMobile ? "100%" : "650px",
             maxWidth: isMobile ? "100%" : "60vw",
             height: isMobile ? "auto" : "500px",
             minHeight: isMobile ? "auto" : "450px",
             background: "#040d1e",
             borderRadius: "10px",
-            padding: isMobile ? "2rem 1.5rem" : "3rem",
+            padding: isMobile ? "2rem 1.5rem" : "2rem",
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
@@ -453,7 +453,7 @@ export default function Page() {
           >
             <li
               style={{
-                fontSize: isMobile ? "0.95rem" : "1.1rem",
+                fontSize: isMobile ? "0.95rem" : "16px",
                 lineHeight: "1.6",
                 color: "rgba(255, 255, 255, 0.9)",
                 textAlign: "justify",
@@ -468,7 +468,7 @@ export default function Page() {
             </li>
             <li
               style={{
-                fontSize: isMobile ? "0.95rem" : "1.1rem",
+                fontSize: isMobile ? "0.95rem" : "16px",
                 lineHeight: "1.6",
                 color: "rgba(255, 255, 255, 0.9)",
                 textAlign: "justify",
@@ -481,7 +481,7 @@ export default function Page() {
             </li>
             <li
               style={{
-                fontSize: isMobile ? "0.95rem" : "1.1rem",
+                fontSize: isMobile ? "0.95rem" : "15px",
                 lineHeight: "1.6",
                 color: "rgba(255, 255, 255, 0.9)",
                 textAlign: "justify",
@@ -495,7 +495,7 @@ export default function Page() {
             </li>
             <li
               style={{
-                fontSize: isMobile ? "0.95rem" : "1.1rem",
+                fontSize: isMobile ? "0.95rem" : "15px",
                 lineHeight: "1.6",
                 color: "rgba(255, 255, 255, 0.9)",
                 textAlign: "justify",
@@ -509,7 +509,7 @@ export default function Page() {
             </li>
             <li
               style={{
-                fontSize: isMobile ? "0.95rem" : "1.1rem",
+                fontSize: isMobile ? "0.95rem" : "15px",
                 lineHeight: "1.6",
                 color: "rgba(255, 255, 255, 0.9)",
                 textAlign: "justify",

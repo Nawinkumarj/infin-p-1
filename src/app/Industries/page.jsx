@@ -10,89 +10,32 @@ gsap.registerPlugin(ScrollTrigger, useGSAP);
 export default function Page() {
   const flipRef = useRef(null);
   const industries = [
-    // Ring 1
-    { id: 1, name: "Healthcare", icon: "/icons/hc.svg", ring: 1, angle: 0 },
-    { id: 2, name: "Realestate", icon: "/icons/re.svg", ring: 1, angle: 180 },
+  // Ring 1 - 2 items
+  { id: 1, name: "Legal Service", icon: "/icons/ls.svg", ring: 1, angle: 50 },
+  { id: 2, name: "Financial Service", icon: "/icons/fs.svg", ring: 1, angle: 180 },
 
-    // Ring 2
-    {
-      id: 3,
-      name: "Telecommunication",
-      icon: "/icons/tc.svg",
-      ring: 2,
-      angle: 0,
-    },
-    {
-      id: 4,
-      name: "Information Technology",
-      icon: "/icons/it.svg",
-      ring: 2,
-      angle: 90,
-    },
-    {
-      id: 5,
-      name: "Media & Entertainment",
-      icon: "/icons/me.svg",
-      ring: 2,
-      angle: 180,
-    },
-    {
-      id: 6,
-      name: "Transportation",
-      icon: "/icons/tl.svg",
-      ring: 2,
-      angle: 270,
-    },
+  // Ring 2 - 3 items
+  { id: 3, name: "Telecommunication", icon: "/icons/tc.svg", ring: 2, angle: 320 },
+  { id: 4, name: "Management Consulting", icon: "/icons/mc.svg", ring: 2, angle: 80 },
+  { id: 5, name: "(GCC)", icon: "/icons/gcc.svg", ring: 2, angle: 240 },
+  
 
-    // Ring 3
-    { id: 7, name: "Mining", icon: "/icons/mn.svg", ring: 3, angle: 45 },
-    {
-      id: 8,
-      name: "Manufacturing",
-      icon: "/icons/mf.svg",
-      ring: 3,
-      angle: 135,
-    },
-    {
-      id: 9,
-      name: "Legal Service",
-      icon: "/icons/ls.svg",
-      ring: 3,
-      angle: 225,
-    },
-    {
-      id: 10,
-      name: "Financial Service",
-      icon: "/icons/fs.svg",
-      ring: 3,
-      angle: 315,
-    },
+  // Ring 3 - 5 items
+  { id: 6, name: "Transportation", icon: "/icons/tl.svg", ring: 3, angle: 30 },
+  { id: 7, name: "Mining", icon: "/icons/mn.svg", ring: 3, angle: 72 },
+  { id: 8, name: "Manufacturing", icon: "/icons/mf.svg", ring: 3, angle: 124 },
+  { id: 9, name: "Healthcare", icon: "/icons/hc.svg", ring: 3, angle: 216 },
+  { id: 10, name: "Realestate", icon: "/icons/re.svg", ring: 3, angle: 288 },
 
-    // Ring 4
-    { id: 11, name: "Hospitality", icon: "/icons/ht.svg", ring: 4, angle: 0 },
-    { id: 12, name: "Education", icon: "/icons/et.svg", ring: 4, angle: 72 },
-    {
-      id: 13,
-      name: "Construction",
-      icon: "/icons/cm.svg",
-      ring: 4,
-      angle: 144,
-    },
-    {
-      id: 14,
-      name: "Agriculture & Farming",
-      icon: "/icons/af.svg",
-      ring: 4,
-      angle: 216,
-    },
-    {
-      id: 15,
-      name: "Energy & Utilities",
-      icon: "/icons/eu.svg",
-      ring: 4,
-      angle: 288,
-    },
-  ];
+  // Ring 4 - 7 items
+  { id: 11, name: "Hospitality", icon: "/icons/ht.svg", ring: 4, angle: 0 },
+  { id: 12, name: "Education", icon: "/icons/et.svg", ring: 4, angle: 51.43 },
+  { id: 13, name: "Construction", icon: "/icons/cm.svg", ring: 4, angle: 102.86 },
+  { id: 14, name: "Agriculture & Farming", icon: "/icons/af.svg", ring: 4, angle: 154.29 },
+  { id: 15, name: "Energy & Utilities", icon: "/icons/eu.svg", ring: 4, angle: 205.72 },
+  { id: 16, name: "Information Technology", icon: "/icons/it.svg", ring: 4, angle: 257.15 },
+  { id: 17, name: "Media & Entertainment", icon: "/icons/me.svg", ring: 4, angle: 308.58 },
+];
 
   useGSAP(
     () => {

@@ -3390,10 +3390,11 @@ a {
   background: url(/bg.svg);
   position: relative;
   height: 70vh;
-  width: 70%;
+  width: 80%;
   margin: 100px auto;
   display: flex;
   justify-content: space-around;
+  align-items: center;
   background-color: white;
   color: var(--foreground);
   border-radius: 15px;
@@ -3407,7 +3408,6 @@ a {
   width: 500px;
   display: flex;
   flex-direction: column;
-  padding-top: 150px;
   gap: 1rem;
 }
 
@@ -3896,7 +3896,7 @@ a {
   max-width: 50vw;
   height: 650px;
   border-radius: 10px;
-  padding: 3rem;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -4544,12 +4544,13 @@ a {
 
 /* Case Study Container */
 .cs-container {
+  padding-top: 70px;
   width: 100vw;
 }
 
 /* Top Section */
 .cs-top-section {
-  height: 50vh;
+  height: 40vh;
   width: 100%;
   border: 1px solid grey;
   display: flex;

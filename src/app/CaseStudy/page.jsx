@@ -7,7 +7,7 @@ const caseStudyList = [
     "id": "1",
     "name": "Financial Service",
     "icon": "react-icon/startup",
-    "title": "FS1",
+    "title": "FS-1",
     "des": "Digital onboarding and customer experience enhancements for banks.",
     "points": [
       "Digital onboarding and customer experience enhancements for banks",
@@ -20,7 +20,7 @@ const caseStudyList = [
     "id": "2",
     "name": "Business Strategy",
     "icon": "react-icon/ecommerce",
-    "title": "BS2",
+    "title": "BS-2",
     "des": "Market entry strategies for new geographies or segments",
     "points": [
       "Market entry strategies for new geographies or segments",
@@ -33,7 +33,7 @@ const caseStudyList = [
     "id": "3",
     "name": "Digital Transformation",
     "icon": "react-icon/branding",
-    "title": "DT3",
+    "title": "DT-3",
     "des": "End-to-end digitalization of business processes",
     "points": [
       "End-to-end digitalization of business processes.",
@@ -46,7 +46,7 @@ const caseStudyList = [
     "id": "4",
     "name": "Regulatory Compliance",
     "icon": "react-icon/saas",
-    "title": "RC4",
+    "title": "RC-4",
     "des": "Development of compliance monitoring dashboards",
     "points": [
       "Development of compliance monitoring dashboards.",
@@ -59,7 +59,7 @@ const caseStudyList = [
     "id": "5",
     "name": "Operational Strategies",
     "icon": "react-icon/digital",
-    "title": "OS5",
+    "title": "OS-5",
     "des": "Process optimization and cost reduction initiatives.",
     "points": [
       "Process optimization and cost reduction initiatives.",
@@ -72,7 +72,7 @@ const caseStudyList = [
     "id": "6",
     "name": "Risk & Governance",
     "icon": "react-icon/digital",
-    "title": "RG6",
+    "title": "RG-6",
     "des": "Enterprise risk management framework design.",
     "points": [
       "Enterprise risk management framework design.",
@@ -85,7 +85,7 @@ const caseStudyList = [
     "id": "7",
     "name": "Process Re-engineering",
     "icon": "react-icon/digital",
-    "title": "PR7",
+    "title": "PR-7",
     "des": "Workflow automation projects.",
     "points": [
       "Workflow automation projects",
@@ -98,7 +98,7 @@ const caseStudyList = [
     "id": "8",
     "name": "Programme Management",
     "icon": "react-icon/digital",
-    "title": "PM8",
+    "title": "PM-8",
     "des": "Large-scale technology implementation oversight.",
     "points": [
       "Large-scale technology implementation oversight.",
@@ -111,7 +111,7 @@ const caseStudyList = [
     "id": "9",
     "name": "GCCs (Global Capability Centers)",
     "icon": "react-icon/digital",
-    "title": "GCC9",
+    "title": "GCC-9",
     "des": "Setting up and optimizing GCCs for cost and talent advantages.",
     "points": [
       "Setting up and optimizing GCCs for cost and talent advantages.",
@@ -123,7 +123,7 @@ const caseStudyList = [
     "id": "10",
     "name": "COEs (Centers of Excellence)",
     "icon": "react-icon/digital",
-    "title": "COE10",
+    "title": "COE-10",
     "des": "Establishing specialized units for analytics, cybersecurity, or compliance.",
     "points": [
       "Establishing specialized units for analytics, cybersecurity, or compliance.",
@@ -135,7 +135,7 @@ const caseStudyList = [
     "id": "11",
     "name": "Management Consulting",
     "icon": "react-icon/digital",
-    "title": "MC11",
+    "title": "MC-11",
     "des": "Strategic transformation projects.",
     "points": [
       "Strategic transformation projects.",
