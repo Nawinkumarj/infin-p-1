@@ -369,7 +369,7 @@ export default function Page() {
                 fontSize: isMobile ? "0.95rem" : "16px",
                 lineHeight: "1.6",
                 color: "#040d1e",
-                textAlign: "justify",
+                textAlign: "left",
                 marginBottom: isMobile ? "0.75rem" : "1rem",
               }}
             >
@@ -382,7 +382,7 @@ export default function Page() {
                 fontSize: isMobile ? "0.95rem" : "16px",
                 lineHeight: "1.6",
                 color: "#040d1e",
-                textAlign: "justify",
+                textAlign: "left",
                 marginBottom: isMobile ? "0.75rem" : "1rem",
               }}
             >
@@ -395,7 +395,7 @@ export default function Page() {
                 fontSize: isMobile ? "0.95rem" : "16px",
                 lineHeight: "1.6",
                 color: "#040d1e",
-                textAlign: "justify",
+                textAlign: "left",
                 margin: 0,
               }}
             >
@@ -456,7 +456,7 @@ export default function Page() {
                 fontSize: isMobile ? "0.95rem" : "16px",
                 lineHeight: "1.6",
                 color: "rgba(255, 255, 255, 0.9)",
-                textAlign: "justify",
+                textAlign: "left",
                 marginBottom: isMobile ? "0.75rem" : "1rem",
               }}
             >
@@ -471,7 +471,7 @@ export default function Page() {
                 fontSize: isMobile ? "0.95rem" : "16px",
                 lineHeight: "1.6",
                 color: "rgba(255, 255, 255, 0.9)",
-                textAlign: "justify",
+                textAlign: "left",
                 marginBottom: isMobile ? "0.75rem" : "1rem",
               }}
             >

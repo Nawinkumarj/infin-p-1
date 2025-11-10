@@ -1442,6 +1442,11 @@ a {
 
 /* Tablet Large (769px - 1024px) */
 @media (max-width: 1024px) {
+  .contact-heading{
+    width: 90%;
+    font-size: 18px;
+    text-align: center;
+  }
   .contact-form-container {
     gap: 30px;
     padding: 30px 20px;
@@ -1684,7 +1689,7 @@ a {
   .btn-group {
     margin-top: 30px;
     gap: 12px;
-    flex-direction: column;
+    flex-direction: row;
   }
 
   .btn {
@@ -2832,8 +2837,15 @@ a {
   height: 100vh;
   font-size: var(--text-s);
   color: var(--background);
+  text-align: center;
 }
-
+@media (max-width: 768px) {
+  .careers-heading{
+    font-size: 35px;
+    text-align: center;
+    padding: 0 10px;
+  }
+}
 /* Careers ends */
 
 /* Footer */
@@ -3332,6 +3344,9 @@ a {
     flex-direction: column;
   }
 
+  .about-us-text-block{
+    padding: 0;
+  }
   .about-us-title {
     font-size: 36px;
   }
@@ -3942,7 +3957,7 @@ a {
   font-size: 1.1rem;
   line-height: 1.6;
   color: #040d1e;
-  text-align: justify;
+  text-align: left;
   margin-bottom: 1rem;
 }
 
@@ -3950,7 +3965,7 @@ a {
   font-size: 1.1rem;
   line-height: 1.6;
   color: rgba(255, 255, 255, 0.9);
-  text-align: justify;
+  text-align: left;
   margin-bottom: 1rem;
 }
 
@@ -3961,7 +3976,7 @@ a {
 /* Tablet Responsive (481px - 768px) */
 @media (min-width: 481px) and (max-width: 768px) {
   .about-vision-mission {
-    padding: 3rem 2rem;
+    padding: 3rem 1rem;
     min-height: 80vh;
   }
 
@@ -4006,8 +4021,9 @@ a {
     max-width: 100% !important;
     height: auto !important;
     min-height: auto !important;
-    padding: 2rem 1.5rem !important;
+    padding: 2rem 1rem !important;
     transform: none !important;
+    text-align: left !important;
   }
 
   .about-vision h2,
@@ -5101,7 +5117,7 @@ a {
 
   .btn {
     padding: 0.8rem 2rem;
-    font-size: 1rem;
+    font-size: 12px;
   }
 }
 

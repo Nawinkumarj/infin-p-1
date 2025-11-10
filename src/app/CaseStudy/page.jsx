@@ -181,6 +181,7 @@ const Page = () => {
   const closePopup = () => {
     setSelectedService(null);
   }
+  
   return (
     <div className="cs-container">
       <div className="cs-top-section">
