@@ -39,8 +39,8 @@ export default function Footer() {
           </div>
         </div>
         <div className="footer-grid-item-5">
+            <h1>Follow us on</h1>
           <div className="footer-item">
-            <Link href="" style={{fontSize:'20px'}}>Follow us on</Link>
             <Link href=""><FaFacebook size='20'/>Facebook</Link>
             <Link href=""> <FaLinkedin size='20'/>LinkedIn</Link>
             <Link href=""> <FaInstagram size='20'/>Instagram</Link>
