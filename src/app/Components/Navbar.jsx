@@ -105,7 +105,7 @@ export default function Navbar() {
 
         {/* Case Study - Desktop Only */}
         <div className="navbar-item">
-          <Link href="/CaseStudy">casestudy</Link>
+          <Link href="/CaseStudy">Expertise</Link>
         </div>
 
         {/* Hamburger Menu Button */}
@@ -197,7 +197,7 @@ export default function Navbar() {
 
           {/* Case Study & Contact - Mobile Only */}
           <Link href="/CaseStudy" onClick={() => setMobileMenuOpen(false)} className="mobile-only">
-            Case Study
+            Expertise
           </Link>
           <Link href="/Contact" onClick={() => setMobileMenuOpen(false)} className="mobile-only">
             Contact
