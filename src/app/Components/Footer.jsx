@@ -48,7 +48,7 @@ export default function Footer() {
         </div>
         <div style={{gridRow: '1 / span 4',gridColumnStart: '4', display:'flex',justifyContent: 'space-between',flexDirection: 'column' , textAlign: 'center', padding: '16px 0 0 0', fontSize: '18px', color: 'orange'}}>
           <div style={{textAlign: 'start', fontWeight: '800', fontSize: '2.3rem', color: 'grey'}}>
-            Immersive <br/> Experience.
+            Advise. <br/> Execute. <br/> Impact.
           </div> 
           <div style={{textAlign:'end', fontSize: '10px'}}>
             <span>

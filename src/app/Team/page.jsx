@@ -34,7 +34,10 @@ const teamMembers = [
     designation: "Operations Manager",
     image:
       "lakshmi1.png",
-    description: "Team Member 3",
+    description: 
+    <>
+    <p></p>
+    </>,
   },
 ];
 

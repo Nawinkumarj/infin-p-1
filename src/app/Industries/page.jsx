@@ -106,7 +106,7 @@ export default function Page() {
           ease: "power2.inOut",
           scrollTrigger: {
             trigger: ".flip-wrapper",
-            start: "top 10%",
+            start: "top 0",
             end: "+=200%",
             scrub: 1,
             pin: true,
