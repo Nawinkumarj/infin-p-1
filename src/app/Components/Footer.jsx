@@ -46,7 +46,7 @@ export default function Footer() {
             <Link href=""> <FaInstagram size='20'/>Instagram</Link>
           </div>
         </div>
-        <div style={{gridRow: '1 / span 4',gridColumnStart: '4', display:'flex',justifyContent: 'space-between',flexDirection: 'column' , textAlign: 'center', padding: '16px 0 0 0', fontSize: '18px', color: 'orange'}}>
+        <div style={{gridRow: '1 / span 4',gridColumnStart: '4', display:'flex',justifyContent: 'space-between',flexDirection: 'column' , textAlign: 'center', padding: '16px 0 0 0', fontSize: '18px', color: 'grey'}}>
           <div style={{textAlign: 'start', fontWeight: '800', fontSize: '2.3rem', color: 'grey'}}>
             Advise. <br/> Execute. <br/> Impact.
           </div> 
@@ -57,6 +57,9 @@ export default function Footer() {
           </div>
         </div>
       </div>
+      <div className="designed-by">
+      Designed and Developed by <a href="http://vcraftyucompany.com/" target="_blank">Vcraftyu Company</a>
+    </div>
     </div>
   );
 }
