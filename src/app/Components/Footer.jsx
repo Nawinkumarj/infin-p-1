@@ -34,8 +34,8 @@ export default function Footer() {
         </div>
         <div className="footer-grid-item-4">
           <div className="footer-item">
-            <Link href="">Terms of Service<GoArrowUpRight /></Link>
-            <Link href="">Privacy Policy<GoArrowUpRight /></Link>
+            <Link href="/Terms">Terms of Service<GoArrowUpRight /></Link>
+            <Link href="/Privacy">Privacy Policy<GoArrowUpRight /></Link>
           </div>
         </div>
         <div className="footer-grid-item-5">

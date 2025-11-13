@@ -104,8 +104,8 @@ const ServiceList = [
   },
   {
     id: 6,
-    section: "program-project-delivery",
-    title: "Program & Project Delivery",
+    section: "product-program-&-project-delivery",
+    title: "Product , Program and Project Delivery",
     description:
       "Execute what matters most. Professional program delivery from planning to benefit realization.",
     imageUrl: "/pms-6.jpg",
@@ -121,7 +121,7 @@ const ServiceList = [
   {
     id: 7,
     section: "pmo-setup",
-    title: "PMO Setup & Governance",
+    title: "PMO Setup, Governance Risk & Compliance",
     description:
       "Build a Project Management Office that actually adds value. Get visibility, consistency, and control.",
     imageUrl: "/pms-7.jpg",

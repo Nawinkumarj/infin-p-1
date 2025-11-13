@@ -68,7 +68,7 @@ export default function page() {
           </div>
         </div>
       </div>
-      <div
+      {/* <div
         style={{ width: "95%", height: "450px", margin: "30px auto" }}
         className="contact-map"
       >
@@ -81,7 +81,7 @@ export default function page() {
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
         ></iframe>
-      </div>
+      </div> */}
     </div>
   );
 }

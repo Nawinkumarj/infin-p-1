@@ -5203,6 +5203,8 @@ a {
   background: var(--background);
   color: #333;
   box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+
 }
 
 .btn-primary:hover {
@@ -5217,6 +5219,8 @@ a {
   color: white;
   border: 2px solid var(--background);
   backdrop-filter: blur(10px);
+  border-radius: 10px;
+
 }
 
 .btn-secondary:hover {
@@ -5527,3 +5531,254 @@ a {
 }
 
 /* We look forward to help you ends */
+/* Terms & Condition  */
+.terms-main-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 0 2rem 0;
+  padding-top: 100px;
+}
+
+.terms-title {
+  text-align: center;
+  font-size: 45px;
+  font-weight: 700;
+  color: var(--background);
+  font-family: var(--heading);
+  text-transform: uppercase;
+  margin: 2rem 0 0.5rem 0;
+  letter-spacing: 1px;
+}
+
+.terms-privacy-date {
+  text-align: center;
+  font-size: 16px;
+  color: white;
+  margin: 2rem;
+}
+
+.terms-section {
+  display: flex;
+  margin-bottom: 2.5rem;
+  align-items: flex-start;
+}
+
+.terms-section-number {
+  min-width: 60px;
+  min-height: 72px;
+  background: var(--background);
+  color: var(--foreground);
+  font-size: 2.2rem;
+  font-weight: 700;
+  border-radius: 0 0 12px 0;
+  padding-top: 14px;
+  text-align: center;
+  margin-right: 0.5rem;
+  margin-left: 2rem;
+}
+
+.terms-content {
+  background: #fff;
+  box-shadow: 0 2px 14px rgba(30,60,90,0.08);
+  border-radius: 10px;
+  padding: 1.2em 1.6em;
+  flex: 1;
+  margin-left: 0.5rem;
+}
+
+.terms-content h2 {
+  color: var(--background);
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 1em;
+  margin-top: 0;
+}
+
+.terms-bold {
+  font-weight: 700;
+  margin-bottom: 1em;
+  color: var(--foreground);
+}
+
+.terms-list {
+  margin-left: 2em;
+  margin-bottom: 1.2em;
+  color: var(--foreground);
+}
+
+.terms-list li {
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 0.8em;
+}
+
+.terms-content p {
+  font-size: 1rem;
+  color: var(--foreground);
+  margin-bottom: 1em;
+  line-height: 1.75;
+}
+
+@media (max-width: 700px) {
+  .terms-section {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .terms-section-number {
+    margin-left: 1rem;
+    margin-right: 0;
+    min-width: 48px;
+    min-height: 48px;
+    font-size: 1.2rem;
+    padding-top: 8px;
+    border-radius: 8px 0 8px 0;
+  }
+  .terms-content {
+    margin-left: 0;
+    margin-top: 0.8rem;
+    padding: 1em 0.7em;
+  }
+  .terms-title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .terms-main-container {
+    margin: 0;
+    padding: 0 0 1rem 0;
+  }
+  .terms-title {
+    font-size: 1.3rem;
+    margin: 1rem 0 0.5rem 0;
+  }
+  .terms-section-number {
+    font-size: 1rem;
+    min-width: 38px;
+    min-height: 38px;
+  }
+}
+
+/* Terms & Condition ends */
+/* Policy starts */
+.policy-main-container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 0 2rem 0;
+  padding-top: 100px;
+}
+.policy-title {
+  text-align: center;
+  font-size: 45px;
+  font-weight: 700;
+  color: var(--background);
+  margin: 2rem 0 0.5rem 0;
+  letter-spacing: 1px;
+  font-family: var(--heading);
+  text-transform: uppercase;
+}
+.policy-date {
+  text-align: center;
+  font-size: 16px;
+  color: white;
+  margin: 2rem;
+}
+.policy-section {
+  display: flex;
+  margin-bottom: 2.5rem;
+  align-items: flex-start;
+}
+.section-number {
+  min-width: 60px;
+  min-height: 72px;
+  background: var(--background);
+  color: var(--foreground);
+  font-size: 2.2rem;
+  font-weight: 700;
+  border-radius: 0 0 12px 0;
+  padding-top: 14px;
+  text-align: center;
+  margin-right: 0.5rem;
+  margin-left: 2rem;
+}
+.section-content {
+  background: #fff;
+  box-shadow: 0 2px 14px rgba(30,60,90,0.08);
+  border-radius: 10px;
+  padding: 1.2em 1.6em;
+  flex: 1;
+  margin-left: 0.5rem;
+}
+.section-content h2 {
+  color: var(--background);
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 1em;
+  margin-top: 0;
+}
+.section-content h3, .section-content h4 {
+  color: var(--foreground);
+  margin-bottom: 0.7em;
+  font-weight: 600;
+}
+.section-content ul {
+  margin-left: 2em;
+  margin-bottom: 1.2em;
+  color: var(--foreground);
+}
+.section-content ul li {
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 0.8em;
+}
+.section-content p {
+  font-size: 1rem;
+  color: var(--foreground);
+  margin-bottom: 1em;
+  line-height: 1.75;
+}
+.section-content a {
+  color: var(--background);
+  text-decoration: wavy;
+  word-break: break-all;
+}
+@media (max-width: 700px) {
+  .policy-section {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .section-number {
+    margin-left: 1rem;
+    margin-right: 0;
+    min-width: 48px;
+    min-height: 48px;
+    font-size: 1.2rem;
+    padding-top: 8px;
+    border-radius: 8px 0 8px 0;
+  }
+  .section-content {
+    margin-left: 0;
+    margin-top: 0.8rem;
+    padding: 1em 0.7em;
+  }
+  .policy-title {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 420px) {
+  .policy-main-container {
+    margin: 0;
+    padding: 0 0 1rem 0;
+  }
+  .policy-title {
+    font-size: 1.3rem;
+    margin: 1rem 0 0.5rem 0;
+  }
+  .section-number {
+    font-size: 1rem;
+    min-width: 38px;
+    min-height: 38px;
+  }
+}
+
+/* Policy ends */

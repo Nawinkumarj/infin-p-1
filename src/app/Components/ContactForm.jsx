@@ -12,15 +12,76 @@ export default function ContactForm() {
     phone: "",
     message: "",
   });
+  const countryCodes = [
+    { code: "+93", label: "Afghanistan" },
+    { code: "+355", label: "Albania" },
+    { code: "+213", label: "Algeria" },
+    { code: "+376", label: "Andorra" },
+    { code: "+244", label: "Angola" },
+    { code: "+54", label: "Argentina" },
+    { code: "+61", label: "Australia" },
+    { code: "+43", label: "Austria" },
+    { code: "+973", label: "Bahrain" },
+    { code: "+880", label: "Bangladesh" },
+    { code: "+32", label: "Belgium" },
+    { code: "+55", label: "Brazil" },
+    { code: "+1", label: "Canada" },
+    { code: "+86", label: "China" },
+    { code: "+57", label: "Colombia" },
+    { code: "+53", label: "Cuba" },
+    { code: "+45", label: "Denmark" },
+    { code: "+20", label: "Egypt" },
+    { code: "+33", label: "France" },
+    { code: "+49", label: "Germany" },
+    { code: "+233", label: "Ghana" },
+    { code: "+30", label: "Greece" },
+    { code: "+36", label: "Hungary" },
+    { code: "+91", label: "India" },
+    { code: "+62", label: "Indonesia" },
+    { code: "+353", label: "Ireland" },
+    { code: "+972", label: "Israel" },
+    { code: "+39", label: "Italy" },
+    { code: "+1-876", label: "Jamaica" },
+    { code: "+81", label: "Japan" },
+    { code: "+254", label: "Kenya" },
+    { code: "+60", label: "Malaysia" },
+    { code: "+52", label: "Mexico" },
+    { code: "+31", label: "Netherlands" },
+    { code: "+64", label: "New Zealand" },
+    { code: "+234", label: "Nigeria" },
+    { code: "+47", label: "Norway" },
+    { code: "+92", label: "Pakistan" },
+    { code: "+63", label: "Philippines" },
+    { code: "+48", label: "Poland" },
+    { code: "+351", label: "Portugal" },
+    { code: "+974", label: "Qatar" },
+    { code: "+7", label: "Russia" },
+    { code: "+966", label: "Saudi Arabia" },
+    { code: "+65", label: "Singapore" },
+    { code: "+27", label: "South Africa" },
+    { code: "+82", label: "South Korea" },
+    { code: "+34", label: "Spain" },
+    { code: "+46", label: "Sweden" },
+    { code: "+41", label: "Switzerland" },
+    { code: "+66", label: "Thailand" },
+    { code: "+90", label: "Turkey" },
+    { code: "+380", label: "Ukraine" },
+    { code: "+971", label: "United Arab Emirates" },
+    { code: "+44", label: "United Kingdom" },
+    { code: "+1", label: "United States" },
+    { code: "+84", label: "Vietnam" },
+  ];
 
-  const totalSteps = 4;
 
   const handleInputChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
   };
+
+  const totalSteps = 4;
 
   const validateCurrentStep = () => {
     switch (currentStep) {
@@ -96,64 +157,66 @@ export default function ContactForm() {
         </div>
         <div className="contact-info-item">
           <div className="icon">📧</div>
-          <a href="mailto:info@infinitasadvisory.com">info@infinitasadvisory.com</a>
+          <a href="mailto:info@infinitasadvisory.com">
+            info@infinitasadvisory.com
+          </a>
         </div>
         <div className="contact-info-item">
           <div className="icon">📍</div>
           <p>United Arab Emirates</p>
         </div>
         <div className="contact-social-media">
-            <h3>Follow Us on:</h3>
-        <div className="social-icons-row">
-          <a
-            href="https://instagram.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="social-icon-link"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="currentColor"
+          <h3>Follow Us on:</h3>
+          <div className="social-icons-row">
+            <a
+              href="https://instagram.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="social-icon-link"
             >
-              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-            </svg>
-          </a>
-          <a
-            href="https://facebook.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="social-icon-link"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="currentColor"
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+              </svg>
+            </a>
+            <a
+              href="https://facebook.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="social-icon-link"
             >
-              <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
-            </svg>
-          </a>
-          <a
-            href="https://linkedin.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="social-icon-link"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="currentColor"
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
+              </svg>
+            </a>
+            <a
+              href="https://linkedin.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="social-icon-link"
             >
-              <path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z" />
-            </svg>
-          </a>
-        </div>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z" />
+              </svg>
+            </a>
+          </div>
         </div>
       </div>
 
@@ -218,16 +281,48 @@ export default function ContactForm() {
                   />
                   <label>Email</label>
                 </div>
-                <div className="user-box">
+                <div
+                  className="user-box"
+                  style={{ display: "flex", alignItems: "center" }}
+                >
+                  <select
+                    name="countryCode"
+                    value={formData.countryCode}
+                    onChange={handleInputChange}
+                    required
+                    style={{
+                      padding: "6px",
+                      borderRadius: "4px",
+                      fontSize: "12px",
+                      maxWidth: "100px",
+                      cursor: "pointer",
+                      background: "none",
+                      outline: "none",
+                      border: 'none',
+                    }}
+                  >
+                    {countryCodes.map((country) => (
+                      <option key={country.code} value={country.code}>
+                        ({country.code})
+                      </option>
+                    ))}
+                  </select>
                   <input
                     type="tel"
                     name="phone"
                     value={formData.phone}
                     onChange={handleInputChange}
                     required
+                    style={{
+                      flex: 1,
+                      padding: "8px",
+                      borderRadius: "4px",
+                      fontSize: "14px",
+                    }}
                   />
-                  <label>Phone Number</label>
+                  <label style={{ paddingLeft: "90px" }}>Contact Number</label>
                 </div>
+
               </div>
               <div className="btn-group">
                 <button type="button" className="btn btn-outline" disabled>
@@ -261,9 +356,8 @@ export default function ContactForm() {
                 ].map((service) => (
                   <div
                     key={service.name}
-                    className={`service-option ${
-                      selectedService === service.name ? "selected" : ""
-                    }`}
+                    className={`service-option ${selectedService === service.name ? "selected" : ""
+                      }`}
                     onClick={() => selectService(service.name)}
                   >
                     <div className="service-icon">{service.icon}</div>

@@ -125,7 +125,7 @@ export default function Navbar() {
             Home
           </Link>
           <Link href="/About" onClick={() => setMobileMenuOpen(false)}>
-            About
+            Why us
           </Link>
 
           {/* Service Dropdown */}
